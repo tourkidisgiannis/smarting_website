@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "src": "/placeholder-1.jpg",
+    "alt": "Εγκατάσταση Server Rack",
+    "category": "Δίκτυα"
+  },
+  {
+    "id": 2,
+    "src": "/placeholder-2.jpg",
+    "alt": "Τοποθέτηση Κάμερας Ασφαλείας",
+    "category": "CCTV"
+  },
+  {
+    "id": 3,
+    "src": "/placeholder-3.jpg",
+    "alt": "Ηλεκτρολογικός Πίνακας",
+    "category": "Ηλεκτρολογικά"
+  },
+  {
+    "id": 4,
+    "src": "/placeholder-4.jpg",
+    "alt": "Σύστημα Συναγερμού",
+    "category": "Ασφάλεια"
+  },
+  {
+    "id": 5,
+    "src": "/placeholder-5.jpg",
+    "alt": "Καλωδίωση Δικτύου",
+    "category": "Δίκτυα"
+  },
+  {
+    "id": 6,
+    "src": "/placeholder-6.jpg",
+    "alt": "Έλεγχος Πρόσβασης",
+    "category": "Ασφάλεια"
+  }
+]
