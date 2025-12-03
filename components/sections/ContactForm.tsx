@@ -23,6 +23,7 @@ export function ContactForm() {
     defaultValues: {
       name: '',
       phone: '',
+      service: '',
       message: '',
     },
   });
@@ -73,7 +74,7 @@ export function ContactForm() {
           render={({ field }) => (
             <FormItem>
               <FormLabel>Ενδιαφέρομαι για</FormLabel>
-              <Select onValueChange={field.onChange} defaultValue={field.value}>
+              <Select onValueChange={field.onChange} value={field.value}>
                 <FormControl>
                   <SelectTrigger>
                     <SelectValue placeholder="Επιλέξτε υπηρεσία" />
