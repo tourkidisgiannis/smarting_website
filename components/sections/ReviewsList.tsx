@@ -1,6 +1,7 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
 import { Star, User } from 'lucide-react';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -10,18 +11,65 @@ import reviewsData from '@/app/mocks/reviews.json';
 export function ReviewsList() {
   const [filter, setFilter] = useState('all');
   const [reviews, setReviews] = useState(reviewsData);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      // Animate reviews on load
+      gsap.from('.review-card', {
+        y: 30,
+        opacity: 0,
+        duration: 0.5,
+        stagger: 0.1,
+        ease: 'power2.out',
+      });
+
+      // Hover effects
+      const cards = document.querySelectorAll('.review-card');
+      cards.forEach((card) => {
+        card.addEventListener('mouseenter', () => {
+          gsap.to(card, {
+            y: -8,
+            boxShadow: '0 10px 30px rgba(0, 173, 181, 0.2)',
+            duration: 0.3,
+            ease: 'power2.out',
+          });
+        });
+
+        card.addEventListener('mouseleave', () => {
+          gsap.to(card, {
+            y: 0,
+            boxShadow: '0 0 0 rgba(0, 173, 181, 0)',
+            duration: 0.3,
+            ease: 'power2.out',
+          });
+        });
+      });
+    }, containerRef);
+
+    return () => ctx.revert();
+  }, [reviews]);
 
   const handleFilterChange = (value: string) => {
     setFilter(value);
-    if (value === 'all') {
-      setReviews(reviewsData);
-    } else {
-      setReviews(reviewsData.filter((r) => r.rating === parseInt(value)));
-    }
+    const newReviews = value === 'all' 
+      ? reviewsData 
+      : reviewsData.filter((r) => r.rating === parseInt(value));
+    
+    // Animate out old reviews
+    gsap.to('.review-card', {
+      opacity: 0,
+      y: -20,
+      duration: 0.2,
+      stagger: 0.05,
+      onComplete: () => {
+        setReviews(newReviews);
+      },
+    });
   };
 
   return (
-    <div className="space-y-8">
+    <div ref={containerRef} className="space-y-8">
       <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
         <h2 className="text-2xl font-bold">Τι λένε οι πελάτες μας</h2>
         <div className="flex items-center gap-2">
@@ -42,7 +90,7 @@ export function ReviewsList() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {reviews.map((review) => (
-          <Card key={review.id} className="bg-muted/50">
+          <Card key={review.id} className="review-card bg-muted/50">
             <CardHeader className="flex flex-row items-start justify-between space-y-0 pb-2">
               <div className="flex items-center gap-2">
                 <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">

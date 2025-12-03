@@ -13,7 +13,7 @@ import { toast } from 'sonner';
 const formSchema = z.object({
   name: z.string().min(2, { message: 'Το όνομα πρέπει να έχει τουλάχιστον 2 χαρακτήρες.' }),
   phone: z.string().min(10, { message: 'Το τηλέφωνο πρέπει να είναι έγκυρο.' }),
-  service: z.string({ required_error: 'Παρακαλώ επιλέξτε υπηρεσία.' }),
+  service: z.string().min(1, { message: 'Παρακαλώ επιλέξτε υπηρεσία.' }),
   message: z.string().min(10, { message: 'Το μήνυμα πρέπει να έχει τουλάχιστον 10 χαρακτήρες.' }),
 });
 

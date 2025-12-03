@@ -1,5 +1,7 @@
 'use client';
 
+import { useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
 import { Zap, Network, Camera, ShieldCheck, ArrowRight } from 'lucide-react';
 import { Card,  CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -15,16 +17,57 @@ const IconMap: Record<string, any> = {
 };
 
 export function ServicesList() {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      // Entrance animations
+      gsap.from('.service-card', {
+        y: 50,
+        opacity: 0,
+        duration: 0.6,
+        stagger: 0.15,
+        ease: 'power3.out',
+      });
+
+      // Hover animations for icons
+      const cards = document.querySelectorAll('.service-card');
+      cards.forEach((card) => {
+        const icon = card.querySelector('.service-icon');
+        
+        card.addEventListener('mouseenter', () => {
+          gsap.to(icon, {
+            scale: 1.2,
+            rotate: 360,
+            duration: 0.5,
+            ease: 'back.out(1.7)',
+          });
+        });
+
+        card.addEventListener('mouseleave', () => {
+          gsap.to(icon, {
+            scale: 1,
+            rotate: 0,
+            duration: 0.3,
+            ease: 'power2.out',
+          });
+        });
+      });
+    }, containerRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div ref={containerRef} className="grid grid-cols-1 md:grid-cols-2 gap-6">
       {services.map((service) => {
         const Icon = IconMap[service.icon] || Zap;
         
         return (
           <Sheet key={service.id}>
-            <Card className="h-full flex flex-col hover:border-primary/50 transition-colors cursor-pointer group">
+            <Card className="service-card h-full flex flex-col hover:border-primary/50 transition-colors cursor-pointer group">
               <CardHeader>
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-4 group-hover:scale-110 transition-transform">
+                <div className="service-icon w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-4">
                   <Icon className="w-6 h-6" />
                 </div>
                 <CardTitle className="text-xl">{service.title}</CardTitle>
