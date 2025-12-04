@@ -1,15 +1,33 @@
 'use client';
 
+import { useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
 import { Clock, Award, MapPin } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import businessInfo from '@/app/mocks/business-info.json';
 
 export function InfoSection() {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.from('.info-card', {
+        y: 30,
+        opacity: 0,
+        duration: 0.8,
+        stagger: 0.15,
+        ease: 'power3.out',
+      });
+    }, containerRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <div className="space-y-8">
+    <div ref={containerRef} className="space-y-8">
       {/* About */}
-      <Card>
+      <Card className="info-card">
         <CardHeader>
           <CardTitle>Σχετικά με εμάς</CardTitle>
         </CardHeader>
@@ -27,7 +45,7 @@ export function InfoSection() {
       </Card>
 
       {/* Certifications */}
-      <Card>
+      <Card className="info-card">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <Award className="text-primary" />
@@ -57,7 +75,7 @@ export function InfoSection() {
       </Card>
 
       {/* Full Hours */}
-      <Card>
+      <Card className="info-card">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <Clock className="text-primary" />
@@ -86,7 +104,7 @@ export function InfoSection() {
       </Card>
 
       {/* Location */}
-      <Card>
+      <Card className="info-card">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <MapPin className="text-primary" />

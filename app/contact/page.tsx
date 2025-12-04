@@ -1,19 +1,42 @@
+'use client';
+
+import { useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
 import { ContactForm } from "@/components/sections/ContactForm";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Phone, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import businessInfo from "@/app/mocks/business-info.json";
 
-export const metadata = {
-  title: "Επικοινωνία - SMARTING.GR",
-  description: "Επικοινωνήστε μαζί μας για οποιαδήποτε ερώτηση ή αίτημα υπηρεσίας.",
-};
-
 export default function ContactPage() {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline();
+
+      tl.from('.anim-header', {
+        y: 30,
+        opacity: 0,
+        duration: 0.8,
+        ease: 'power3.out',
+      })
+      .from('.anim-card', {
+        y: 30,
+        opacity: 0,
+        duration: 0.8,
+        stagger: 0.2,
+        ease: 'power3.out',
+      }, '-=0.5');
+    }, containerRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <div className="container mx-auto px-4 py-16">
+    <div ref={containerRef} className="container mx-auto px-4 py-16">
       <div className="max-w-5xl mx-auto">
-        <div className="text-center mb-12">
+        <div className="anim-header text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold tracking-tighter mb-4">
             Επικοινωνήστε μαζί μας
           </h1>
@@ -24,7 +47,7 @@ export default function ContactPage() {
 
         <div className="grid lg:grid-cols-2 gap-8">
           {/* Contact Form */}
-          <Card>
+          <Card className="anim-card">
             <CardHeader>
               <CardTitle>Στείλτε μας μήνυμα</CardTitle>
             </CardHeader>
@@ -35,7 +58,7 @@ export default function ContactPage() {
 
           {/* Contact Info & Quick Actions */}
           <div className="space-y-6">
-            <Card>
+            <Card className="anim-card">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Phone className="text-primary" />
@@ -60,7 +83,7 @@ export default function ContactPage() {
               </CardContent>
             </Card>
 
-            <Card>
+            <Card className="anim-card">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <MapPin className="text-primary" />
@@ -87,7 +110,7 @@ export default function ContactPage() {
             </Card>
 
             {/* Map Embed Placeholder */}
-            <Card className="overflow-hidden">
+            <Card className="anim-card overflow-hidden">
               <div className="aspect-video bg-muted relative flex items-center justify-center">
                 <MapPin className="w-12 h-12 text-muted-foreground opacity-20" />
                 <p className="absolute text-sm text-muted-foreground">Χάρτης Google</p>

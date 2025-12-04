@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import { Phone, Calendar } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import businessInfo from '@/app/mocks/business-info.json';
-import { useEffect, useState } from 'react';
-import { cn } from '@/lib/utils';
+import { Phone, Calendar } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import businessInfo from "@/app/mocks/business-info.json";
+import { useEffect, useState } from "react";
+import { cn } from "@/lib/utils";
 
 export function StickyCTA() {
   const [isVisible, setIsVisible] = useState(false);
@@ -15,8 +15,8 @@ export function StickyCTA() {
       setIsVisible(window.scrollY > 100);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
@@ -35,7 +35,7 @@ export function StickyCTA() {
       <Button variant="secondary" className="w-full" asChild>
         <a href="/contact">
           <Calendar className="mr-2 h-4 w-4" />
-          Αίτηση
+          Ραντεβού
         </a>
       </Button>
     </div>
