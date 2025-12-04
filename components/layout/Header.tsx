@@ -1,3 +1,6 @@
+'use client';
+
+import { useState } from 'react';
 import Link from 'next/link';
 import { Menu, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -6,6 +9,8 @@ import { Logo } from '@/components/ui/Logo';
 import businessInfo from '@/app/mocks/business-info.json';
 
 export function Header() {
+  const [isOpen, setIsOpen] = useState(false);
+
   const navLinks = [
     { href: '/', label: 'Αρχική' },
     { href: '/categories', label: 'Υπηρεσίες' },
@@ -41,7 +46,7 @@ export function Header() {
         </nav>
 
         {/* Mobile Nav */}
-        <Sheet>
+        <Sheet open={isOpen} onOpenChange={setIsOpen}>
           <SheetTrigger asChild className="md:hidden">
             <Button variant="ghost" size="icon">
               <Menu className="h-6 w-6" />
@@ -57,6 +62,7 @@ export function Header() {
                 <Link
                   key={link.href}
                   href={link.href}
+                  onClick={() => setIsOpen(false)}
                   className="text-lg font-medium transition-all duration-200 hover:text-primary py-2 px-3 rounded-lg hover:bg-primary/10 w-full text-center hover:scale-105 active:scale-95"
                 >
                   {link.label}
