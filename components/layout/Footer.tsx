@@ -33,7 +33,7 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="h-4 w-4 text-primary shrink-0" />
-                <a href={`tel:${businessInfo.phone}`} className="hover:text-primary transition-colors">
+                <a href={`tel:${businessInfo.phone}`} className="hover-link">
                   {businessInfo.phone}
                 </a>
               </li>
@@ -51,7 +51,7 @@ export function Footer() {
                 </li>
               ))}
               <li>
-                <Link href="/info" className="text-primary hover:underline text-xs">
+                <Link href="/info" className="hover-link text-primary text-xs">
                   Δείτε όλο το ωράριο &rarr;
                 </Link>
               </li>
@@ -62,10 +62,10 @@ export function Footer() {
           <div>
             <h4 className="font-semibold text-white mb-4">Σύνδεσμοι</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><Link href="/services" className="hover:text-primary transition-colors">Υπηρεσίες</Link></li>
-              <li><Link href="/reviews" className="hover:text-primary transition-colors">Κριτικές</Link></li>
-              <li><Link href="/contact" className="hover:text-primary transition-colors">Επικοινωνία</Link></li>
-              <li><Link href="/info" className="hover:text-primary transition-colors">Πληροφορίες</Link></li>
+              <li><Link href="/categories" className="hover-link">Υπηρεσίες</Link></li>
+              <li><Link href="/reviews" className="hover-link">Κριτικές</Link></li>
+              <li><Link href="/contact" className="hover-link">Επικοινωνία</Link></li>
+              <li><Link href="/info" className="hover-link">Πληροφορίες</Link></li>
             </ul>
           </div>
         </div>

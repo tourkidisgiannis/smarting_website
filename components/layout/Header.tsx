@@ -2,12 +2,13 @@ import Link from 'next/link';
 import { Menu, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Logo } from '@/components/ui/Logo';
 import businessInfo from '@/app/mocks/business-info.json';
 
 export function Header() {
   const navLinks = [
     { href: '/', label: 'Αρχική' },
-    { href: '/services', label: 'Υπηρεσίες' },
+    { href: '/categories', label: 'Υπηρεσίες' },
     { href: '/reviews', label: 'Κριτικές' },
     { href: '/info', label: 'Πληροφορίες' },
     { href: '/contact', label: 'Επικοινωνία' },
@@ -16,10 +17,8 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-background/80 backdrop-blur-md">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
-        <Link href="/" className="flex items-center gap-2">
-          <span className="text-xl font-bold tracking-tighter text-white">
-            SMARTING<span className="text-primary">.GR</span>
-          </span>
+        <Link href="/" className="flex items-center">
+          <Logo className="h-10 w-auto text-primary" />
         </Link>
 
         {/* Desktop Nav */}
@@ -28,7 +27,7 @@ export function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+              className="relative text-sm font-medium text-muted-foreground transition-all duration-200 hover:text-primary hover:-translate-y-0.5 after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
             >
               {link.label}
             </Link>
@@ -58,7 +57,7 @@ export function Header() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-lg font-medium hover:text-primary transition-colors py-2 px-3 rounded-lg hover:bg-primary/10 w-full text-center"
+                  className="text-lg font-medium transition-all duration-200 hover:text-primary py-2 px-3 rounded-lg hover:bg-primary/10 w-full text-center hover:scale-105 active:scale-95"
                 >
                   {link.label}
                 </Link>

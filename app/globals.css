@@ -1,57 +1,55 @@
 @import "tailwindcss";
+@import "../styles/theme.css";
 
 @theme {
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* SMARTING.GR Tailwind Color Tokens */
+  --color-primaryTeal: var(--color-primary-teal);
+  --color-deepNavy: var(--color-deep-navy);
+  --color-lightTeal: var(--color-light-teal);
+  --color-darkBlue: var(--color-dark-blue);
+  --color-softWhite: var(--color-soft-white);
+  --color-neutralGray: var(--color-neutral-gray);
 }
 
 :root {
-  /* Brand Palette */
-  --color-primary: #222831;
-  --color-surface: #393E46;
-  --color-accent: #00ADB5;
-  --color-light: #EEEEEE;
+  /* Shadcn/UI & Base Mappings - SMARTING.GR Palette */
+  --background: var(--color-dark-blue);
+  --foreground: var(--color-soft-white);
 
-  /* Shadcn/UI & Base Mappings */
-  --background: var(--color-primary);
-  --foreground: var(--color-light);
+  --card: var(--color-deep-navy);
+  --card-foreground: var(--color-soft-white);
 
-  --card: var(--color-surface);
-  --card-foreground: var(--color-light);
+  --popover: var(--color-deep-navy);
+  --popover-foreground: var(--color-soft-white);
 
-  --popover: var(--color-surface);
-  --popover-foreground: var(--color-light);
+  --primary: var(--color-primary-teal);
+  --primary-foreground: var(--color-soft-white);
 
-  --primary: var(--color-accent);
-  --primary-foreground: var(--color-primary);
+  --secondary: var(--color-deep-navy);
+  --secondary-foreground: var(--color-soft-white);
 
-  --secondary: var(--color-surface);
-  --secondary-foreground: var(--color-light);
+  --muted: #1a3344;
+  --muted-foreground: var(--color-neutral-gray);
 
-  --muted: #2a2f38; /* Slightly lighter than primary */
-  --muted-foreground: #a0a0a0;
-
-  --accent: var(--color-accent);
-  --accent-foreground: var(--color-primary);
+  --accent: var(--color-light-teal);
+  --accent-foreground: var(--color-dark-blue);
 
   --destructive: #ef4444;
   --destructive-foreground: #ffffff;
 
-  --border: #4a505a;
-  --input: #4a505a;
-  --ring: var(--color-accent);
+  --border: rgba(var(--color-primary-teal-rgb), 0.2);
+  --input: rgba(var(--color-primary-teal-rgb), 0.15);
+  --ring: var(--color-primary-teal);
 
   --radius: 0.5rem;
 }
 
 /* Dark mode by default for this brand */
 @media (prefers-color-scheme: light) {
-  /* We want to enforce the dark theme as the primary brand identity, 
-     but if we needed a light mode, we would define it here. 
-     For now, mapping to the same dark theme or a light variation if requested.
-     Per prompt "Primary Dark: #222831", implying a dark-themed site.
-     I will keep the root variables as the source of truth.
-  */
+  /* Enforcing dark theme as primary brand identity */
 }
 
 body {
@@ -68,14 +66,73 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--color-primary);
+  background: var(--color-dark-blue);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-surface);
+  background: var(--color-deep-navy);
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-accent);
+  background: var(--color-primary-teal);
+}
+
+/* Category Accordion Styles */
+.category-accordion-trigger {
+  transition: background-color 0.2s ease;
+}
+
+.category-accordion-trigger:hover {
+  background-color: rgba(var(--color-primary-teal-rgb), 0.06);
+}
+
+.category-accordion-trigger[data-state="open"] .category-chevron {
+  transform: rotate(90deg);
+}
+
+.category-chevron {
+  transition: transform 0.2s ease;
+}
+
+.subcat-link {
+  display: block;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  transition: background-color 0.15s ease;
+}
+
+.subcat-link:hover {
+  background-color: rgba(var(--color-primary-teal-rgb), 0.08);
+}
+
+.subcat-link:focus-visible {
+  outline: 2px solid var(--color-primary-teal);
+  outline-offset: 2px;
+}
+
+
+/* Animated Link Hover Effect */
+.hover-link {
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.hover-link:hover {
+  color: var(--color-primary-teal);
+}
+
+.hover-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 1px;
+  background-color: var(--color-primary-teal);
+  transition: width 0.3s ease;
+}
+
+.hover-link:hover::after {
+  width: 100%;
 }

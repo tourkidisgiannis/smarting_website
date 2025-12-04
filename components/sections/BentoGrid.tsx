@@ -95,7 +95,7 @@ export function BentoGrid() {
             </CardHeader>
             <CardContent className="grid grid-cols-2 gap-4">
               {services.slice(0, 4).map((s) => (
-                <Link key={s.id} href="/services" className="flex items-center gap-3 p-3 rounded-lg bg-muted hover:bg-muted/80 transition-colors">
+                <Link key={s.id} href="/categories" className="flex items-center gap-3 p-3 rounded-lg bg-muted hover:bg-muted/80 transition-colors">
                   <div className="p-2 rounded-full bg-primary/10 text-primary">
                     {/* Simple icon mapping based on ID or just generic */}
                     <Zap className="w-4 h-4" />
@@ -138,7 +138,7 @@ export function BentoGrid() {
                 Εξειδικευμένες λύσεις CCTV και συναγερμών για την απόλυτη προστασία του χώρου σας.
               </p>
               <Button variant="link" className="text-primary p-0 h-auto" asChild>
-                <Link href="/services">Μάθετε περισσότερα &rarr;</Link>
+                <Link href="/categories" className="hover-link">Μάθετε περισσότερα &rarr;</Link>
               </Button>
             </CardContent>
           </Card>

@@ -13,17 +13,34 @@ export function WhyChooseUs() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from('.reason-card', {
+      const tl = gsap.timeline({
         scrollTrigger: {
           trigger: sectionRef.current,
           start: 'top bottom-=100',
         },
+      });
+
+      // Animate section header first
+      tl.from('.section-title', {
+        y: 40,
+        opacity: 0,
+        duration: 0.7,
+        ease: 'power3.out',
+      })
+      .from('.section-desc', {
+        y: 30,
+        opacity: 0,
+        duration: 0.6,
+        ease: 'power3.out',
+      }, '-=0.4')
+      // Then cards stagger in
+      .from('.reason-card', {
         y: 50,
         opacity: 0,
         duration: 0.7,
-        stagger: 0.2,
+        stagger: 0.15,
         ease: 'power3.out',
-      });
+      }, '-=0.3');
     }, sectionRef);
 
     return () => ctx.revert();
@@ -56,10 +73,10 @@ export function WhyChooseUs() {
     <section ref={sectionRef} className="py-20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tighter mb-4">
+          <h2 className="section-title text-3xl md:text-4xl font-bold tracking-tighter mb-4">
             Γιατί να μας Επιλέξετε;
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="section-desc text-lg text-muted-foreground max-w-2xl mx-auto">
             Η εμπειρία, η αξιοπιστία και η δέσμευσή μας στην ποιότητα μας κάνουν την ιδανική επιλογή 
             για τις ηλεκτρολογικές και τεχνολογικές σας ανάγκες.
           </p>

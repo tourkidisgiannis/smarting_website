@@ -1,0 +1,28 @@
+/* SMARTING.GR Brand Color Palette */
+/* Import this file in globals.css */
+
+:root {
+  /* Primary Teal - Main brand color for CTAs, links, accents */
+  --color-primary-teal: #4A90A0;
+  --color-primary-teal-rgb: 74, 144, 160;
+
+  /* Deep Navy - Dark backgrounds, headers */
+  --color-deep-navy: #0F2A3A;
+  --color-deep-navy-rgb: 15, 42, 58;
+
+  /* Light Teal - Hover states, secondary accents */
+  --color-light-teal: #4FA3B5;
+  --color-light-teal-rgb: 79, 163, 181;
+
+  /* Dark Blue - Primary background, dark sections */
+  --color-dark-blue: #0D2130;
+  --color-dark-blue-rgb: 13, 33, 48;
+
+  /* Soft White - Light backgrounds, text on dark */
+  --color-soft-white: #F8F9FA;
+  --color-soft-white-rgb: 248, 249, 250;
+
+  /* Neutral Gray - Muted text, borders, secondary elements */
+  --color-neutral-gray: #7A8A92;
+  --color-neutral-gray-rgb: 122, 138, 146;
+}

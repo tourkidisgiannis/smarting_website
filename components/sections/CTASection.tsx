@@ -12,16 +12,45 @@ export function CTASection() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from('.cta-card', {
+      const tl = gsap.timeline({
         scrollTrigger: {
           trigger: sectionRef.current,
           start: 'top bottom-=50',
         },
+      });
+
+      tl.from('.cta-card', {
         scale: 0.95,
         opacity: 0,
         duration: 0.8,
         ease: 'back.out(1.2)',
-      });
+      })
+      .from('.cta-title', {
+        y: 30,
+        opacity: 0,
+        duration: 0.6,
+        ease: 'power3.out',
+      }, '-=0.4')
+      .from('.cta-desc', {
+        y: 20,
+        opacity: 0,
+        duration: 0.5,
+        ease: 'power3.out',
+      }, '-=0.3')
+      .from('.cta-button', {
+        y: 15,
+        opacity: 0,
+        duration: 0.4,
+        stagger: 0.1,
+        ease: 'power2.out',
+      }, '-=0.2')
+      .from('.trust-item', {
+        y: 20,
+        opacity: 0,
+        duration: 0.5,
+        stagger: 0.1,
+        ease: 'power2.out',
+      }, '-=0.2');
     }, sectionRef);
 
     return () => ctx.revert();
@@ -40,28 +69,28 @@ export function CTASection() {
           </div>
 
           <CardContent className="relative p-8 md:p-12 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tighter mb-4">
+            <h2 className="cta-title text-3xl md:text-4xl font-bold tracking-tighter mb-4">
               Έτοιμοι να Ξεκινήσετε;
             </h2>
-            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+            <p className="cta-desc text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
               Επικοινωνήστε μαζί μας σήμερα για μια δωρεάν εκτίμηση και ανακαλύψτε πώς μπορούμε 
               να βελτιώσουμε την ασφάλεια και την αποδοτικότητα των εγκαταστάσεών σας.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button size="lg" className="w-full sm:w-auto shadow-lg shadow-primary/30" asChild>
+              <Button size="lg" className="cta-button w-full sm:w-auto shadow-lg shadow-primary/30" asChild>
                 <a href={`tel:${businessInfo.phone}`}>
                   <Phone className="mr-2 h-5 w-5" />
                   Καλέστε Τώρα
                 </a>
               </Button>
-              <Button size="lg" variant="secondary" className="w-full sm:w-auto shadow-lg" asChild>
+              <Button size="lg" variant="secondary" className="cta-button w-full sm:w-auto shadow-lg" asChild>
                 <a href="/contact">
                   <Calendar className="mr-2 h-5 w-5" />
                   Κλείστε Ραντεβού
                 </a>
               </Button>
-              <Button size="lg" variant="outline" className="w-full sm:w-auto" asChild>
+              <Button size="lg" variant="outline" className="cta-button w-full sm:w-auto" asChild>
                 <a href={`sms:${businessInfo.phone}`}>
                   <MessageSquare className="mr-2 h-5 w-5" />
                   Στείλτε SMS
@@ -72,15 +101,15 @@ export function CTASection() {
             {/* Trust Indicators */}
             <div className="mt-10 pt-8 border-t border-white/10">
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
-                <div>
+                <div className="trust-item">
                   <div className="text-2xl font-bold text-primary mb-1">100%</div>
                   <div className="text-sm text-muted-foreground">Ικανοποίηση Πελατών</div>
                 </div>
-                <div>
+                <div className="trust-item">
                   <div className="text-2xl font-bold text-primary mb-1">Δωρεάν</div>
                   <div className="text-sm text-muted-foreground">Εκτίμηση Κόστους</div>
                 </div>
-                <div>
+                <div className="trust-item">
                   <div className="text-2xl font-bold text-primary mb-1">24/7</div>
                   <div className="text-sm text-muted-foreground">Τεχνική Υποστήριξη</div>
                 </div>

@@ -13,28 +13,37 @@ export function AboutSection() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from('.about-content', {
+      const tl = gsap.timeline({
         scrollTrigger: {
           trigger: sectionRef.current,
           start: 'top bottom-=100',
         },
-        y: 50,
-        opacity: 0,
-        duration: 0.8,
-        ease: 'power3.out',
       });
 
-      gsap.from('.stat-card', {
-        scrollTrigger: {
-          trigger: '.stats-grid',
-          start: 'top bottom-=100',
-        },
+      // Animate title first
+      tl.from('.about-title', {
+        y: 40,
+        opacity: 0,
+        duration: 0.7,
+        ease: 'power3.out',
+      })
+      // Then paragraphs stagger
+      .from('.about-paragraph', {
         y: 30,
         opacity: 0,
         duration: 0.6,
         stagger: 0.15,
+        ease: 'power3.out',
+      }, '-=0.4')
+      // Finally stat cards
+      .from('.stat-card', {
+        y: 30,
+        opacity: 0,
+        scale: 0.95,
+        duration: 0.6,
+        stagger: 0.1,
         ease: 'power2.out',
-      });
+      }, '-=0.2');
     }, sectionRef);
 
     return () => ctx.revert();
@@ -52,17 +61,17 @@ export function AboutSection() {
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           {/* Main About Content */}
-          <div className="about-content text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tighter mb-6">
+          <div className="text-center mb-16">
+            <h2 className="about-title text-3xl md:text-4xl font-bold tracking-tighter mb-6">
               Η Εμπειρία μας στην Υπηρεσία σας
             </h2>
-            <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+            <p className="about-paragraph text-lg text-muted-foreground leading-relaxed mb-4">
               Η <span className="text-primary font-semibold">SMARTING.GR</span> είναι μια δυναμική εταιρεία που ειδικεύεται 
               στην παροχή ολοκληρωμένων λύσεων ηλεκτρολογικής τεχνικής υποστήριξης και συστημάτων ασφαλείας. 
               Με περισσότερα από 10 χρόνια εμπειρίας στον χώρο, έχουμε εξυπηρετήσει εκατοντάδες πελάτες, 
               τόσο ιδιώτες όσο και επιχειρήσεις.
             </p>
-            <p className="text-lg text-muted-foreground leading-relaxed">
+            <p className="about-paragraph text-lg text-muted-foreground leading-relaxed">
               Η ομάδα μας αποτελείται από πιστοποιημένους τεχνικούς με εξειδίκευση σε δίκτυα δεδομένων, 
               συστήματα CCTV, συναγερμούς και ηλεκτρολογικές εγκαταστάσεις. Χρησιμοποιούμε μόνο 
               πιστοποιημένα υλικά και ακολουθούμε αυστηρά τις διεθνείς προδιαγραφές ασφαλείας.

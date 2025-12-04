@@ -9,10 +9,10 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      <BentoGrid />
+     
       <AboutSection />
       <ImageShowcase />
-      <WhyChooseUs />
+      <WhyChooseUs /> <BentoGrid />
       <CTASection />
     </>
   );
