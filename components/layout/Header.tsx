@@ -6,7 +6,6 @@ import { Menu, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import businessInfo from "@/app/mocks/business-info.json";
-import Logo from "../ui/Logo";
 import Image from "next/image";
 import logo from "@/public/images/smarting_logo_inline.png";
 
