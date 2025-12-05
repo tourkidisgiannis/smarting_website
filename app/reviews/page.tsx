@@ -1,4 +1,4 @@
-import { ReviewsList } from "@/components/sections/ReviewsList";
+import { GoogleReviews } from "@/components/sections/GoogleReviews";
 
 export const metadata = {
   title: "Κριτικές - SMARTING.GR",
@@ -8,8 +8,8 @@ export const metadata = {
 export default function ReviewsPage() {
   return (
     <div className="container mx-auto px-4 py-16">
-      <div className="max-w-5xl mx-auto">
-        <ReviewsList />
+      <div className="max-w-7xl mx-auto">
+        <GoogleReviews />
       </div>
     </div>
   );

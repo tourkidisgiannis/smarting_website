@@ -1,148 +1,143 @@
+
 'use client';
 
-import { useEffect, useRef } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { MapPin, Clock, Phone, ShieldCheck, Network, Zap, Star } from 'lucide-react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import businessInfo from '@/app/mocks/business-info.json';
-import services from '@/app/mocks/services.json';
+import { 
+  Zap, 
+  Network, 
+  ShieldCheck, 
+  Home, 
+  Flame, 
+  Sun, 
+  Briefcase, 
+  Headphones, 
+  Lightbulb,
+  ChevronRight
+} from 'lucide-react';
+import { categories } from '@/data/categories';
 import Link from 'next/link';
-import Image from 'next/image';
+import { cn } from '@/lib/utils';
 
-gsap.registerPlugin(ScrollTrigger);
+
+const iconMap: Record<string, React.ElementType> = {
+  'security-systems': ShieldCheck,
+  'electrical': Zap,
+  'smart-home': Home,
+  'networks': Network,
+  'home-solutions': Lightbulb,
+  'fire-safety': Flame,
+  'pv-energy': Sun,
+  'specialized': Briefcase,
+  'support': Headphones,
+};
 
 export function BentoGrid() {
-  const gridRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.from('.bento-card', {
-        scrollTrigger: {
-          trigger: gridRef.current,
-          start: 'top bottom-=100',
-        },
-        y: 50,
-        opacity: 0,
-        duration: 0.8,
-        stagger: 0.1,
-        ease: 'power3.out',
-      });
-    }, gridRef);
-
-    return () => ctx.revert();
-  }, []);
-
   return (
-    <section className="py-20 bg-muted/30" ref={gridRef}>
+    <section className="py-24 bg-background relative overflow-hidden">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 auto-rows-[minmax(180px,auto)]">
-          
-          {/* Hours Card */}
-          <Card className="bento-card col-span-1 sm:col-span-2 lg:col-span-1 row-span-2 bg-card hover:bg-card/80 transition-colors">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Clock className="text-primary" />
-                Ωράριο
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <ul className="space-y-2 text-sm">
-                {businessInfo.hours.map((h) => (
-                  <li key={h.day} className="flex justify-between border-b border-white/5 pb-1 last:border-0">
-                    <span className={h.time === 'Κλειστά' ? 'text-muted-foreground' : ''}>{h.day}</span>
-                    <span className={h.time === 'Κλειστά' ? 'text-destructive' : 'text-primary'}>{h.time}</span>
-                  </li>
-                ))}
-              </ul>
-            </CardContent>
-          </Card>
+        <div className="mb-12 text-center max-w-2xl mx-auto">
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4 text-white">
+            Οι Υπηρεσίες <span className="text-primary">Μας</span>
+          </h2>
+          <p className="text-muted-foreground text-lg">
+            Εξερευνήστε τις κατηγορίες υπηρεσιών μας και βρείτε ακριβώς αυτό που ψάχνετε.
+          </p>
+        </div>
 
-          {/* Map/Address Card */}
-          <Card className="bento-card col-span-1 sm:col-span-2 lg:col-span-2 row-span-1 overflow-hidden relative group">
-            <div className="absolute inset-0 bg-black/50 z-10 group-hover:bg-black/40 transition-colors" />
-            {/* Placeholder Map Image - In production use a real map embed or image */}
-            <div className="absolute inset-0 bg-zinc-800 flex items-center justify-center text-muted-foreground">
-               <MapPin className="w-12 h-12 opacity-20" />
-            </div>
-            <CardContent className="relative z-20 h-full flex flex-col justify-end p-6">
-              <h3 className="text-xl font-bold text-white mb-2">{businessInfo.address.street}</h3>
-              <p className="text-gray-300 mb-4">{businessInfo.address.city}, {businessInfo.address.postalCode}</p>
-              <Button variant="secondary" size="sm" className="w-fit" asChild>
-                <a href={`https://maps.google.com/?q=${businessInfo.address.plusCode}`} target="_blank" rel="noopener noreferrer">
-                  <MapPin className="mr-2 h-4 w-4" />
-                  Οδηγίες Πλοήγησης
-                </a>
-              </Button>
-            </CardContent>
-          </Card>
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 auto-rows-[200px]">
+          {categories.map((category, index) => {
+            const Icon = iconMap[category.id] || Zap;
+            
+            // Define spans based on index for 9 items
+            let spanClasses = "";
+            switch(index) {
+              case 0: // Security (2x2)
+                spanClasses = "col-span-1 md:col-span-2 lg:col-span-2 row-span-2";
+                break;
+              case 1: // Electrical (1x1)
+                spanClasses = "col-span-1 md:col-span-1 md:row-span-1";
+                break;
+              case 2: // Smart Home (1x2 Tall)
+                spanClasses = "col-span-1 md:col-span-1 md:row-span-2";
+                break;
+              case 3: // Networks (1x1)
+                spanClasses = "col-span-1 md:col-span-1 md:row-span-1";
+                break;
+              case 4: // Home Sol (1x1)
+                spanClasses = "col-span-1 md:col-span-1 md:row-span-1";
+                break;
+              case 5: // Fire Safety (1x1)
+                spanClasses = "col-span-1 md:col-span-1 md:row-span-1";
+                break;
+              case 6: // PV Energy (2x1 Wide)
+                 spanClasses = "col-span-1 md:col-span-2 lg:col-span-2 row-span-1"; 
+                 break;
+              case 7: // Specialized (2x1 Wide)
+                 spanClasses = "col-span-1 md:col-span-2 lg:col-span-2 row-span-1";
+                 break;
+              case 8: // Support (2x1 Wide)
+                 spanClasses = "col-span-1 md:col-span-2 lg:col-span-2 row-span-1";
+                 break;
+              default:
+                 spanClasses = "col-span-1";
+            }
 
-          {/* Phone Card */}
-          <Card className="bento-card col-span-1 bg-primary text-primary-foreground flex flex-col justify-center items-center text-center p-6 hover:bg-primary/90 transition-colors">
-            <Phone className="w-12 h-12 mb-4" />
-            <h3 className="text-2xl font-bold mb-2">{businessInfo.phone}</h3>
-            <p className="text-primary-foreground/80 mb-4">Καλέστε μας για άμεση εξυπηρέτηση</p>
-            <Button variant="secondary" className="w-full text-primary" asChild>
-              <a href={`tel:${businessInfo.phone}`}>Κλήση</a>
-            </Button>
-          </Card>
-
-          {/* Services Highlight */}
-          <Card className="bento-card col-span-1 sm:col-span-2 lg:col-span-2 row-span-1">
-            <CardHeader>
-              <CardTitle>Υπηρεσίες</CardTitle>
-            </CardHeader>
-            <CardContent className="grid grid-cols-2 gap-4">
-              {services.slice(0, 4).map((s) => (
-                <Link key={s.id} href="/categories" className="flex items-center gap-3 p-3 rounded-lg bg-muted hover:bg-muted/80 transition-colors">
-                  <div className="p-2 rounded-full bg-primary/10 text-primary">
-                    {/* Simple icon mapping based on ID or just generic */}
-                    <Zap className="w-4 h-4" />
+            return (
+              <div 
+                key={category.id} 
+                className={cn(
+                  "category-card group relative rounded-3xl border border-white/10 bg-zinc-900/50 overflow-hidden hover:border-primary/50 transition-all duration-500 hover:shadow-lg hover:shadow-primary/20",
+                  spanClasses
+                )}
+              >
+                {/* Default State Content */}
+                <div className="absolute inset-0 z-10 p-6 flex flex-col items-center justify-center text-center transition-all duration-300 group-hover:opacity-0 group-hover:scale-90">
+                  <div className={cn(
+                    "rounded-2xl bg-white/5 flex items-center justify-center mb-4 text-white group-hover:scale-110 transition-transform duration-500",
+                    (index === 0 || index === 2) ? "w-20 h-20" : "w-14 h-14"
+                  )}>
+                    <Icon className={cn(
+                      "text-primary",
+                      (index === 0 || index === 2) ? "w-10 h-10" : "w-7 h-7"
+                    )} />
                   </div>
-                  <span className="font-medium text-sm">{s.title}</span>
-                </Link>
-              ))}
-            </CardContent>
-          </Card>
+                  <h3 className={cn(
+                    "font-bold text-white mb-2",
+                    (index === 0 || index === 2) ? "text-2xl" : "text-lg"
+                  )}>{category.title}</h3>
+                  <p className="text-sm text-zinc-400">
+                    {category.subcategories.length} υπηρεσίες
+                  </p>
+                </div>
 
-          {/* Reviews Preview */}
-          <Card className="bento-card col-span-1 row-span-1">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Star className="fill-yellow-500 text-yellow-500" />
-                Κριτικές
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="flex flex-col justify-between h-[140px]">
-              <div className="text-center">
-                <span className="text-4xl font-bold">{businessInfo.rating}</span>
-                <span className="text-muted-foreground text-sm block">από {businessInfo.reviewCount} πελάτες</span>
+                {/* Hover State - Subcategories List */}
+                <div className="absolute inset-0 z-20 bg-zinc-950/90 backdrop-blur-md p-6 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 flex flex-col">
+                  <div className="flex items-center gap-2 mb-4 pb-2 border-b border-white/10 shrink-0">
+                    <Icon className="w-5 h-5 text-primary" />
+                    <h4 className="font-semibold text-white text-sm truncate">{category.title}</h4>
+                  </div>
+                  
+                  <div className="flex-1 overflow-y-auto pr-2 custom-scrollbar space-y-2">
+                    {category.subcategories.map((sub) => (
+                      <Link 
+                        key={sub.id}
+                        href={`/categories/${category.id}/${sub.id}`}
+                        className="block group/link"
+                      >
+                        <div className="flex items-center justify-between text-sm py-1.5 px-2 rounded-lg hover:bg-white/5 text-zinc-300 hover:text-primary transition-colors">
+                          <span className="truncate mr-2">{sub.title}</span>
+                          <ChevronRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all" />
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                  
+                  <div className="mt-4 pt-2 border-t border-white/10 text-center shrink-0">
+                    <span className="text-xs text-muted-foreground group-hover:text-primary transition-colors">Δείτε περισσότερα</span>
+                  </div>
+                </div>
               </div>
-              <Button variant="outline" className="w-full mt-auto" asChild>
-                <Link href="/reviews">Δείτε όλες</Link>
-              </Button>
-            </CardContent>
-          </Card>
-
-          {/* Security Highlight */}
-          <Card className="bento-card col-span-1 sm:col-span-2 lg:col-span-1 bg-gradient-to-br from-zinc-900 to-zinc-800 border-primary/20">
-            <CardHeader>
-              <CardTitle className="text-primary flex items-center gap-2">
-                <ShieldCheck />
-                Ασφάλεια
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm text-muted-foreground mb-4">
-                Εξειδικευμένες λύσεις CCTV και συναγερμών για την απόλυτη προστασία του χώρου σας.
-              </p>
-              <Button variant="link" className="text-primary p-0 h-auto" asChild>
-                <Link href="/categories" className="hover-link">Μάθετε περισσότερα &rarr;</Link>
-              </Button>
-            </CardContent>
-          </Card>
-
+            );
+          })}
         </div>
       </div>
     </section>

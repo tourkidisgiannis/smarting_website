@@ -18,14 +18,72 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "SMARTING.GR - Ηλεκτρολογική Τεχνική Υποστήριξη | Δίκτυα, CCTV, Συστήματα Ασφαλείας",
-  description: "Εξειδικευμένες υπηρεσίες ηλεκτρολογικής τεχνικής υποστήριξης, εγκατάστασης δικτύων, CCTV και συστημάτων ασφαλείας στην Ιωνία. Βαθμολογία 5.0 από 60 κριτικές.",
-  keywords: ["ηλεκτρολόγος", "CCTV", "συστήματα ασφαλείας", "δίκτυα", "Ιωνία", "τεχνική υποστήριξη"],
+  title: "SMARTING.GR - Ηλεκτρολογική Τεχνική Υποστήριξη Θεσσαλονίκη | Δίκτυα, CCTV, Συστήματα Ασφαλείας",
+  description:
+    "Εξειδικευμένες υπηρεσίες ηλεκτρολογικής τεχνικής υποστήριξης, εγκατάστασης δικτύων, CCTV και συστημάτων ασφαλείας στη Θεσσαλονίκη και την Ιωνία. Βαθμολογία 5.0 από 60+ κριτικές.",
+  keywords: [
+    "ηλεκτρολόγος Θεσσαλονίκη",
+    "CCTV Θεσσαλονίκη",
+    "συστήματα ασφαλείας Θεσσαλονίκη",
+    "εγκατάσταση δικτύων",
+    "τεχνική υποστήριξη",
+    "Ιωνία",
+    "Θεσσαλονίκη",
+    "ηλεκτρολογικές εργασίες",
+    "Συστήματα Ασφαλείας",
+    "Κάμερες Ασφαλείας",
+    "Συναγερμοί",
+    "Θυροτηλεοράσεις",
+    "Access Control",
+    "Ηλεκτρολογικές Εγκαταστάσεις",
+    "Φωτισμός",
+    "Φορτιστές Ηλεκτρικών Οχημάτων",
+    "Smart Home",
+    "Αυτοματισμοί",
+    "Έξυπνος Φωτισμός",
+    "Δίκτυα & Internet",
+    "WiFi Mesh",
+    "Δομημένη Καλωδίωση",
+    "Οικιακές Λύσεις",
+    "Πυρανίχνευση",
+    "Πυρασφάλεια",
+    "Φωτοβολταϊκά",
+    "Ανιχνευτές Καπνού",
+    "Ενεργειακή Διαχείριση",
+    "Συντήρηση Συστημάτων"
+  ],
   openGraph: {
-    title: "SMARTING.GR - Ηλεκτρολογική Τεχνική Υποστήριξη",
-    description: "Εξειδικευμένες υπηρεσίες ηλεκτρολογικής τεχνικής υποστήριξης, εγκατάστασης δικτύων, CCTV και συστημάτων ασφαλείας.",
+    title: "SMARTING.GR - Ηλεκτρολογική Τεχνική Υποστήριξη στη Θεσσαλονίκη",
+    description:
+      "Προηγμένες υπηρεσίες ηλεκτρολογικών εγκαταστάσεων, δικτύων, CCTV και συστημάτων ασφαλείας στη Θεσσαλονίκη και τις γύρω περιοχές.",
     type: "website",
+    locale: "el_GR",
+    siteName: "SMARTING.GR",
+    url: "https://smarting-website.vercel.app/",
+    images: [
+      {
+        url: "https://smarting-website.vercel.app/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "SMARTING.GR - Ηλεκτρολογική Τεχνική Υποστήριξη Θεσσαλονίκη"
+      }
+    ]
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "SMARTING.GR - Ηλεκτρολογικές Υπηρεσίες & Συστήματα Ασφαλείας στη Θεσσαλονίκη",
+    description:
+      "Επαγγελματικές υπηρεσίες ηλεκτρολογικής υποστήριξης, δικτύων, CCTV και ασφαλείας στη Θεσσαλονίκη.",
+    images: ["https://smarting-website.vercel.app/og-image.jpg"]
+  },
+  alternates: {
+    canonical: "https://smarting-website.vercel.app/"
+  },
+  // Extra metadata beneficial for location-based SEO
+  other: {
+    service_area: "Thessaloniki, Ionía, Central Macedonia",
+    business_type: "Electrical Support, CCTV, Security Systems, Network Installations"
+  }
 };
 
 import { AnimatedBackground } from "@/components/layout/AnimatedBackground";

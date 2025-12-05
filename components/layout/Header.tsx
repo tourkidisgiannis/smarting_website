@@ -23,12 +23,12 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-background/80 backdrop-blur-md">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
-        <Link href="/" className="flex items-center">
+        <Link href="/" className="flex items-center shrink-0">
           <Image src={logo} width={200} height={200} alt="logo" />
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-6">
+        <nav className="hidden lg:flex items-center gap-6">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -62,7 +62,7 @@ export function Header() {
 
         {/* Mobile Nav */}
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
-          <SheetTrigger asChild className="md:hidden">
+          <SheetTrigger asChild className="lg:hidden">
             <Button variant="ghost" size="icon">
               <Menu className="h-6 w-6" />
               <span className="sr-only">Toggle menu</span>

@@ -1,8 +1,6 @@
 "use client";
 
-import { Phone, Calendar } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import businessInfo from "@/app/mocks/business-info.json";
+import { CTAButton } from "@/components/ui/CTAButton";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
@@ -26,18 +24,12 @@ export function StickyCTA() {
         isVisible ? "translate-y-0" : "translate-y-full"
       )}
     >
-      <Button variant="default" className="w-full" asChild>
-        <a href={`tel:${businessInfo.phone}`}>
-          <Phone className="mr-2 h-4 w-4" />
-          Κλήση
-        </a>
-      </Button>
-      <Button variant="secondary" className="w-full" asChild>
-        <a href="/contact">
-          <Calendar className="mr-2 h-4 w-4" />
-          Ραντεβού
-        </a>
-      </Button>
+      <CTAButton action="call" variant="default" className="w-full" iconPosition="left">
+        Κλήση
+      </CTAButton>
+      <CTAButton action="book" variant="secondary" className="w-full" iconPosition="left">
+        Ραντεβού
+      </CTAButton>
     </div>
   );
 }

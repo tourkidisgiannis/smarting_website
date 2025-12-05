@@ -1,51 +1,9 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Shield, Zap, HeadphonesIcon, Award } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
-gsap.registerPlugin(ScrollTrigger);
-
 export function WhyChooseUs() {
-  const sectionRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: 'top bottom-=100',
-        },
-      });
-
-      // Animate section header first
-      tl.from('.section-title', {
-        y: 40,
-        opacity: 0,
-        duration: 0.7,
-        ease: 'power3.out',
-      })
-      .from('.section-desc', {
-        y: 30,
-        opacity: 0,
-        duration: 0.6,
-        ease: 'power3.out',
-      }, '-=0.4')
-      // Then cards stagger in
-      .from('.reason-card', {
-        y: 50,
-        opacity: 0,
-        duration: 0.7,
-        stagger: 0.15,
-        ease: 'power3.out',
-      }, '-=0.3');
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, []);
-
   const reasons = [
     {
       icon: Award,
@@ -70,13 +28,13 @@ export function WhyChooseUs() {
   ];
 
   return (
-    <section ref={sectionRef} className="py-20">
+    <section className="py-20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="section-title text-3xl md:text-4xl font-bold tracking-tighter mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tighter mb-4">
             Γιατί να μας Επιλέξετε;
           </h2>
-          <p className="section-desc text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-zinc-400 max-w-2xl mx-auto">
             Η εμπειρία, η αξιοπιστία και η δέσμευσή μας στην ποιότητα μας κάνουν την ιδανική επιλογή 
             για τις ηλεκτρολογικές και τεχνολογικές σας ανάγκες.
           </p>
@@ -88,18 +46,18 @@ export function WhyChooseUs() {
             return (
               <Card 
                 key={index} 
-                className="reason-card bg-card/50 backdrop-blur-sm border-primary/10 hover:border-primary/30 transition-all hover:shadow-lg hover:shadow-primary/10"
+                className="bg-card/50 backdrop-blur-sm border-primary/10 hover:border-primary/30 transition-all hover:shadow-lg hover:shadow-primary/10"
               >
                 <CardHeader>
                   <div className="flex items-center gap-4">
                     <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
                       <Icon className="w-7 h-7 text-primary" />
                     </div>
-                    <CardTitle className="text-xl">{reason.title}</CardTitle>
+                    <CardTitle className="text-xl text-zinc-100">{reason.title}</CardTitle>
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground leading-relaxed">
+                  <p className="text-zinc-300 leading-relaxed">
                     {reason.description}
                   </p>
                 </CardContent>

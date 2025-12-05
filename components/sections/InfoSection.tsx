@@ -93,13 +93,7 @@ export function InfoSection() {
               </div>
             ))}
           </div>
-          <div className="mt-6 p-4 bg-muted rounded-lg">
-            <h4 className="font-medium mb-2">Προτείνετε νέες ώρες λειτουργίας</h4>
-            <p className="text-sm text-muted-foreground mb-3">
-              Θα θέλατε να λειτουργούμε σε διαφορετικές ώρες; Πείτε μας τη γνώμη σας!
-            </p>
-            <Button variant="outline" size="sm">Προτείνετε ώρες</Button>
-          </div>
+        
         </CardContent>
       </Card>
 
@@ -119,7 +113,7 @@ export function InfoSection() {
           </p>
           <Button asChild>
             <a 
-              href={`https://maps.google.com/?q=${businessInfo.address.plusCode}`}
+              href={`https://maps.google.com/?q=${businessInfo.address['lat-lon']}`}
               target="_blank" 
               rel="noopener noreferrer"
             >

@@ -2,10 +2,8 @@
 
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
-import { Phone, Calendar, MessageSquare } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import businessInfo from '@/app/mocks/business-info.json';
+import { CTAButton } from '@/components/ui/CTAButton';
 
 export function CTASection() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -78,24 +76,15 @@ export function CTASection() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button size="lg" className="cta-button w-full sm:w-auto shadow-lg shadow-primary/30" asChild>
-                <a href={`tel:${businessInfo.phone}`}>
-                  <Phone className="mr-2 h-5 w-5" />
-                  Καλέστε Τώρα
-                </a>
-              </Button>
-              <Button size="lg" variant="secondary" className="cta-button w-full sm:w-auto shadow-lg" asChild>
-                <a href="/contact">
-                  <Calendar className="mr-2 h-5 w-5" />
-                  Κλείστε Ραντεβού
-                </a>
-              </Button>
-              <Button size="lg" variant="outline" className="cta-button w-full sm:w-auto" asChild>
-                <a href={`sms:${businessInfo.phone}`}>
-                  <MessageSquare className="mr-2 h-5 w-5" />
-                  Στείλτε SMS
-                </a>
-              </Button>
+              <CTAButton action="call" size="lg" className="cta-button w-full sm:w-auto shadow-lg shadow-primary/30" iconPosition="left">
+                Καλέστε Τώρα
+              </CTAButton>
+              <CTAButton action="book" size="lg" variant="secondary" className="cta-button w-full sm:w-auto shadow-lg" iconPosition="left">
+                Κλείστε Ραντεβού
+              </CTAButton>
+              <CTAButton action="sms" size="lg" variant="outline" className="cta-button w-full sm:w-auto" iconPosition="left">
+                Στείλτε SMS
+              </CTAButton>
             </div>
 
             {/* Trust Indicators */}
