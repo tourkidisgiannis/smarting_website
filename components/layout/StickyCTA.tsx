@@ -22,7 +22,7 @@ export function StickyCTA() {
   return (
     <div
       className={cn(
-        "fixed bottom-0 left-0 right-0 z-50 grid grid-cols-2 gap-2 bg-background/95 p-4 backdrop-blur supports-[backdrop-filter]:bg-background/60 md:hidden transition-transform duration-300 border-t border-white/10",
+        "fixed bottom-0 left-0 right-0 z-50 grid grid-cols-2 gap-2 bg-background/95 p-4 backdrop-blur supports-backdrop-filter:bg-background/60 md:hidden transition-transform duration-300 border-t border-white/10",
         isVisible ? "translate-y-0" : "translate-y-full"
       )}
     >

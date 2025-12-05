@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { useEffect, useRef } from 'react';
-import { gsap } from 'gsap';
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
 import { ContactForm } from "@/components/sections/ContactForm";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Phone, MapPin } from "lucide-react";
@@ -15,19 +15,22 @@ export default function ContactPage() {
     const ctx = gsap.context(() => {
       const tl = gsap.timeline();
 
-      tl.from('.anim-header', {
+      tl.from(".anim-header", {
         y: 30,
         opacity: 0,
         duration: 0.8,
-        ease: 'power3.out',
-      })
-      .from('.anim-card', {
-        y: 30,
-        opacity: 0,
-        duration: 0.8,
-        stagger: 0.2,
-        ease: 'power3.out',
-      }, '-=0.5');
+        ease: "power3.out",
+      }).from(
+        ".anim-card",
+        {
+          y: 30,
+          opacity: 0,
+          duration: 0.8,
+          stagger: 0.2,
+          ease: "power3.out",
+        },
+        "-=0.5"
+      );
     }, containerRef);
 
     return () => ctx.revert();
@@ -41,7 +44,8 @@ export default function ContactPage() {
             Επικοινωνήστε μαζί μας
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Είμαστε εδώ για να απαντήσουμε σε κάθε ερώτησή σας και να σας εξυπηρετήσουμε.
+            Είμαστε εδώ για να απαντήσουμε σε κάθε ερώτησή σας και να σας
+            εξυπηρετήσουμε.
           </p>
         </div>
 
@@ -75,9 +79,7 @@ export default function ContactPage() {
                     </a>
                   </Button>
                   <Button variant="outline" className="flex-1" asChild>
-                    <a href={`sms:${businessInfo.phone}`}>
-                      Αποστολή SMS
-                    </a>
+                    <a href={`sms:${businessInfo.mobile}`}>Αποστολή SMS</a>
                   </Button>
                 </div>
               </CardContent>
@@ -92,14 +94,16 @@ export default function ContactPage() {
               </CardHeader>
               <CardContent>
                 <p className="mb-4">
-                  {businessInfo.address.street}<br />
-                  {businessInfo.address.city} {businessInfo.address.postalCode}<br />
+                  {businessInfo.address.street}
+                  <br />
+                  {businessInfo.address.city} {businessInfo.address.postalCode}
+                  <br />
                   {businessInfo.address.country}
                 </p>
                 <Button variant="outline" className="w-full" asChild>
-                  <a 
-                    href={`https://maps.google.com/?q=${businessInfo.address.plusCode}`}
-                    target="_blank" 
+                  <a
+                    href={`https://maps.google.com/?q=${businessInfo.address["lat-lon"]}`}
+                    target="_blank"
                     rel="noopener noreferrer"
                   >
                     <MapPin className="mr-2 h-4 w-4" />
@@ -113,7 +117,9 @@ export default function ContactPage() {
             <Card className="anim-card overflow-hidden">
               <div className="aspect-video bg-muted relative flex items-center justify-center">
                 <MapPin className="w-12 h-12 text-muted-foreground opacity-20" />
-                <p className="absolute text-sm text-muted-foreground">Χάρτης Google</p>
+                <p className="absolute text-sm text-muted-foreground">
+                  Χάρτης Google
+                </p>
               </div>
             </Card>
           </div>

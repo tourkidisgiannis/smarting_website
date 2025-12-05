@@ -36,13 +36,30 @@ export function Logo({
       </defs>
 
       {/* House + door group */}
-      <g transform="translate(0,0)" fill="none" stroke={color} strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round" vectorEffect="non-scaling-stroke">
+      <g
+        transform="translate(0,0)"
+        fill="none"
+        stroke={color}
+        strokeWidth={strokeWidth}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        vectorEffect="non-scaling-stroke"
+      >
         {/* Roof */}
         <polygon points="12,36 40,14 68,36" fill="none" />
         {/* Body: drawn as rounded rect stroke only; interior used for clipping */}
         <rect x="12" y="36" width="56" height="34" rx="4" ry="4" fill="none" />
         {/* Door: filled to create contrast and a clear 'inside' reference */}
-        <rect x="34" y="50" width="12" height="20" rx="1.5" ry="1.5" fill={color} stroke="none" />
+        <rect
+          x="34"
+          y="50"
+          width="12"
+          height="20"
+          rx="1.5"
+          ry="1.5"
+          fill={color}
+          stroke="none"
+        />
       </g>
 
       {/* Wi-Fi group — clipped to the house interior so arcs appear 'inside' */}
@@ -81,14 +98,6 @@ export function Logo({
       </g>
 
       {/* Logotype */}
-      <g fill={color} style={{ fontFamily: "Inter, Arial, sans-serif" }}>
-        <text x="98" y="43" fontSize="36" fontWeight={800} dominantBaseline="middle">
-          SMARTING.GR
-        </text>
-        <text x="120" y="67" fontSize="12" fontWeight={600} letterSpacing="1.5" fill={color} opacity={0.9}>
-          SMART SOLUTIONS
-        </text>
-      </g>
     </svg>
   );
 }
