@@ -71,6 +71,7 @@ export default function ContactPage() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <p className="text-2xl font-bold">{businessInfo.phone}</p>
+                <p className="text-2xl font-bold">{businessInfo.mobile}</p>
                 <div className="flex gap-3">
                   <Button className="flex-1" asChild>
                     <a href={`tel:${businessInfo.phone}`}>
