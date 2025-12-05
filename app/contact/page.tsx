@@ -73,7 +73,7 @@ export default function ContactPage() {
                 <p className="text-2xl font-bold">{businessInfo.phone}</p>
                 <p className="text-2xl font-bold">{businessInfo.mobile}</p>
                 <div className="flex gap-3">
-                  <Button className="flex-1" asChild>
+                  <Button variant="default" className="flex-1" asChild>
                     <a href={`tel:${businessInfo.phone}`}>
                       <Phone className="mr-2 h-4 w-4" />
                       Κλήση
