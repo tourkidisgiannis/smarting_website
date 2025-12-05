@@ -89,7 +89,6 @@ export default function ContactPage() {
                 </div>
               </CardContent>
             </Card>
-
             <Card className="anim-card">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
@@ -119,12 +118,16 @@ export default function ContactPage() {
             </Card>
 
             {/* Map Embed Placeholder */}
-            <Card className="anim-card overflow-hidden">
-              <div className="aspect-video bg-muted relative flex items-center justify-center">
-                <MapPin className="w-12 h-12 text-muted-foreground opacity-20" />
-                <p className="absolute text-sm text-muted-foreground">
-                  Χάρτης Google
-                </p>
+            <Card className="overflow-hidden p-0 border-0">
+              <div className="aspect-video w-full">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3025.36905179205!2d22.85383218314381!3d40.6878690653583!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a83b3c9dcfbbe3%3A0xdd67b6323ff9fb39!2sSMARTING.GR!5e0!3m2!1sel!2sgr!4v1764905598394!5m2!1sel!2sgr"
+                  className="w-full h-full border-0"
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Google Maps location of SMARTING.GR"
+                />
               </div>
             </Card>
           </div>
