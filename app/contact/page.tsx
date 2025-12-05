@@ -107,7 +107,7 @@ export default function ContactPage() {
                 </p>
                 <Button variant="outline" className="w-full" asChild>
                   <Link
-                    href={`https://maps.google.com/?q=${businessInfo.address.plusCode}`}
+                    href={`https://maps.google.com/?q=${businessInfo.address["lat-lon"]}`}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
