@@ -1,29 +1,35 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import Link from 'next/link';
-import { Menu, Phone } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { Logo } from '@/components/ui/Logo';
-import businessInfo from '@/app/mocks/business-info.json';
+import { useState } from "react";
+import Link from "next/link";
+import { Menu, Phone } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import businessInfo from "@/app/mocks/business-info.json";
+import Logo from "../ui/Logo";
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
-    { href: '/', label: 'Αρχική' },
-    { href: '/categories', label: 'Υπηρεσίες' },
-    { href: '/reviews', label: 'Κριτικές' },
-    { href: '/info', label: 'Πληροφορίες' },
-    { href: '/contact', label: 'Επικοινωνία' },
+    { href: "/", label: "Αρχική" },
+    { href: "/categories", label: "Υπηρεσίες" },
+    { href: "/reviews", label: "Κριτικές" },
+    { href: "/info", label: "Πληροφορίες" },
+    { href: "/contact", label: "Επικοινωνία" },
   ];
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-background/80 backdrop-blur-md">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <Link href="/" className="flex items-center">
-          <Logo className="h-10 w-auto text-primary" />
+          <Logo
+            src="/images/smarting_logo_inline.png"
+            alt="Company Logo"
+            width={150}
+            height={50}
+            priority={true} // Use for LCP if logo is above the fold
+          />
         </Link>
 
         {/* Desktop Nav */}
@@ -37,12 +43,26 @@ export function Header() {
               {link.label}
             </Link>
           ))}
-          <Button variant="default" size="sm" asChild>
-            <a href={`tel:${businessInfo.phone}`}>
-              <Phone className="mr-2 h-4 w-4" />
-              {businessInfo.phone}
-            </a>
-          </Button>
+          <div className="gap-2 flex tracking-wide">
+            <Button variant="default" size="sm" asChild>
+              <a
+                href={`tel:${businessInfo.phone}`}
+                className="flex items-center justify-center gap-2" // Use gap instead of mr-2
+              >
+                <Phone className="h-4 w-4" />
+                <p className="mb-0.5">6987341139</p>
+              </a>
+            </Button>
+            <Button variant="default" size="sm" asChild>
+              <a
+                href={`tel:${businessInfo.phone}`}
+                className="flex items-center justify-center gap-2" // Use gap instead of mr-2
+              >
+                <Phone className="h-4 w-4" />
+                <p className="mb-0.5">2310 781555</p>
+              </a>
+            </Button>
+          </div>
         </nav>
 
         {/* Mobile Nav */}
@@ -53,9 +73,9 @@ export function Header() {
               <span className="sr-only">Toggle menu</span>
             </Button>
           </SheetTrigger>
-          <SheetContent 
-            side="right" 
-            className="w-full sm:w-[400px] bg-background/95 backdrop-blur-xl border-l border-white/10 supports-[backdrop-filter]:bg-background/80"
+          <SheetContent
+            side="right"
+            className="w-full sm:w-[400px] bg-background/95 backdrop-blur-xl border-l border-white/10 supports-backdrop-filter:bg-background/80"
           >
             <nav className="flex flex-col gap-4 mt-8 items-center">
               {navLinks.map((link) => (
@@ -63,12 +83,15 @@ export function Header() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="text-lg font-medium transition-all duration-200 hover:text-primary py-2 px-3 rounded-lg hover:bg-primary/10 w-full text-center hover:scale-105 active:scale-95"
+                  className="text-lg font-medium transition-all duration-200 hover:text-primary py-2 px-3 rounded-lg hover:bg-red/10 w-full text-center hover:scale-105 active:scale-95"
                 >
                   {link.label}
                 </Link>
               ))}
-              <Button className="mt-4 w-full shadow-lg shadow-primary/20" asChild>
+              <Button
+                className="mt-4 w-full shadow-lg shadow-primary/20"
+                asChild
+              >
                 <a href={`tel:${businessInfo.phone}`}>
                   <Phone className="mr-2 h-4 w-4" />
                   Καλέστε μας

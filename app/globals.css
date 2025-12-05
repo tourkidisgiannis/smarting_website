@@ -6,28 +6,63 @@
   --font-mono: var(--font-geist-mono);
 
   /* SMARTING.GR Tailwind Color Tokens */
-  --color-primaryTeal: var(--color-primary-teal);
-  --color-deepNavy: var(--color-deep-navy);
-  --color-lightTeal: var(--color-light-teal);
-  --color-darkBlue: var(--color-dark-blue);
-  --color-softWhite: var(--color-soft-white);
-  --color-neutralGray: var(--color-neutral-gray);
+  --color-primary: var(--color-primary-teal);
+  --color-primary-foreground: var(--color-soft-white);
 
+  --color-secondary: var(--color-deep-navy);
+  --color-secondary-foreground: var(--color-soft-white);
+
+  --color-accent: var(--color-light-teal);
+  --color-accent-foreground: var(--color-dark-blue);
+
+  --color-background: var(--color-dark-blue);
+  --color-foreground: var(--color-soft-white);
+
+  --color-card: var(--color-deep-navy);
+  --color-card-foreground: var(--color-soft-white);
+
+  --color-popover: var(--color-deep-navy);
+  --color-popover-foreground: var(--color-soft-white);
+
+  --color-muted: rgba(var(--color-neutral-gray-rgb), 0.1);
+  --color-muted-foreground: var(--color-neutral-gray);
+
+  --color-border: rgba(var(--color-primary-teal-rgb), 0.2);
+  --color-input: rgba(var(--color-primary-teal-rgb), 0.15);
+  --color-ring: var(--color-primary-teal);
+
+  --color-destructive: #ef4444;
+  --color-destructive-foreground: #ffffff;
+
+  /* Radius */
+  --radius-lg: 0.5rem;
+  --radius-md: calc(var(--radius-lg) - 2px);
+  --radius-sm: calc(var(--radius-md) - 2px);
+
+  /* Animations */
   --animate-accordion-down: accordion-down 0.3s cubic-bezier(0.87, 0, 0.13, 1);
   --animate-accordion-up: accordion-up 0.3s cubic-bezier(0.87, 0, 0.13, 1);
 
   @keyframes accordion-down {
-    from { height: 0; }
-    to { height: var(--radix-accordion-content-height); }
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
   }
   @keyframes accordion-up {
-    from { height: var(--radix-accordion-content-height); }
-    to { height: 0; }
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
   }
 }
 
+/* Shadcn CSS Variables - Direct mapping to SMARTING.GR palette */
 :root {
-  /* Shadcn/UI & Base Mappings - SMARTING.GR Palette */
   --background: var(--color-dark-blue);
   --foreground: var(--color-soft-white);
 
@@ -43,7 +78,7 @@
   --secondary: var(--color-deep-navy);
   --secondary-foreground: var(--color-soft-white);
 
-  --muted: #1a3344;
+  --muted: rgba(var(--color-neutral-gray-rgb), 0.1);
   --muted-foreground: var(--color-neutral-gray);
 
   --accent: var(--color-light-teal);
@@ -59,17 +94,35 @@
   --radius: 0.5rem;
 }
 
-/* Dark mode by default for this brand */
-@media (prefers-color-scheme: light) {
-  /* Enforcing dark theme as primary brand identity */
+/* Force dark theme for SMARTING.GR brand */
+.dark,
+:root {
+  --background: var(--color-dark-blue);
+  --foreground: var(--color-soft-white);
+  --card: var(--color-deep-navy);
+  --popover: var(--color-deep-navy);
+  --primary: var(--color-primary-teal);
+  --secondary: var(--color-deep-navy);
+  --muted: rgba(var(--color-neutral-gray-rgb), 0.1);
+  --accent: var(--color-light-teal);
+  --destructive: #ef4444;
+  --border: rgba(var(--color-primary-teal-rgb), 0.2);
+  --input: rgba(var(--color-primary-teal-rgb), 0.15);
+  --ring: var(--color-primary-teal);
 }
 
+/* Base styles */
 body {
   background-color: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Apply styles to all elements */
+* {
+  border-color: var(--border);
 }
 
 /* Scrollbar styling */
@@ -107,6 +160,48 @@ body {
   transition: transform 0.2s ease;
 }
 
+/* Logo specific styles */
+.logo-primary {
+  color: var(--color-primary-teal);
+}
+
+.logo-white {
+  color: var(--color-soft-white);
+}
+
+.logo-light {
+  color: var(--color-light-teal);
+}
+
+.logo-dark {
+  color: var(--color-deep-navy);
+}
+
+/* Logo animations */
+.logo-hover {
+  transition: all 0.3s ease;
+}
+
+.logo-hover:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 8px rgba(var(--color-primary-teal-rgb), 0.3));
+}
+
+/* Pulse animation for loading/attention */
+@keyframes logo-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.logo-pulse {
+  animation: logo-pulse 2s ease-in-out infinite;
+}
+
 .subcat-link {
   display: block;
   padding: 0.5rem 1rem;
@@ -123,7 +218,6 @@ body {
   outline-offset: 2px;
 }
 
-
 /* Animated Link Hover Effect */
 .hover-link {
   position: relative;
@@ -135,7 +229,7 @@ body {
 }
 
 .hover-link::after {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   bottom: -2px;
@@ -149,5 +243,46 @@ body {
   width: 100%;
 }
 
-/* Accordion Animations */
+/* Shadcn component specific overrides */
+[data-slot="card"] {
+  background-color: var(--card) !important;
+  color: var(--card-foreground) !important;
+}
 
+[data-slot="button"][data-variant="primary"] {
+  background-color: var(--primary) !important;
+  color: var(--primary-foreground) !important;
+}
+
+[data-slot="button"][data-variant="secondary"] {
+  background-color: var(--secondary) !important;
+  color: var(--secondary-foreground) !important;
+}
+
+[data-slot="button"][data-variant="outline"] {
+  border-color: var(--border) !important;
+  color: var(--foreground) !important;
+}
+
+[data-slot="button"][data-variant="ghost"]:hover {
+  background-color: rgba(var(--color-primary-teal-rgb), 0.08) !important;
+}
+
+[data-slot="input"] {
+  background-color: transparent !important;
+  border-color: var(--input) !important;
+}
+
+[data-slot="input"]:focus {
+  border-color: var(--ring) !important;
+  box-shadow: 0 0 0 2px rgba(var(--color-primary-teal-rgb), 0.1) !important;
+}
+
+[data-slot="alert"] {
+  border-color: var(--border) !important;
+}
+
+[data-slot="alert"][data-variant="destructive"] {
+  background-color: var(--destructive) !important;
+  color: var(--destructive-foreground) !important;
+}

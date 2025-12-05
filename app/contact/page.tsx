@@ -7,6 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Phone, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import businessInfo from "@/app/mocks/business-info.json";
+import Link from "next/link";
 
 export default function ContactPage() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -73,14 +74,17 @@ export default function ContactPage() {
                 <p className="text-2xl font-bold">{businessInfo.phone}</p>
                 <p className="text-2xl font-bold">{businessInfo.mobile}</p>
                 <div className="flex gap-3">
-                  <Button variant="default" className="flex-1" asChild>
-                    <a href={`tel:${businessInfo.phone}`}>
+                  <Button variant="outline" className="flex-1" asChild>
+                    <Link href={`tel:${businessInfo.phone}`}>
                       <Phone className="mr-2 h-4 w-4" />
                       Κλήση
-                    </a>
+                    </Link>
                   </Button>
+
                   <Button variant="outline" className="flex-1" asChild>
-                    <a href={`sms:${businessInfo.mobile}`}>Αποστολή SMS</a>
+                    <Link href={`sms:${businessInfo.mobile}`}>
+                      Αποστολή SMS
+                    </Link>
                   </Button>
                 </div>
               </CardContent>
@@ -102,14 +106,14 @@ export default function ContactPage() {
                   {businessInfo.address.country}
                 </p>
                 <Button variant="outline" className="w-full" asChild>
-                  <a
-                    href={`https://maps.google.com/?q=${businessInfo.address["lat-lon"]}`}
+                  <Link
+                    href={`https://maps.google.com/?q=${businessInfo.address.plusCode}`}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     <MapPin className="mr-2 h-4 w-4" />
                     Οδηγίες Πλοήγησης
-                  </a>
+                  </Link>
                 </Button>
               </CardContent>
             </Card>
