@@ -9,9 +9,11 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { toast } from 'sonner';
+import { categories } from '@/data/categories';
 
 const formSchema = z.object({
   name: z.string().min(2, { message: 'Το όνομα πρέπει να έχει τουλάχιστον 2 χαρακτήρες.' }),
+  email: z.string().email({ message: 'Παρακαλώ εισάγετε ένα έγκυρο email.' }),
   phone: z.string().min(10, { message: 'Το τηλέφωνο πρέπει να είναι έγκυρο.' }),
   service: z.string().min(1, { message: 'Παρακαλώ επιλέξτε υπηρεσία.' }),
   message: z.string().min(10, { message: 'Το μήνυμα πρέπει να έχει τουλάχιστον 10 χαρακτήρες.' }),
@@ -22,19 +24,39 @@ export function ContactForm() {
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: '',
+      email: '',
       phone: '',
       service: '',
       message: '',
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    // In a real app, this would send data to an API
-    console.log(values);
-    toast.success('Το μήνυμα στάλθηκε επιτυχώς!', {
-      description: 'Θα επικοινωνήσουμε μαζί σας σύντομα.',
-    });
-    form.reset();
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(values),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Something went wrong');
+      }
+
+      toast.success('Το μήνυμα στάλθηκε επιτυχώς!', {
+        description: 'Θα επικοινωνήσουμε μαζί σας σύντομα.',
+      });
+      form.reset();
+    } catch (error) {
+      console.error('Submission error:', error);
+      toast.error('Σφάλμα αποστολής', {
+        description: 'Υπήρξε πρόβλημα κατά την αποστολή του μηνύματος. Παρακαλώ δοκιμάστε ξανά ή καλέστε μας.',
+      });
+    }
   }
 
   return (
@@ -48,6 +70,20 @@ export function ContactForm() {
               <FormLabel>Ονοματεπώνυμο</FormLabel>
               <FormControl>
                 <Input placeholder="Γιάννης Παπαδόπουλος" {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        
+        <FormField
+          control={form.control}
+          name="email"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Email</FormLabel>
+              <FormControl>
+                <Input placeholder="email@example.com" type="email" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -80,11 +116,12 @@ export function ContactForm() {
                     <SelectValue placeholder="Επιλέξτε υπηρεσία" />
                   </SelectTrigger>
                 </FormControl>
-                <SelectContent>
-                  <SelectItem value="electrical">Ηλεκτρολογική Υποστήριξη</SelectItem>
-                  <SelectItem value="network">Δίκτυα & Καλωδιώσεις</SelectItem>
-                  <SelectItem value="cctv">CCTV & Κάμερες</SelectItem>
-                  <SelectItem value="security">Συστήματα Ασφαλείας</SelectItem>
+                <SelectContent className="max-h-[250px] bg-popover">
+                  {categories.map((category) => (
+                    <SelectItem key={category.id} value={category.id}>
+                      {category.title}
+                    </SelectItem>
+                  ))}
                   <SelectItem value="other">Άλλο</SelectItem>
                 </SelectContent>
               </Select>
@@ -111,8 +148,8 @@ export function ContactForm() {
           )}
         />
 
-        <Button type="submit" className="w-full" size="lg">
-          Αποστολή Μηνύματος
+        <Button type="submit" className="w-full" size="lg" disabled={form.formState.isSubmitting}>
+          {form.formState.isSubmitting ? 'Αποστολή...' : 'Αποστολή Μηνύματος'}
         </Button>
       </form>
     </Form>

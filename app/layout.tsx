@@ -18,7 +18,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "SMARTING.GR - Ηλεκτρολογική Τεχνική Υποστήριξη Θεσσαλονίκη | Δίκτυα, CCTV, Συστήματα Ασφαλείας",
+  title:
+    "SMARTING.GR - Smart Solutions - Ηλεκτρολογική Τεχνική Υποστήριξη Θεσσαλονίκη | Δίκτυα, CCTV, Συστήματα Ασφαλείας",
   description:
     "Εξειδικευμένες υπηρεσίες ηλεκτρολογικής τεχνικής υποστήριξης, εγκατάστασης δικτύων, CCTV και συστημάτων ασφαλείας στη Θεσσαλονίκη και την Ιωνία. Βαθμολογία 5.0 από 60+ κριτικές.",
   keywords: [
@@ -50,7 +51,7 @@ export const metadata: Metadata = {
     "Φωτοβολταϊκά",
     "Ανιχνευτές Καπνού",
     "Ενεργειακή Διαχείριση",
-    "Συντήρηση Συστημάτων"
+    "Συντήρηση Συστημάτων",
   ],
   openGraph: {
     title: "SMARTING.GR - Ηλεκτρολογική Τεχνική Υποστήριξη στη Θεσσαλονίκη",
@@ -65,25 +66,27 @@ export const metadata: Metadata = {
         url: "https://smarting-website.vercel.app/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "SMARTING.GR - Ηλεκτρολογική Τεχνική Υποστήριξη Θεσσαλονίκη"
-      }
-    ]
+        alt: "SMARTING.GR - Ηλεκτρολογική Τεχνική Υποστήριξη Θεσσαλονίκη",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "SMARTING.GR - Ηλεκτρολογικές Υπηρεσίες & Συστήματα Ασφαλείας στη Θεσσαλονίκη",
+    title:
+      "SMARTING.GR - Ηλεκτρολογικές Υπηρεσίες & Συστήματα Ασφαλείας στη Θεσσαλονίκη",
     description:
       "Επαγγελματικές υπηρεσίες ηλεκτρολογικής υποστήριξης, δικτύων, CCTV και ασφαλείας στη Θεσσαλονίκη.",
-    images: ["https://smarting-website.vercel.app/og-image.jpg"]
+    images: ["https://smarting-website.vercel.app/og-image.jpg"],
   },
   alternates: {
-    canonical: "https://smarting-website.vercel.app/"
+    canonical: "https://smarting-website.vercel.app/",
   },
   // Extra metadata beneficial for location-based SEO
   other: {
     service_area: "Thessaloniki, Ionía, Central Macedonia",
-    business_type: "Electrical Support, CCTV, Security Systems, Network Installations"
-  }
+    business_type:
+      "Electrical Support, CCTV, Security Systems, Network Installations",
+  },
 };
 
 import { AnimatedBackground } from "@/components/layout/AnimatedBackground";
@@ -108,9 +111,7 @@ export default function RootLayout({
       >
         <AnimatedBackground />
         <Header />
-        <main className="min-h-screen">
-          {children}
-        </main>
+        <main className="min-h-screen">{children}</main>
         <Footer />
         <StickyCTA />
         <Toaster />
