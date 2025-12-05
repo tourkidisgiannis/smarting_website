@@ -7,6 +7,8 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import businessInfo from "@/app/mocks/business-info.json";
 import Logo from "../ui/Logo";
+import Image from "next/image";
+import logo from "@/public/images/smarting_logo_inline.png";
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,13 +25,7 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-background/80 backdrop-blur-md">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <Link href="/" className="flex items-center">
-          <Logo
-            src="/images/smarting_logo_inline.png"
-            alt="Company Logo"
-            width={150}
-            height={50}
-            priority={true} // Use for LCP if logo is above the fold
-          />
+          <Image src={logo} width={200} height={200} alt="logo" />
         </Link>
 
         {/* Desktop Nav */}
