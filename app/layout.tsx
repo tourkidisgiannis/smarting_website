@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     "Συντήρηση Συστημάτων",
   ],
   openGraph: {
-    title: "SMARTING.GR - Smart Solutions στη Θεσσαλονίκη",
+    title: "SMARTING.GR - Smart Solutions",
     description:
       "Προηγμένες υπηρεσίες ηλεκτρολογικών εγκαταστάσεων, δικτύων, CCTV και συστημάτων ασφαλείας στη Θεσσαλονίκη και τις γύρω περιοχές.",
     type: "website",
