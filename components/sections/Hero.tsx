@@ -100,8 +100,8 @@ export function Hero() {
           </Badge>
         </div>
 <div className="flex justify-center items-center hero-title ">
-   <h1 className="hero-title text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter text-transparent bg-clip-text bg-gradient-to-b  from-white via-white to-white/50 mb-6 max-w-4xl mx-auto leading-[1.1] py-3">
-          Smarting<span className="text-primary">.gr</span>
+   <h1 className="hero-title text-5xl md:text-7xl lg:text-8xl font-black mb-6 max-w-5xl mx-auto leading-[1.1] py-4 px-2 text-metallic-teal">
+          Smarting<span>.gr</span>
         </h1>
 </div>
        
@@ -134,7 +134,7 @@ export function Hero() {
 
         {/* Bottom subtle detail */}
         <div className="mt-12 pt-8 border-t border-white/5 mx-auto max-w-sm text-xs text-muted-foreground hero-cta opacity-60">
-          <p>Εξυπηρέτηση σε όλη τη Θεσσαλονίκη • 24/7 Υποστήριξη</p>
+          <p>Εξυπηρέτηση σε όλη τη Βόρεια Ελλάδα • 24/7 Υποστήριξη</p>
         </div>
       </div>
     </section>

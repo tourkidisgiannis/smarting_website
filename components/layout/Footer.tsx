@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { MapPin, Phone, Mail, Clock } from 'lucide-react';
+import { MapPin, Phone} from 'lucide-react';
 import businessInfo from '@/app/mocks/business-info.json';
 
 export function Footer() {
@@ -9,8 +9,8 @@ export function Footer() {
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand & Tagline */}
           <div>
-            <h3 className="text-xl font-bold text-white mb-4">
-              SMARTING<span className="text-primary">.GR</span>
+            <h3 className="text-xl font-bold mb-4 text-metallic-teal">
+              SMARTING<span>.GR</span>
             </h3>
             <p className="text-sm text-muted-foreground mb-4">
               {businessInfo.tagline}

@@ -66,28 +66,7 @@ export function ImageShowcase() {
               υποδομής, δικτύων δεδομένων και συστημάτων ασφαλείας. Κάθε εγκατάσταση σχεδιάζεται 
               με προσοχή στη λεπτομέρεια και υλοποιείται με τα υψηλότερα πρότυπα ποιότητας.
             </p>
-            <div className="grid grid-cols-2 gap-4 pt-4">
-              <div className="space-y-2">
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 rounded-full bg-primary"></div>
-                  <span className="text-sm font-medium">Δομημένη Καλωδίωση</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 rounded-full bg-primary"></div>
-                  <span className="text-sm font-medium">Συστήματα CCTV</span>
-                </div>
-              </div>
-              <div className="space-y-2">
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 rounded-full bg-primary"></div>
-                  <span className="text-sm font-medium">Ηλεκτρικοί Πίνακες</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 rounded-full bg-primary"></div>
-                  <span className="text-sm font-medium">Access Control</span>
-                </div>
-              </div>
-            </div>
+           
           </div>
         </div>
       </div>
