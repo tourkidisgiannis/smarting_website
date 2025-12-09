@@ -5,7 +5,6 @@ import { gsap } from "gsap";
 import { CTAButton } from "@/components/ui/CTAButton";
 import { CircuitBoard } from "@/components/ui/CircuitBoard";
 import { Badge } from "@/components/ui/badge";
-import businessInfo from "@/app/mocks/business-info.json";
 
 export function Hero() {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -32,6 +31,7 @@ export function Hero() {
           },
           "-=0.4"
         )
+
         .from(
           ".hero-motto",
           {
@@ -99,18 +99,16 @@ export function Hero() {
             </span>
           </Badge>
         </div>
-<div className="flex justify-center items-center hero-title ">
-   <h1 className="hero-title text-5xl md:text-7xl lg:text-8xl font-black mb-6 max-w-5xl mx-auto leading-[1.1] py-4 px-2 text-metallic-teal">
-          Smarting<span>.gr</span>
-        </h1>
-</div>
-       
+
+        <div className="flex justify-center items-center hero-title">
+          <h1 className="hero-title text-6xl md:text-8xl lg:text-9xl font-black mb-6 max-w-5xl mx-auto leading-[1.1] py-8 px-4 text-metallic-teal font-[family-name:var(--font-display)]">
+            Smarting<span>.gr</span>
+          </h1>
+        </div>
 
         <p className="hero-motto text-xl md:text-2xl font-medium text-primary mb-6">
           Έξυπνες Λύσεις, Άμεσα & Αξιόπιστα
         </p>
-
-        
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-5">
           <CTAButton
@@ -133,7 +131,7 @@ export function Hero() {
         </div>
 
         {/* Bottom subtle detail */}
-        <div className="mt-12 pt-8 border-t border-white/5 mx-auto max-w-sm text-xs text-muted-foreground hero-cta opacity-60">
+        <div className="mt-12 pt-8 border-t border-white/5 mx-auto max-w-sm text-xs text-foreground/60 hero-cta opacity-60">
           <p>Εξυπηρέτηση σε όλη τη Βόρεια Ελλάδα • 24/7 Υποστήριξη</p>
         </div>
       </div>

@@ -38,7 +38,7 @@ export function BentoGrid() {
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4 text-white">
             Οι Υπηρεσίες <span className="text-primary">Μας</span>
           </h2>
-          <p className="text-muted-foreground text-lg">
+          <p className="text-foreground/80 text-lg">
             Εξερευνήστε τις κατηγορίες υπηρεσιών μας και βρείτε ακριβώς αυτό που ψάχνετε.
           </p>
         </div>
@@ -85,7 +85,7 @@ export function BentoGrid() {
               <div 
                 key={category.id} 
                 className={cn(
-                  "category-card group relative rounded-3xl border border-white/10 bg-zinc-900/50 overflow-hidden hover:border-primary/50 transition-all duration-500 hover:shadow-lg hover:shadow-primary/20",
+                  "category-card group relative rounded-3xl border border-white/10 bg-gradient-to-br from-zinc-900/90 via-zinc-900/60 to-zinc-900/30 overflow-hidden hover:border-primary/50 transition-all duration-500 hover:shadow-lg hover:shadow-primary/20",
                   spanClasses
                 )}
               >
@@ -132,7 +132,12 @@ export function BentoGrid() {
                   </div>
                   
                   <div className="mt-4 pt-2 border-t border-white/10 text-center shrink-0">
-                    <span className="text-xs text-muted-foreground group-hover:text-primary transition-colors">Δείτε περισσότερα</span>
+                    <a
+                      href="/categories"
+                      className="text-xs text-foreground/80 group-hover:text-primary transition-colors hover:underline"
+                    >
+                      Δείτε περισσότερα
+                    </a>
                   </div>
                 </div>
               </div>

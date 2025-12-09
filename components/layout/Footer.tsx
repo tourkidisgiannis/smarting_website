@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { MapPin, Phone} from 'lucide-react';
+import { MapPin, Phone, Facebook, Instagram } from 'lucide-react';
 import businessInfo from '@/app/mocks/business-info.json';
 
 export function Footer() {
@@ -7,17 +7,39 @@ export function Footer() {
     <footer className="border-t border-white/10 bg-card text-card-foreground">
       <div className="container mx-auto px-4 py-12 md:py-16">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-          {/* Brand & Tagline */}
+            {/* Brand & Tagline */}
           <div>
-            <h3 className="text-xl font-bold mb-4 text-metallic-teal">
+            <h3 className="text-4xl font-black mb-4 text-metallic-teal font-[family-name:var(--font-display)]">
               SMARTING<span>.GR</span>
             </h3>
             <p className="text-sm text-muted-foreground mb-4">
               {businessInfo.tagline}
             </p>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm text-muted-foreground mb-6">
               {businessInfo.description}
             </p>
+            
+            {/* Social Links */}
+            <div className="flex gap-4">
+              <a 
+                href={businessInfo.socials.facebook} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-primary transition-colors"
+                aria-label="Facebook"
+              >
+                <Facebook className="h-5 w-5" />
+              </a>
+              <a 
+                href={businessInfo.socials.instagram} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-primary transition-colors"
+                aria-label="Instagram"
+              >
+                <Instagram className="h-5 w-5" />
+              </a>
+            </div>
           </div>
 
           {/* Contact Info */}
@@ -35,6 +57,14 @@ export function Footer() {
                 <Phone className="h-4 w-4 text-primary shrink-0" />
                 <a href={`tel:${businessInfo.phone}`} className="hover-link">
                   {businessInfo.phone}
+                </a>
+              </li>
+              <li className="flex items-center gap-2">
+                <svg className="h-4 w-4 text-primary shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                </svg>
+                <a href={`mailto:${businessInfo.email}`} className="hover-link">
+                  {businessInfo.email}
                 </a>
               </li>
             </ul>

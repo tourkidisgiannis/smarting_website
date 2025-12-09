@@ -1,0 +1,27 @@
+User-agent: *
+Allow: /
+
+# Allow all AI crawlers and search engines
+User-agent: GPTBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent:anthropic-ai
+Allow: /
+
+User-agent: OpenAI
+Allow: /
+
+# Sitemap
+Sitemap: https://www.smarting.gr/sitemap.xml
+
+# Host directive
+Host: https://www.smarting.gr

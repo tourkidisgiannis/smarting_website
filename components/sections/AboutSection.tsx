@@ -65,15 +65,15 @@ export function AboutSection() {
             <h2 className="about-title text-3xl md:text-4xl font-bold tracking-tighter mb-6">
               Η Εμπειρία μας στην Υπηρεσία σας
             </h2>
-            <p className="about-paragraph text-lg text-muted-foreground leading-relaxed mb-4">
-              Η <span className="text-primary font-semibold">SMARTING.GR</span> είναι μια δυναμική εταιρεία που ειδικεύεται 
-              στην παροχή ολοκληρωμένων λύσεων ηλεκτρολογικής τεχνικής υποστήριξης και συστημάτων ασφαλείας. 
-              Με περισσότερα από 10 χρόνια εμπειρίας στον χώρο, έχουμε εξυπηρετήσει εκατοντάδες πελάτες, 
+            <p className="about-paragraph text-lg text-foreground/80 leading-relaxed mb-4">
+              Η <span className="text-primary font-semibold">SMARTING.GR</span> είναι μια δυναμική εταιρεία που ειδικεύεται
+              στην παροχή ολοκληρωμένων λύσεων ηλεκτρολογικής τεχνικής υποστήριξης και συστημάτων ασφαλείας.
+              Με περισσότερα από 10 χρόνια εμπειρίας στον χώρο, έχουμε εξυπηρετήσει εκατοντάδες πελάτες,
               τόσο ιδιώτες όσο και επιχειρήσεις.
             </p>
-            <p className="about-paragraph text-lg text-muted-foreground leading-relaxed">
-              Η ομάδα μας αποτελείται από πιστοποιημένους τεχνικούς με εξειδίκευση σε δίκτυα δεδομένων, 
-              συστήματα CCTV, συναγερμούς και ηλεκτρολογικές εγκαταστάσεις. Χρησιμοποιούμε μόνο 
+            <p className="about-paragraph text-lg text-foreground/80 leading-relaxed">
+              Η ομάδα μας αποτελείται από πιστοποιημένους τεχνικούς με εξειδίκευση σε δίκτυα δεδομένων,
+              συστήματα CCTV, συναγερμούς και ηλεκτρολογικές εγκαταστάσεις. Χρησιμοποιούμε μόνο
               πιστοποιημένα υλικά και ακολουθούμε αυστηρά τις διεθνείς προδιαγραφές ασφαλείας.
             </p>
           </div>
@@ -89,7 +89,7 @@ export function AboutSection() {
                       <Icon className="w-6 h-6 text-primary" />
                     </div>
                     <div className="text-3xl font-bold text-white mb-2">{stat.value}</div>
-                    <div className="text-sm text-muted-foreground">{stat.label}</div>
+                    <div className="text-sm text-foreground/80">{stat.label}</div>
                   </CardContent>
                 </Card>
               );

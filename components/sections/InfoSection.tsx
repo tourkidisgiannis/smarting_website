@@ -32,13 +32,13 @@ export function InfoSection() {
           <CardTitle>Σχετικά με εμάς</CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
-          <p className="text-muted-foreground leading-relaxed">
-            Η SMARTING.GR είναι μια εξειδικευμένη εταιρεία που παρέχει ολοκληρωμένες λύσεις ηλεκτρολογικής τεχνικής υποστήριξης, 
-            εγκατάστασης δικτύων, συστημάτων CCTV και ασφαλείας. Με χρόνια εμπειρίας και εξειδίκευσης, εξυπηρετούμε τόσο 
+          <p className="text-foreground/80 leading-relaxed">
+            Η SMARTING.GR είναι μια εξειδικευμένη εταιρεία που παρέχει ολοκληρωμένες λύσεις ηλεκτρολογικής τεχνικής υποστήριξης,
+            εγκατάστασης δικτύων, συστημάτων CCTV και ασφαλείας. Με χρόνια εμπειρίας και εξειδίκευσης, εξυπηρετούμε τόσο
             ιδιώτες όσο και επιχειρήσεις, προσφέροντας αξιόπιστες και σύγχρονες τεχνολογικές λύσεις.
           </p>
-          <p className="text-muted-foreground leading-relaxed">
-            Η ομάδα μας αποτελείται από πιστοποιημένους τεχνικούς που εγγυώνται την υψηλή ποιότητα των υπηρεσιών μας. 
+          <p className="text-foreground/80 leading-relaxed">
+            Η ομάδα μας αποτελείται από πιστοποιημένους τεχνικούς που εγγυώνται την υψηλή ποιότητα των υπηρεσιών μας.
             Χρησιμοποιούμε μόνο πιστοποιημένα υλικά και ακολουθούμε τις διεθνείς προδιαγραφές ασφαλείας.
           </p>
         </CardContent>
@@ -53,7 +53,7 @@ export function InfoSection() {
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <ul className="space-y-3 text-sm text-muted-foreground">
+          <ul className="space-y-3 text-sm text-foreground/80">
             <li className="flex items-start gap-3">
               <span className="text-primary">✓</span>
               <span>Πιστοποιημένοι τεχνικοί με εξειδίκευση σε ηλεκτρολογικές εγκαταστάσεις</span>

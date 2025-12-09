@@ -113,7 +113,7 @@ export function AnimatedSubcategoryContent({
             {category.title}
           </Link>
           <ChevronRight className="breadcrumb-item h-4 w-4" aria-hidden="true" />
-          <span className="breadcrumb-item text-softWhite" aria-current="page">
+          <span className="breadcrumb-item text-foreground" aria-current="page">
             {sub.title}
           </span>
         </nav>
@@ -121,7 +121,7 @@ export function AnimatedSubcategoryContent({
         {/* Main Content */}
         <article>
           <header className="mb-8">
-            <h1 className="anim-title text-3xl md:text-4xl font-bold text-softWhite mb-4">
+            <h1 className="anim-title text-3xl md:text-4xl font-bold text-foreground mb-4">
               {sub.title}
             </h1>
             <p className="anim-desc text-lg text-neutralGray">
@@ -153,7 +153,7 @@ export function AnimatedSubcategoryContent({
 
           {/* CTA Section */}
           <div className="anim-cta bg-card border border-border rounded-xl p-6 md:p-8 mb-12">
-            <h2 className="text-xl font-semibold text-softWhite mb-2">
+            <h2 className="text-xl font-semibold text-foreground mb-2">
               Ενδιαφέρεστε για αυτή την υπηρεσία;
             </h2>
             <p className="text-neutralGray mb-4">
@@ -162,13 +162,13 @@ export function AnimatedSubcategoryContent({
             <div className="flex flex-wrap gap-4">
               <a
                 href="/contact"
-                className="inline-flex items-center justify-center px-6 py-3 bg-primaryTeal text-softWhite font-medium rounded-lg hover:bg-lightTeal transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+                className="inline-flex items-center justify-center px-6 py-3 bg-primaryTeal text-foreground font-medium rounded-lg hover:bg-lightTeal transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
               >
                 Ζητήστε Προσφορά
               </a>
               <Link
                 href="/categories"
-                className="inline-flex items-center justify-center px-6 py-3 border border-border text-softWhite font-medium rounded-lg hover:bg-card/80 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+                className="inline-flex items-center justify-center px-6 py-3 border border-border text-foreground font-medium rounded-lg hover:bg-card/80 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
               >
                 Όλες οι Υπηρεσίες
               </Link>
@@ -181,7 +181,7 @@ export function AnimatedSubcategoryContent({
           <section aria-labelledby="related-services">
             <h2 
               id="related-services" 
-              className="anim-related-title text-2xl font-semibold text-softWhite mb-6"
+              className="anim-related-title text-2xl font-semibold text-foreground mb-6"
             >
               Σχετικές Υπηρεσίες
             </h2>
@@ -192,7 +192,7 @@ export function AnimatedSubcategoryContent({
                   href={`/categories/${category.id}/${related.id}`}
                   className="anim-related-item group block p-4 bg-card border border-border rounded-lg hover:border-primary/50 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
                 >
-                  <h3 className="font-medium text-softWhite group-hover:text-primary transition-colors mb-1">
+                  <h3 className="font-medium text-foreground group-hover:text-primary transition-colors mb-1">
                     {related.title}
                   </h3>
                   <p className="text-sm text-neutralGray line-clamp-2">

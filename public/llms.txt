@@ -1,0 +1,37 @@
+# SMARTING.GR
+
+> SMARTING.GR is a professional electrical and security systems company based in Thessaloniki, Greece. We provide electrical support services, network installations, CCTV and security systems. Our business operates primarily in Thessaloniki and the surrounding areas, with expertise in electrical installations, security systems, network infrastructure, and smart home solutions.
+
+SMARTING.GR specializes in professional electrical support services in Thessaloniki and Central Macedonia. Our services include electrical installations, security systems (CCTV, alarms), network infrastructure, smart home automation, and energy solutions. Our team consists of certified technicians with years of experience in electrical and security installations.
+
+For technical queries, our services include electrical installations, network setup, security camera installation, and smart home automation. We serve both residential and commercial clients in the Thessaloniki region, with a focus on quality, safety, and customer satisfaction.
+
+Our comprehensive service portfolio includes:
+- Security Systems: CCTV, NVR/DVR, video intercom, access control, alarm systems, ANPR, and perimeter protection
+- Electrical Installations: Home electrics, industrial installations, panel upgrades, lighting, EV chargers, earthing and surge protection
+- Smart Home & Automation: Full smart home design, DIY kits, smart lighting, thermostats, smart locks, voice control, and garden automation
+- Networks & Internet: Website development, WiFi mesh systems, access points, NAS solutions, and structured cabling
+- Home Solutions: Smart energy meters, solar floodlights, GPS trackers, dashcams, and home sensors
+- Fire Safety: Fire panels, smoke/gas/CO detectors, flood detectors, and wireless smart detectors
+- PV Energy: Autonomous PV systems, on/off-grid and hybrid systems, inverters/batteries, and energy monitoring
+- Specialized Solutions: Elder care systems, Airbnb/hotel solutions, hospital/elderly care facilities, industrial solutions, and temperature/humidity monitoring
+- Support & Maintenance: Technical support, maintenance contracts, remote monitoring, and equipment upgrades
+
+## Documentation
+
+[Business Information](/info)
+[Service Categories](/categories)
+[Security Systems Services](/categories/security-systems)
+[Electrical Installations](/categories/electrical)
+[Smart Home & Automation](/categories/smart-home)
+[Network Solutions](/categories/networks)
+[Fire Safety](/categories/fire-safety)
+[PV Energy](/categories/pv-energy)
+[Specialized Solutions](/categories/specialized)
+[Support & Maintenance](/categories/support)
+[Contact Information](/contact)
+
+## Optional
+
+[Customer Reviews](/reviews)
+[Technical Specifications](/categories)

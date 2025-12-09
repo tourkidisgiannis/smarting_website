@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Electrolize } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { StickyCTA } from "@/components/layout/StickyCTA";
+import { FacebookMessenger } from "@/components/FacebookMessenger";
 import { Toaster } from "@/components/ui/sonner";
 import { generateLocalBusinessSchema } from "@/lib/schema";
 
@@ -15,6 +16,13 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+// Bold display font for hero headings
+const electrolize = Electrolize({
+  variable: "--font-display",
+  subsets: ["latin"],
+  weight: "400",
 });
 
 export const metadata: Metadata = {
@@ -60,10 +68,10 @@ export const metadata: Metadata = {
     type: "website",
     locale: "el_GR",
     siteName: "SMARTING.GR",
-    url: "https://smarting-website.vercel.app/",
+    url: "https://www.smarting.gr/",
     images: [
       {
-        url: "https://smarting-website.vercel.app/og-image.jpg",
+        url: "https://www.smarting.gr/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "SMARTING.GR - Ηλεκτρολογική Τεχνική Υποστήριξη Θεσσαλονίκη",
@@ -76,16 +84,21 @@ export const metadata: Metadata = {
       "SMARTING.GR - Ηλεκτρολογικές Υπηρεσίες & Συστήματα Ασφαλείας στη Θεσσαλονίκη",
     description:
       "Επαγγελματικές υπηρεσίες ηλεκτρολογικής υποστήριξης, δικτύων, CCTV και ασφαλείας στη Θεσσαλονίκη.",
-    images: ["https://smarting-website.vercel.app/og-image.jpg"],
+    images: ["https://www.smarting.gr/og-image.jpg"],
   },
   alternates: {
-    canonical: "https://smarting-website.vercel.app/",
+    canonical: "https://www.smarting.gr/",
   },
   // Extra metadata beneficial for location-based SEO
   other: {
     service_area: "Thessaloniki, Ionía, Central Macedonia",
     business_type:
       "Electrical Support, CCTV, Security Systems, Network Installations",
+  },
+  icons: {
+    icon: "/images/smarting_logo_vertical.png",
+    shortcut: "/images/smarting_logo_vertical.png",
+    apple: "/images/smarting_logo_vertical.png",
   },
 };
 
@@ -107,13 +120,14 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${electrolize.variable} antialiased`}
       >
         <AnimatedBackground />
         <Header />
         <main className="min-h-screen">{children}</main>
         <Footer />
         <StickyCTA />
+        <FacebookMessenger />
         <Toaster />
       </body>
     </html>

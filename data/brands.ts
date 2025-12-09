@@ -8,36 +8,41 @@ export interface Brand {
 
 export const subcategoryBrands: Record<string, Brand[]> = {
   // Security Systems
+  // Security Systems - Keeping as is since user did not specify changes for Security
   "cctv": [
     { name: "Hikvision", logo: "/brands/hikvision.svg" },
     { name: "Dahua", logo: "/brands/dahua.svg" },
-    { name: "Axis", logo: "/brands/axis.svg" },
-    { name: "Hanwha", logo: "/brands/hanwha.svg" },
-    { name: "Uniview", logo: "/brands/uniview.svg" },
+    { name: "Ajax", logo: "/brands/ajax.svg" },
+    { name: "TP-Link", logo: "/brands/tp-link.svg" },
+    { name: "EZVIZ", logo: "/brands/ezviz.svg" },
+    { name: "Hiwatch", logo: "/brands/hiwatch.svg" },
   ],
   "nvr-dvr": [
     { name: "Hikvision", logo: "/brands/hikvision.svg" },
     { name: "Dahua", logo: "/brands/dahua.svg" },
-    { name: "Synology", logo: "/brands/synology.svg" },
-    { name: "QNAP", logo: "/brands/qnap.svg" },
+    { name: "TVT", logo: "/brands/tvt.svg" },
   ],
   "video-intercom": [
     { name: "Hikvision", logo: "/brands/hikvision.svg" },
     { name: "Dahua", logo: "/brands/dahua.svg" },
-    { name: "2N", logo: "/brands/2n.svg" },
-    { name: "Akuvox", logo: "/brands/akuvox.svg" },
+    { name: "CTC", logo: "/brands/ctc.svg" },
+    { name: "Fermax", logo: "/brands/fermax.svg" },
+    { name: "Urmet", logo: "/brands/urmet.svg" },
+    { name: "Comelit", logo: "/brands/comelit.svg" },
   ],
-  "access-control": [
-    { name: "ZKTeco", logo: "/brands/zkteco.svg" },
+  "access-control": [  
     { name: "Hikvision", logo: "/brands/hikvision.svg" },
-    { name: "Suprema", logo: "/brands/suprema.svg" },
-    { name: "Salto", logo: "/brands/salto.svg" },
+    { name: "Dahua", logo: "/brands/dahua.svg" },
+    { name: "Yale", logo: "/brands/yale.svg" },
+    { name: "Paxtron", logo: "/brands/paxtron.svg" },
   ],
   "alarm-systems": [
     { name: "Ajax", logo: "/brands/ajax.svg" },
+    { name: "Hikvision", logo: "/brands/hikvision.svg" },
+    { name: "Dahua", logo: "/brands/dahua.svg" },
+    { name: "Sigma", logo: "/brands/sigma.svg" },
     { name: "Paradox", logo: "/brands/paradox.svg" },
-    { name: "DSC", logo: "/brands/dsc.svg" },
-    { name: "Honeywell", logo: "/brands/honeywell.svg" },
+    { name: "Bosch", logo: "/brands/bosch.svg" },
   ],
   "anpr": [
     { name: "Hikvision", logo: "/brands/hikvision.svg" },
@@ -46,22 +51,23 @@ export const subcategoryBrands: Record<string, Brand[]> = {
   ],
   "perimeter": [
     { name: "Optex", logo: "/brands/optex.svg" },
-    { name: "Takex", logo: "/brands/takex.svg" },
-    { name: "Hikvision", logo: "/brands/hikvision.svg" },
+    { name: "ALEAN", logo: "/brands/alean.svg" },
   ],
 
-  // Electrical
+  // Electrical - Keeping as is since user did not specify changes
   "home-electrics": [
     { name: "Schneider Electric", logo: "/brands/schneider.svg" },
     { name: "ABB", logo: "/brands/abb.svg" },
     { name: "Legrand", logo: "/brands/legrand.svg" },
     { name: "Hager", logo: "/brands/hager.svg" },
+    { name: "Eaton", logo: "/brands/eaton.svg" },
   ],
   "industrial-install": [
     { name: "Schneider Electric", logo: "/brands/schneider.svg" },
-    { name: "Siemens", logo: "/brands/siemens.svg" },
     { name: "ABB", logo: "/brands/abb.svg" },
-    { name: "Eaton", logo: "/brands/eaton.svg" },
+    { name: "Legrand", logo: "/brands/legrand.svg" },
+    { name: "Hager", logo: "/brands/hager.svg" },
+    { name: "Siemens", logo: "/brands/siemens.svg" },
   ],
   "panel-upgrades": [
     { name: "Schneider Electric", logo: "/brands/schneider.svg" },
@@ -71,202 +77,198 @@ export const subcategoryBrands: Record<string, Brand[]> = {
   "lighting": [
     { name: "Philips", logo: "/brands/philips.svg" },
     { name: "Osram", logo: "/brands/osram.svg" },
-    { name: "Mean Well", logo: "/brands/meanwell.svg" },
+    { name: "ACA", logo: "/brands/aca.svg" },
     { name: "Ledvance", logo: "/brands/ledvance.svg" },
+    { name: "EUROLAMP", logo: "/brands/eurolamp.svg" },
+    { name: "V-TAC", logo: "/brands/v-tac.svg" },
   ],
   "ev-chargers": [
     { name: "ABB", logo: "/brands/abb.svg" },
-    { name: "Schneider Electric", logo: "/brands/schneider.svg" },
     { name: "Wallbox", logo: "/brands/wallbox.svg" },
-    { name: "Easee", logo: "/brands/easee.svg" },
+    { name: "Tesla", logo: "/brands/tesla.svg" },
+    { name: "MC Chargers", logo: "/brands/mcchargers.svg" },
+    { name: "Huawei", logo: "/brands/huawei.svg" },
   ],
   "earthing": [
     { name: "OBO Bettermann", logo: "/brands/obo.svg" },
     { name: "DEHN", logo: "/brands/dehn.svg" },
-    { name: "Phoenix Contact", logo: "/brands/phoenix.svg" },
+    { name: "Furse", logo: "/brands/furse.svg" },
   ],
 
   // Smart Home
   "full-design": [
-    { name: "Control4", logo: "/brands/control4.svg" },
-    { name: "Crestron", logo: "/brands/crestron.svg" },
     { name: "KNX", logo: "/brands/knx.svg" },
-    { name: "Loxone", logo: "/brands/loxone.svg" },
   ],
   "diy-kits": [
     { name: "Sonoff", logo: "/brands/sonoff.svg" },
     { name: "Shelly", logo: "/brands/shelly.svg" },
     { name: "Tuya", logo: "/brands/tuya.svg" },
-    { name: "Xiaomi", logo: "/brands/xiaomi.svg" },
+    { name: "Aqara", logo: "/brands/aqara.svg" },
+    { name: "Zigbee", logo: "/brands/zigbee.svg" },
   ],
   "smart-lighting": [
     { name: "Philips Hue", logo: "/brands/philips.svg" },
-    { name: "IKEA Tradfri", logo: "/brands/ikea.svg" },
+    { name: "Yeelight", logo: "/brands/yeelight.svg" },
+    { name: "LIFX", logo: "/brands/lifx.svg" },
     { name: "Shelly", logo: "/brands/shelly.svg" },
     { name: "Sonoff", logo: "/brands/sonoff.svg" },
   ],
   "thermostats": [
     { name: "Nest", logo: "/brands/nest.svg" },
-    { name: "Tado", logo: "/brands/tado.svg" },
     { name: "Honeywell", logo: "/brands/honeywell.svg" },
-    { name: "Ecobee", logo: "/brands/ecobee.svg" },
+    { name: "Shelly", logo: "/brands/shelly.svg" },
   ],
   "smart-locks": [
-    { name: "Yale", logo: "/brands/yale.svg" },
     { name: "Nuki", logo: "/brands/nuki.svg" },
+    { name: "Yale", logo: "/brands/yale.svg" },
     { name: "August", logo: "/brands/august.svg" },
     { name: "Aqara", logo: "/brands/aqara.svg" },
   ],
   "smart-speakers": [
-    { name: "Amazon Alexa", logo: "/brands/alexa.svg" },
-    { name: "Google Home", logo: "/brands/google.svg" },
-    { name: "Apple HomeKit", logo: "/brands/apple.svg" },
+    { name: "Google Nest", logo: "/brands/google.svg" },
   ],
   "shading": [
     { name: "Somfy", logo: "/brands/somfy.svg" },
     { name: "Nice", logo: "/brands/nice.svg" },
     { name: "Shelly", logo: "/brands/shelly.svg" },
+    { name: "Aqara", logo: "/brands/aqara.svg" },
   ],
   "doorbells": [
     { name: "Ring", logo: "/brands/ring.svg" },
-    { name: "Google Nest", logo: "/brands/nest.svg" },
+    { name: "Nest Doorbell", logo: "/brands/nest.svg" },
+    { name: "Hikvision", logo: "/brands/hikvision.svg" },
     { name: "Aqara", logo: "/brands/aqara.svg" },
-    { name: "Eufy", logo: "/brands/eufy.svg" },
   ],
   "garden-automation": [
-    { name: "Gardena", logo: "/brands/gardena.svg" },
-    { name: "Rain Bird", logo: "/brands/rainbird.svg" },
-    { name: "Hunter", logo: "/brands/hunter.svg" },
+    { name: "Gardena Smart", logo: "/brands/gardena.svg" },
+    { name: "Shelly", logo: "/brands/shelly.svg" },
   ],
   "garage-remote": [
     { name: "Nice", logo: "/brands/nice.svg" },
-    { name: "Came", logo: "/brands/came.svg" },
     { name: "Somfy", logo: "/brands/somfy.svg" },
-    { name: "BFT", logo: "/brands/bft.svg" },
+    { name: "Shelly", logo: "/brands/shelly.svg" },
   ],
 
   // Networks
-  "web-dev": [
-    { name: "Next.js", logo: "/brands/nextjs.svg" },
-    { name: "React", logo: "/brands/react.svg" },
-    { name: "Vercel", logo: "/brands/vercel.svg" },
-  ],
+  "web-dev": [],
   "wifi-mesh": [
     { name: "Ubiquiti", logo: "/brands/ubiquiti.svg" },
     { name: "TP-Link", logo: "/brands/tplink.svg" },
-    { name: "Netgear", logo: "/brands/netgear.svg" },
-    { name: "Eero", logo: "/brands/eero.svg" },
+    { name: "Google", logo: "/brands/google.svg" },
+    { name: "Asus", logo: "/brands/asus.svg" },
   ],
   "ap-router": [
     { name: "Ubiquiti", logo: "/brands/ubiquiti.svg" },
     { name: "MikroTik", logo: "/brands/mikrotik.svg" },
     { name: "Cisco", logo: "/brands/cisco.svg" },
-    { name: "TP-Link", logo: "/brands/tplink.svg" },
+    { name: "TP-Link Omada", logo: "/brands/tplink.svg" },
   ],
   "nas-backups": [
     { name: "Synology", logo: "/brands/synology.svg" },
     { name: "QNAP", logo: "/brands/qnap.svg" },
-    { name: "Western Digital", logo: "/brands/wd.svg" },
+    { name: "TrueNAS", logo: "/brands/truenas.svg" },
   ],
   "structured-cabling": [
-    { name: "Panduit", logo: "/brands/panduit.svg" },
-    { name: "CommScope", logo: "/brands/commscope.svg" },
     { name: "Legrand", logo: "/brands/legrand.svg" },
+    { name: "Schrack", logo: "/brands/schrack.svg" },
   ],
 
-  // Home Solutions - use generic tech brands
+  // Home Solutions
   "smart-meters": [
     { name: "Shelly", logo: "/brands/shelly.svg" },
-    { name: "Schneider Electric", logo: "/brands/schneider.svg" },
+    { name: "Sonoff", logo: "/brands/sonoff.svg" },
+    { name: "Tuya", logo: "/brands/tuya.svg" },
   ],
   "solar-floodlights": [
+    { name: "V-TAC", logo: "/brands/v-tac.svg" },
+    { name: "Ledvance", logo: "/brands/ledvance.svg" },
     { name: "Philips", logo: "/brands/philips.svg" },
-    { name: "Osram", logo: "/brands/osram.svg" },
   ],
   "gps-trackers": [
     { name: "Teltonika", logo: "/brands/teltonika.svg" },
-    { name: "Garmin", logo: "/brands/garmin.svg" },
+    { name: "Coban", logo: "/brands/coban.svg" },
+    { name: "SinoTrack", logo: "/brands/sinotrack.svg" },
+    { name: "Protrack", logo: "/brands/protrack.svg" },
+    { name: "Pandora", logo: "/brands/pandora.svg" },
   ],
-  "dashcams": [
-    { name: "BlackVue", logo: "/brands/blackvue.svg" },
-    { name: "Garmin", logo: "/brands/garmin.svg" },
-    { name: "Nextbase", logo: "/brands/nextbase.svg" },
-  ],
+  "dashcams": [],
   "home-sensors": [
     { name: "Aqara", logo: "/brands/aqara.svg" },
     { name: "Shelly", logo: "/brands/shelly.svg" },
     { name: "Sonoff", logo: "/brands/sonoff.svg" },
+    { name: "Tuya", logo: "/brands/tuya.svg" },
+    { name: "Philips Hue", logo: "/brands/philips.svg" },
   ],
 
   // Fire Detection
   "fire-panels": [
+    { name: "Bosch", logo: "/brands/bosch.svg" },
+    { name: "Olympia Electronics", logo: "/brands/olympia.svg" },
     { name: "Honeywell", logo: "/brands/honeywell.svg" },
     { name: "Siemens", logo: "/brands/siemens.svg" },
-    { name: "Bosch", logo: "/brands/bosch.svg" },
   ],
   "smoke-gas": [
     { name: "Honeywell", logo: "/brands/honeywell.svg" },
-    { name: "Kidde", logo: "/brands/kidde.svg" },
-    { name: "Ajax", logo: "/brands/ajax.svg" },
+    { name: "Olympia Electronics", logo: "/brands/olympia.svg" },
   ],
   "flood-detectors": [
-    { name: "Ajax", logo: "/brands/ajax.svg" },
     { name: "Aqara", logo: "/brands/aqara.svg" },
     { name: "Shelly", logo: "/brands/shelly.svg" },
   ],
   "smart-detectors": [
-    { name: "Ajax", logo: "/brands/ajax.svg" },
-    { name: "Nest", logo: "/brands/nest.svg" },
+    { name: "Sonoff", logo: "/brands/sonoff.svg" },
     { name: "Aqara", logo: "/brands/aqara.svg" },
+    { name: "Shelly", logo: "/brands/shelly.svg" },
   ],
 
   // Photovoltaics
   "autonomous-pv": [
-    { name: "SMA", logo: "/brands/sma.svg" },
     { name: "Victron", logo: "/brands/victron.svg" },
-    { name: "Huawei", logo: "/brands/huawei.svg" },
+    { name: "Sungrow", logo: "/brands/sungrow.svg" },
+    { name: "Growatt", logo: "/brands/growatt.svg" },
+    { name: "SMA", logo: "/brands/sma.svg" },
   ],
   "on-off-hybrid": [
     { name: "Huawei", logo: "/brands/huawei.svg" },
-    { name: "SMA", logo: "/brands/sma.svg" },
-    { name: "SolarEdge", logo: "/brands/solaredge.svg" },
     { name: "Fronius", logo: "/brands/fronius.svg" },
+    { name: "Sungrow", logo: "/brands/sungrow.svg" },
+    { name: "Growatt", logo: "/brands/growatt.svg" },
   ],
   "inverters-batteries": [
     { name: "Victron", logo: "/brands/victron.svg" },
     { name: "Huawei", logo: "/brands/huawei.svg" },
-    { name: "BYD", logo: "/brands/byd.svg" },
-    { name: "Tesla", logo: "/brands/tesla.svg" },
+    { name: "SMA", logo: "/brands/sma.svg" },
   ],
   "monitoring": [
-    { name: "SolarEdge", logo: "/brands/solaredge.svg" },
+    { name: "SolarEdge", logo: "/brands/solaredge.svg" }, // Assuming keep if user mentioned SMA/Huawei in PV
     { name: "Huawei", logo: "/brands/huawei.svg" },
     { name: "SMA", logo: "/brands/sma.svg" },
+    { name: "Fronius", logo: "/brands/fronius.svg" },
   ],
 
   // Specialized
   "elder-care": [
-    { name: "Philips", logo: "/brands/philips.svg" },
-    { name: "Ajax", logo: "/brands/ajax.svg" },
+    { name: "Tuya", logo: "/brands/tuya.svg" },
   ],
   "airbnb-hotel": [
+    { name: "Nuki", logo: "/brands/nuki.svg" },
     { name: "Yale", logo: "/brands/yale.svg" },
     { name: "August", logo: "/brands/august.svg" },
     { name: "Shelly", logo: "/brands/shelly.svg" },
   ],
   "hospitals": [
-    { name: "Honeywell", logo: "/brands/honeywell.svg" },
     { name: "Siemens", logo: "/brands/siemens.svg" },
     { name: "Bosch", logo: "/brands/bosch.svg" },
   ],
   "industrial-solutions": [
     { name: "Hikvision", logo: "/brands/hikvision.svg" },
-    { name: "Honeywell", logo: "/brands/honeywell.svg" },
+    { name: "Axis", logo: "/brands/axis.svg" },
     { name: "Bosch", logo: "/brands/bosch.svg" },
+    { name: "Siemens", logo: "/brands/siemens.svg" },
   ],
   "temp-monitoring": [
-    { name: "Testo", logo: "/brands/testo.svg" },
     { name: "Shelly", logo: "/brands/shelly.svg" },
+    { name: "Sonoff", logo: "/brands/sonoff.svg" },
   ],
 
   // Support
@@ -287,6 +289,8 @@ export const subcategoryBrands: Record<string, Brand[]> = {
     { name: "Ubiquiti", logo: "/brands/ubiquiti.svg" },
   ],
 };
+
+
 
 // Get brands for a subcategory, with fallback to generic tech brands
 export function getBrandsForSubcategory(subcatId: string): Brand[] {

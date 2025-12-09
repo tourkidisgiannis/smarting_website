@@ -97,8 +97,8 @@ interface AnimatedPageHeaderProps {
 export function AnimatedPageHeader({
   title,
   description,
-  titleClassName = 'text-4xl md:text-5xl font-bold tracking-tighter mb-4 text-softWhite',
-  descriptionClassName = 'text-lg text-neutralGray max-w-2xl mx-auto',
+  titleClassName = 'text-4xl md:text-5xl font-bold tracking-tighter mb-4 text-foreground',
+  descriptionClassName = 'text-lg text-foreground/80 max-w-2xl mx-auto',
 }: AnimatedPageHeaderProps) {
   const containerRef = useRef<HTMLDivElement>(null);
 

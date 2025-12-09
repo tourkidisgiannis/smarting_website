@@ -14,6 +14,7 @@
   },
   "phone": "+302310781555",
   "mobile": "+306987341139",
+  "email": "Info@smarting.gr",
   "hours": [
     { "day": "Δευτέρα", "time": "9:00 π.μ.–5:00 μ.μ." },
     { "day": "Τρίτη", "time": "9:00 π.μ.–5:00 μ.μ." },
@@ -26,5 +27,9 @@
   "coordinates": {
     "lat": 40.6833,
     "lng": 22.8667
+  },
+  "socials": {
+    "facebook": "https://www.facebook.com/share/1GCK7RRnrm/",
+    "instagram": "https://www.instagram.com/smarting.gr/#"
   }
 }

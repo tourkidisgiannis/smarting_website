@@ -80,10 +80,10 @@ export function CategoriesAccordion() {
   return (
     <Accordion type="multiple" className="w-full space-y-4">
       {categories.map((category) => (
-        <AccordionItem 
-          key={category.id} 
-          value={category.id} 
-          className="border border-border rounded-lg overflow-hidden bg-card"
+        <AccordionItem
+          key={category.id}
+          value={category.id}
+          className="border border-border rounded-lg overflow-hidden bg-card accordion-item"
         >
           <AccordionTrigger 
             className="px-5 py-4 hover:bg-muted/50 hover:no-underline [&[data-state=open]>svg]:rotate-180"
@@ -99,7 +99,7 @@ export function CategoriesAccordion() {
                   <li key={sub.id}>
                     <Link
                       href={`/categories/${category.id}/${sub.id}`}
-                      className="subcat-link hover-link text-sm text-muted-foreground flex items-center gap-2"
+                      className="subcat-link hover-link text-sm text-foreground/80 flex items-center gap-2"
                     >
                       <ChevronRight className="h-3 w-3 text-primary/60" aria-hidden="true" />
                       {sub.title}

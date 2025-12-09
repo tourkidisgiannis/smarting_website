@@ -2,18 +2,24 @@
 
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Card, CardContent } from '@/components/ui/card';
 import { CTAButton } from '@/components/ui/CTAButton';
+
+gsap.registerPlugin(ScrollTrigger);
 
 export function CTASection() {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    if (!sectionRef.current) return;
+
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: 'top bottom-=50',
+          start: 'top 80%',
+          toggleActions: 'play none none reverse',
         },
       });
 
@@ -35,13 +41,6 @@ export function CTASection() {
         duration: 0.5,
         ease: 'power3.out',
       }, '-=0.3')
-      .from('.cta-button', {
-        y: 15,
-        opacity: 0,
-        duration: 0.4,
-        stagger: 0.1,
-        ease: 'power2.out',
-      }, '-=0.2')
       .from('.trust-item', {
         y: 20,
         opacity: 0,
@@ -70,19 +69,36 @@ export function CTASection() {
             <h2 className="cta-title text-3xl md:text-4xl font-bold tracking-tighter mb-4">
               Έτοιμοι να Ξεκινήσετε;
             </h2>
-            <p className="cta-desc text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Επικοινωνήστε μαζί μας σήμερα για μια δωρεάν εκτίμηση και ανακαλύψτε πώς μπορούμε 
+            <p className="cta-desc text-lg text-foreground/80 mb-8 max-w-2xl mx-auto">
+              Επικοινωνήστε μαζί μας σήμερα για μια δωρεάν εκτίμηση και ανακαλύψτε πώς μπορούμε
               να βελτιώσουμε την ασφάλεια και την αποδοτικότητα των εγκαταστάσεών σας.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <CTAButton action="call" size="lg" className="cta-button w-full sm:w-auto shadow-lg shadow-primary/30" iconPosition="left">
-                Καλέστε Τώρα
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-5">
+              <CTAButton
+                action="call"
+                size="lg"
+                className="h-12 px-8 text-lg rounded-full shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all duration-300"
+                iconPosition="left"
+              >
+                Κλήση Τώρα
               </CTAButton>
-              <CTAButton action="book" size="lg" variant="secondary" className="cta-button w-full sm:w-auto shadow-lg" iconPosition="left">
+              <CTAButton
+                action="book"
+                size="lg"
+                variant="secondary"
+                className="h-12 px-8 text-lg rounded-full border border-white/10 hover:bg-white/5 transition-all duration-300"
+                iconPosition="left"
+              >
                 Κλείστε Ραντεβού
               </CTAButton>
-              <CTAButton action="sms" size="lg" variant="outline" className="cta-button w-full sm:w-auto" iconPosition="left">
+              <CTAButton
+                action="sms"
+                size="lg"
+                variant="outline"
+                className="h-12 px-8 text-lg rounded-full border border-white/10 hover:bg-white/5 transition-all duration-300"
+                iconPosition="left"
+              >
                 Στείλτε SMS
               </CTAButton>
             </div>
@@ -92,15 +108,15 @@ export function CTASection() {
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
                 <div className="trust-item">
                   <div className="text-2xl font-bold text-primary mb-1">100%</div>
-                  <div className="text-sm text-muted-foreground">Ικανοποίηση Πελατών</div>
+                  <div className="text-sm text-foreground/80">Ικανοποίηση Πελατών</div>
                 </div>
                 <div className="trust-item">
                   <div className="text-2xl font-bold text-primary mb-1">Δωρεάν</div>
-                  <div className="text-sm text-muted-foreground">Εκτίμηση Κόστους</div>
+                  <div className="text-sm text-foreground/80">Εκτίμηση Κόστους</div>
                 </div>
                 <div className="trust-item">
                   <div className="text-2xl font-bold text-primary mb-1">24/7</div>
-                  <div className="text-sm text-muted-foreground">Τεχνική Υποστήριξη</div>
+                  <div className="text-sm text-foreground/80">Τεχνική Υποστήριξη</div>
                 </div>
               </div>
             </div>
