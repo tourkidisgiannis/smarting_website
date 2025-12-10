@@ -101,7 +101,7 @@ export function Hero() {
         </div>
 
         <div className="flex justify-center items-center hero-title">
-          <h1 className="hero-title text-6xl md:text-8xl  lg:text-9xl font-semibold font-poppins tracking-tighter mb-6 max-w-5xl mx-auto leading-[1.1] py-8 px-4 text-primary ">
+          <h1 className="hero-title text-5xl md:text-8xl  lg:text-9xl font-semibold font-poppins tracking-tighter mb-6 max-w-5xl mx-auto leading-[1.1] py-8 px-4 text-primary ">
             SMARTING<span>.GR</span>
           </h1>
         </div>
