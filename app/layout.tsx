@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Electrolize } from "next/font/google";
+import { Geist, Geist_Mono, Electrolize, Poppins } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -11,6 +11,12 @@ import { generateLocalBusinessSchema } from "@/lib/schema";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+});
+
+const poppins = Poppins({
+  variable: "--font-poppins",
+  subsets: ["latin"],
+  weight: ["400", "600", "700", "900"],
 });
 
 const geistMono = Geist_Mono({
@@ -120,7 +126,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${electrolize.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${electrolize.variable} ${poppins.variable} antialiased`}
       >
         <AnimatedBackground />
         <Header />

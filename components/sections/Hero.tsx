@@ -94,19 +94,19 @@ export function Hero() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
             </span>
-            <span className="font-medium">
+            <span className="font-medium text-foreground/80">
               Ηλεκτρολογικές Υπηρεσίες Νέας Γενιάς
             </span>
           </Badge>
         </div>
 
         <div className="flex justify-center items-center hero-title">
-          <h1 className="hero-title text-6xl md:text-8xl lg:text-9xl font-black mb-6 max-w-5xl mx-auto leading-[1.1] py-8 px-4 text-metallic-teal font-[family-name:var(--font-display)]">
-            Smarting<span>.gr</span>
+          <h1 className="hero-title text-6xl md:text-8xl  lg:text-9xl font-semibold font-poppins tracking-tighter mb-6 max-w-5xl mx-auto leading-[1.1] py-8 px-4 text-primary ">
+            SMARTING<span>.GR</span>
           </h1>
         </div>
 
-        <p className="hero-motto text-xl md:text-2xl font-medium text-primary mb-6">
+        <p className="hero-motto text-xl md:text-2xl font-medium text-foreground/80 mb-6">
           Έξυπνες Λύσεις, Άμεσα & Αξιόπιστα
         </p>
 

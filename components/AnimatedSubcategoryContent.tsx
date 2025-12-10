@@ -120,36 +120,35 @@ export function AnimatedSubcategoryContent({
 
         {/* Main Content */}
         <article>
-          <header className="mb-8">
-            <h1 className="anim-title text-3xl md:text-4xl font-bold text-foreground mb-4">
-              {sub.title}
-            </h1>
-            <p className="anim-desc text-lg text-neutralGray">
-              {sub.description}
-            </p>
-          </header>
+          <div className="flex flex-col-reverse lg:grid lg:grid-cols-2 gap-8 items-start mb-12">
+            <div className="flex flex-col gap-6">
+              <header>
+                <h1 className="anim-title text-3xl md:text-4xl font-bold text-foreground mb-4">
+                  {sub.title}
+                </h1>
+                <p className="anim-desc text-lg text-neutralGray">
+                  {sub.description}
+                </p>
+              </header>
+            </div>
 
-          {/* Logo Carousel - Partner Brands */}
-          <div className="anim-logos mb-8">
-            <LogoCarousel subcatId={sub.id} />
+            {/* Image */}
+            <figure className="anim-image relative aspect-video rounded-xl overflow-hidden bg-card border border-border w-full h-full">
+              <Image
+                src={sub.image}
+                alt={sub.title}
+                fill
+                className="object-contain"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
+                priority
+              />
+            </figure>
           </div>
 
-          {/* Image */}
-          <figure className="anim-image relative aspect-video rounded-xl overflow-hidden bg-card border border-border mb-8">
-            <Image
-              src={sub.image}
-              alt={sub.title}
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 800px"
-              priority
-            />
-            <figcaption className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-darkBlue/90 to-transparent p-4">
-              <span className="text-sm text-neutralGray">
-                Εικόνα: {sub.title}
-              </span>
-            </figcaption>
-          </figure>
+          {/* Logo Carousel - Partner Brands */}
+          <div className="anim-logos mb-12">
+            <LogoCarousel subcatId={sub.id} />
+          </div>
 
           {/* CTA Section */}
           <div className="anim-cta bg-card border border-border rounded-xl p-6 md:p-8 mb-12">
