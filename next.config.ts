@@ -5,6 +5,12 @@ const nextConfig: NextConfig = {
     remotePatterns: [],
     qualities: [100, 75, 90],
   },
+
+  // CRITICAL for shared hosting / CloudLinux
+  experimental: {
+    workerThreads: false,
+    cpus: 1,
+  },
 };
 
 export default nextConfig;
