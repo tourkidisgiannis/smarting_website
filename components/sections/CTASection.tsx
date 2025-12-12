@@ -66,7 +66,7 @@ export function CTASection() {
           </div>
 
           <CardContent className="relative p-8 md:p-12 text-center">
-            <h2 className="cta-title text-3xl md:text-4xl font-bold tracking-tighter mb-4">
+            <h2 className="cta-title text-3xl md:text-4xl font-bold tracking-wide mb-4">
               Έτοιμοι να Ξεκινήσετε;
             </h2>
             <p className="cta-desc text-lg text-foreground/80 mb-8 max-w-2xl mx-auto">

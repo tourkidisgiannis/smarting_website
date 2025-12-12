@@ -71,7 +71,7 @@ export function GoogleReviews() {
     <div className="space-y-10">
       <div className="flex flex-col md:flex-row justify-between items-end gap-6 border-b border-primary/10 pb-8">
         <div>
-          <h2 className="text-3xl font-bold tracking-tight mb-2">Τι λένε οι πελάτες μας</h2>
+          <h2 className="text-3xl font-bold tracking-wide mb-2">Τι λένε οι πελάτες μας</h2>
           <div className="flex items-center gap-2 text-muted-foreground">
             <span className="flex items-center text-primary font-medium">
               {averageRating.toFixed(1)} <Star className="ml-1 w-4 h-4 fill-primary" />

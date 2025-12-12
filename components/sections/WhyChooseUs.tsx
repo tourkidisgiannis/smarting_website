@@ -31,7 +31,7 @@ export function WhyChooseUs() {
     <section className="py-20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tighter mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-wide mb-4">
             Γιατί να μας Επιλέξετε;
           </h2>
           <p className="text-lg text-zinc-400 max-w-2xl mx-auto">

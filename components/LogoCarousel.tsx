@@ -1,7 +1,8 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
+import Image from 'next/image';
 import { getBrandsForSubcategory, type Brand } from '@/data/brands';
 
 interface LogoCarouselProps {
@@ -72,12 +73,25 @@ export function LogoCarousel({ subcatId }: LogoCarouselProps) {
 }
 
 function LogoItem({ brand }: { brand: Brand }) {
+  const [imageError, setImageError] = useState(false);
+
   return (
-    <div className="logo-item flex-shrink-0 flex items-center justify-center w-32 h-16 bg-card/50 rounded-lg border border-border/50 px-4 py-2 grayscale hover:grayscale-0 transition-all duration-300 hover:border-primary/30 hover:bg-card">
-      {/* Since we don't have actual SVG logos, show brand name as placeholder */}
-      <span className="text-sm font-medium text-neutralGray text-center leading-tight">
-        {brand.name}
-      </span>
+    <div className="logo-item flex-shrink-0 flex items-center justify-center w-32 h-16 bg-transparent rounded-lg border-0 px-4 py-2 transition-all duration-300">
+      {brand.logo && !imageError ? (
+        <Image
+          src={brand.logo}
+          alt={brand.name}
+          width={100}
+          height={32}
+          className="max-h-8 max-w-full object-contain"
+          onError={() => setImageError(true)}
+          unoptimized // For SVG files
+        />
+      ) : (
+        <span className="text-sm font-medium text-neutralGray text-center leading-tight">
+          {brand.name}
+        </span>
+      )}
     </div>
   );
 }

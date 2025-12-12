@@ -133,14 +133,13 @@ export function AnimatedSubcategoryContent({
             </div>
 
             {/* Image */}
-            <figure className="anim-image relative aspect-video rounded-xl overflow-hidden bg-card border border-border w-full h-full">
+            <figure className="anim-image relative aspect-square rounded-xl overflow-hidden bg-card border border-border w-full h-full">
               <Image
                 src={sub.image}
                 alt={sub.title}
                 fill
                 className="object-contain"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
-                priority
               />
             </figure>
           </div>

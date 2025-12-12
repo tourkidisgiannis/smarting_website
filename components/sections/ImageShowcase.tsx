@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import { useEffect, useRef } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Image from 'next/image';
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -11,28 +11,30 @@ export function ImageShowcase() {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    if (!sectionRef.current) return;
+
     const ctx = gsap.context(() => {
-      gsap.from('.showcase-image', {
+      gsap.from(".showcase-image", {
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: 'top bottom-=100',
+          start: "top bottom-=100",
         },
         scale: 0.9,
         opacity: 0,
         duration: 1,
-        ease: 'power3.out',
+        ease: "power3.out",
       });
 
-      gsap.from('.showcase-overlay', {
+      gsap.from(".showcase-overlay", {
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: 'top bottom-=100',
+          start: "top bottom-=100",
         },
         x: -100,
         opacity: 0,
         duration: 0.8,
         delay: 0.3,
-        ease: 'power3.out',
+        ease: "power3.out",
       });
     }, sectionRef);
 
@@ -44,29 +46,30 @@ export function ImageShowcase() {
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
           {/* Image */}
-          <div className="showcase-image relative aspect-[4/3] rounded-2xl overflow-hidden border border-primary/20 shadow-2xl shadow-primary/10">
+          <div className="showcase-image relative aspect-4/3 rounded-2xl overflow-hidden border border-primary/20 shadow-2xl shadow-primary/10">
             <Image
               src="/hero-image.png"
               alt="Professional electrical and security systems installation"
               fill
               className="object-cover"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               priority={false}
               quality={90}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/20 to-transparent" />
+            <div className="absolute inset-0 bg-linear-to-t from-background/80 via-background/20 to-transparent" />
           </div>
 
           {/* Content */}
           <div className="showcase-overlay space-y-6">
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tighter">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-wide">
               Επαγγελματική Τεχνολογία &amp; Ασφάλεια
             </h2>
             <p className="text-lg text-foreground/80 leading-relaxed">
-              Εξειδικευόμαστε στην εγκατάσταση και συντήρηση προηγμένων συστημάτων ηλεκτρολογικής
-              υποδομής, δικτύων δεδομένων και συστημάτων ασφαλείας. Κάθε εγκατάσταση σχεδιάζεται
-              με προσοχή στη λεπτομέρεια και υλοποιείται με τα υψηλότερα πρότυπα ποιότητας.
+              Εξειδικευόμαστε στην εγκατάσταση και συντήρηση προηγμένων
+              συστημάτων ηλεκτρολογικής υποδομής, δικτύων δεδομένων και
+              συστημάτων ασφαλείας. Κάθε εγκατάσταση σχεδιάζεται με προσοχή στη
+              λεπτομέρεια και υλοποιείται με τα υψηλότερα πρότυπα ποιότητας.
             </p>
-           
           </div>
         </div>
       </div>

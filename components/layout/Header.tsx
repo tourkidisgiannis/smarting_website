@@ -24,7 +24,13 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-background/80 backdrop-blur-md">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <Link href="/" className="flex items-center shrink-0">
-          <Image src={logo} width={200} height={200} alt="logo" />
+          <Image
+            src={logo}
+            width={150}
+            height={50}
+            alt="logo"
+            style={{ width: "auto", height: "auto" }}
+          />
         </Link>
 
         {/* Desktop Nav */}
@@ -64,7 +70,7 @@ export function Header() {
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
           <SheetTrigger asChild className="lg:hidden">
             <Button variant="ghost" size="icon">
-              <Menu className="h-6 w-6" />
+              <Menu className="size-7" />
               <span className="sr-only">Toggle menu</span>
             </Button>
           </SheetTrigger>

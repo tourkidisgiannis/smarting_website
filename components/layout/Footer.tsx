@@ -44,7 +44,7 @@ export function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h4 className="font-semibold text-white mb-4 font-[family-name:var(--font-poppins)]">
+            <h4 className="font-semibold text-white mb-4 font-poppins ">
               Επικοινωνία
             </h4>
             <ul className="space-y-3 text-sm text-muted-foreground">

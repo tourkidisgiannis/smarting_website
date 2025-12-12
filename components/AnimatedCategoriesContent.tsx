@@ -49,18 +49,20 @@ export function AnimatedCategoriesContent() {
       }, '-=0.5');
 
       // Animate accordion items with stagger from left to right on scroll
-      gsap.from(accordionItems, {
-        x: -50,
-        opacity: 0,
-        duration: 0.7,
-        stagger: 0.15,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: ".accordion-item", // Use class selector instead of the array
-          start: 'top 85%',
-          toggleActions: 'play none none reverse',
-        }
-      });
+      if (accordionItems.length > 0) {
+        gsap.from(accordionItems, {
+          x: -50,
+          opacity: 0,
+          duration: 0.7,
+          stagger: 0.15,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: accordionItems[0] as Element, // Use the first accordion item as trigger
+            start: 'top 85%',
+            toggleActions: 'play none none reverse',
+          }
+        });
+      }
 
       // Animate CTA section
       const ctaTl = gsap.timeline({
@@ -87,7 +89,7 @@ export function AnimatedCategoriesContent() {
       <div className="max-w-4xl mx-auto">
         {/* Page Header */}
         <div className="text-center mb-12">
-          <h1 className="anim-title text-4xl md:text-5xl font-bold tracking-tighter mb-4 text-foreground overflow-hidden">
+          <h1 className="anim-title text-4xl md:text-5xl font-bold tracking-wide mb-4 text-foreground overflow-hidden">
             {splitText("Οι Υπηρεσίες μας")}
           </h1>
           <p className="anim-desc text-lg text-foreground/80 max-w-2xl mx-auto">

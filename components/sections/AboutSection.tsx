@@ -12,6 +12,8 @@ export function AboutSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    if (!sectionRef.current) return;
+
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({
         scrollTrigger: {
@@ -62,7 +64,7 @@ export function AboutSection() {
         <div className="max-w-4xl mx-auto">
           {/* Main About Content */}
           <div className="text-center mb-16">
-            <h2 className="about-title text-3xl md:text-4xl font-bold tracking-tighter mb-6">
+            <h2 className="about-title text-3xl md:text-4xl font-bold tracking-wide mb-6">
               Η Εμπειρία μας στην Υπηρεσία σας
             </h2>
             <p className="about-paragraph text-lg text-foreground/80 leading-relaxed mb-4">

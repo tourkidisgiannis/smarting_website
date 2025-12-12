@@ -32,6 +32,7 @@ const electrolize = Electrolize({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.smarting.gr"),
   title:
     "SMARTING.GR - Smart Solutions - Ηλεκτρολογική Τεχνική Υποστήριξη Θεσσαλονίκη | Δίκτυα, CCTV, Συστήματα Ασφαλείας",
   description:

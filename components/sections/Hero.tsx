@@ -44,17 +44,6 @@ export function Hero() {
           "-=0.6"
         )
         .from(
-          ".hero-tagline",
-          {
-            y: 20,
-            opacity: 0,
-            duration: 0.8,
-            ease: "power3.out",
-            clearProps: "all",
-          },
-          "-=0.6"
-        )
-        .from(
           ".hero-cta",
           {
             y: 20,
@@ -100,13 +89,13 @@ export function Hero() {
           </Badge>
         </div>
 
-        <div className="flex justify-center items-center hero-title">
-          <h1 className="hero-title text-5xl md:text-8xl  lg:text-9xl font-semibold font-poppins tracking-tighter mb-6 max-w-5xl mx-auto leading-[1.1] py-8 px-4 text-primary ">
+        <div className="flex justify-center items-center">
+          <h1 className="hero-title text-5xl md:text-8xl  lg:text-9xl font-semibold font-display tracking-tighter  mb-6 max-w-5xl mx-auto leading-[1.1] py-8 px-4 text-primary ">
             SMARTING<span>.GR</span>
           </h1>
         </div>
 
-        <p className="hero-motto text-xl md:text-2xl font-medium text-foreground/80 mb-6">
+        <p className="hero-motto hero-tagline text-xl md:text-2xl font-medium text-foreground/80 mb-6">
           Έξυπνες Λύσεις, Άμεσα & Αξιόπιστα
         </p>
 
@@ -131,7 +120,7 @@ export function Hero() {
         </div>
 
         {/* Bottom subtle detail */}
-        <div className="mt-12 pt-8 border-t border-white/5 mx-auto max-w-sm text-xs text-foreground/60 hero-cta opacity-60">
+        <div className="mt-12 pt-8 border-t border-white/5 mx-auto max-w-sm text-sm text-foreground/60 hero-cta opacity-60">
           <p>Εξυπηρέτηση σε όλη τη Βόρεια Ελλάδα • 24/7 Υποστήριξη</p>
         </div>
       </div>

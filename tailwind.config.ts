@@ -59,6 +59,9 @@ const config: Config = {
         "soft-white": "var(--color-soft-white)",
         "neutral-gray": "var(--color-neutral-gray)",
       },
+      fontFamily: {
+        'display': 'var(--font-display)',
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
@@ -73,10 +76,17 @@ const config: Config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        "circuit-flow": {
+          "0%": { strokeDashoffset: "1000" },
+          "100%": { strokeDashoffset: "0" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.3s ease-out",
         "accordion-up": "accordion-up 0.3s ease-out",
+        "circuit-flow-1": "circuit-flow 4s linear infinite",
+        "circuit-flow-2": "circuit-flow 5s linear infinite reverse",
+        "circuit-flow-3": "circuit-flow 7s linear infinite",
       },
     },
   },

@@ -44,7 +44,7 @@ export async function generateMetadata({ params }: SubcategoryPageProps): Promis
     openGraph: {
       title: `${sub.title} | ${category.title} – SMARTING.GR`,
       description: sub.description,
-      images: [{ url: sub.image, width: 1200, height: 675, alt: sub.title }],
+      images: [{ url: sub.image, width: 1200, height: 1200, alt: sub.title }],
       type: 'article',
     },
   };

@@ -2,13 +2,13 @@
   <defs>
     <!-- Gradient definitions -->
     <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#00ADB5;stop-opacity:0.3" />
-      <stop offset="100%" style="stop-color:#00ADB5;stop-opacity:0.1" />
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0.1" />
     </linearGradient>
-    
+
     <radialGradient id="glowGradient" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" style="stop-color:#00ADB5;stop-opacity:0.4" />
-      <stop offset="100%" style="stop-color:#00ADB5;stop-opacity:0" />
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.4" />
+      <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0" />
     </radialGradient>
 
     <!-- Filter for glow effect -->
@@ -22,76 +22,76 @@
   </defs>
 
   <!-- Background -->
-  <rect width="1920" height="1080" fill="#222831" opacity="0"/>
+  <rect width="1920" height="1080" fill="#000000" opacity="0.1"/>
 
   <!-- Animated circuit nodes -->
-  <circle cx="300" cy="200" r="4" fill="#00ADB5" opacity="0.6">
+  <circle cx="300" cy="200" r="4" fill="#ffffff" opacity="0.6">
     <animate attributeName="opacity" values="0.3;0.8;0.3" dur="3s" repeatCount="indefinite"/>
     <animate attributeName="r" values="3;5;3" dur="3s" repeatCount="indefinite"/>
   </circle>
-  
-  <circle cx="800" cy="400" r="4" fill="#00ADB5" opacity="0.6">
+
+  <circle cx="800" cy="400" r="4" fill="#ffffff" opacity="0.6">
     <animate attributeName="opacity" values="0.4;0.9;0.4" dur="4s" repeatCount="indefinite" begin="0.5s"/>
     <animate attributeName="r" values="3;6;3" dur="4s" repeatCount="indefinite" begin="0.5s"/>
   </circle>
-  
-  <circle cx="1400" cy="300" r="4" fill="#00ADB5" opacity="0.6">
+
+  <circle cx="1400" cy="300" r="4" fill="#ffffff" opacity="0.6">
     <animate attributeName="opacity" values="0.3;0.7;0.3" dur="5s" repeatCount="indefinite" begin="1s"/>
     <animate attributeName="r" values="3;5;3" dur="5s" repeatCount="indefinite" begin="1s"/>
   </circle>
 
-  <circle cx="600" cy="700" r="4" fill="#00ADB5" opacity="0.6">
+  <circle cx="600" cy="700" r="4" fill="#ffffff" opacity="0.6">
     <animate attributeName="opacity" values="0.4;0.8;0.4" dur="3.5s" repeatCount="indefinite" begin="1.5s"/>
     <animate attributeName="r" values="3;5;3" dur="3.5s" repeatCount="indefinite" begin="1.5s"/>
   </circle>
 
-  <circle cx="1600" cy="800" r="4" fill="#00ADB5" opacity="0.6">
+  <circle cx="1600" cy="800" r="4" fill="#ffffff" opacity="0.6">
     <animate attributeName="opacity" values="0.3;0.9;0.3" dur="4.5s" repeatCount="indefinite" begin="2s"/>
     <animate attributeName="r" values="3;6;3" dur="4.5s" repeatCount="indefinite" begin="2s"/>
   </circle>
 
   <!-- Connecting lines with animation -->
-  <line x1="300" y1="200" x2="800" y2="400" stroke="#00ADB5" stroke-width="0.5" opacity="0.3">
+  <line x1="300" y1="200" x2="800" y2="400" stroke="#ffffff" stroke-width="0.5" opacity="0.3">
     <animate attributeName="opacity" values="0.1;0.4;0.1" dur="3s" repeatCount="indefinite"/>
   </line>
-  
-  <line x1="800" y1="400" x2="1400" y2="300" stroke="#00ADB5" stroke-width="0.5" opacity="0.3">
+
+  <line x1="800" y1="400" x2="1400" y2="300" stroke="#ffffff" stroke-width="0.5" opacity="0.3">
     <animate attributeName="opacity" values="0.1;0.5;0.1" dur="4s" repeatCount="indefinite" begin="0.5s"/>
   </line>
 
-  <line x1="600" y1="700" x2="800" y2="400" stroke="#00ADB5" stroke-width="0.5" opacity="0.3">
+  <line x1="600" y1="700" x2="800" y2="400" stroke="#ffffff" stroke-width="0.5" opacity="0.3">
     <animate attributeName="opacity" values="0.1;0.4;0.1" dur="3.5s" repeatCount="indefinite" begin="1s"/>
   </line>
 
-  <line x1="1400" y1="300" x2="1600" y2="800" stroke="#00ADB5" stroke-width="0.5" opacity="0.3">
+  <line x1="1400" y1="300" x2="1600" y2="800" stroke="#ffffff" stroke-width="0.5" opacity="0.3">
     <animate attributeName="opacity" values="0.1;0.5;0.1" dur="4.5s" repeatCount="indefinite" begin="1.5s"/>
   </line>
 
   <!-- Floating particles -->
   <g opacity="0.4">
-    <circle cx="200" cy="150" r="2" fill="#00ADB5">
+    <circle cx="200" cy="150" r="2" fill="#ffffff">
       <animate attributeName="cy" values="150;850;150" dur="20s" repeatCount="indefinite"/>
       <animate attributeName="opacity" values="0;0.6;0" dur="20s" repeatCount="indefinite"/>
     </circle>
-    
-    <circle cx="500" cy="100" r="2" fill="#00ADB5">
+
+    <circle cx="500" cy="100" r="2" fill="#ffffff">
       <animate attributeName="cy" values="100;900;100" dur="25s" repeatCount="indefinite"/>
       <animate attributeName="opacity" values="0;0.5;0" dur="25s" repeatCount="indefinite"/>
     </circle>
-    
-    <circle cx="1200" cy="50" r="2" fill="#00ADB5">
+
+    <circle cx="1200" cy="50" r="2" fill="#ffffff">
       <animate attributeName="cy" values="50;950;50" dur="30s" repeatCount="indefinite"/>
       <animate attributeName="opacity" values="0;0.7;0" dur="30s" repeatCount="indefinite"/>
     </circle>
 
-    <circle cx="1700" cy="200" r="2" fill="#00ADB5">
+    <circle cx="1700" cy="200" r="2" fill="#ffffff">
       <animate attributeName="cy" values="200;1000;200" dur="22s" repeatCount="indefinite"/>
       <animate attributeName="opacity" values="0;0.5;0" dur="22s" repeatCount="indefinite"/>
     </circle>
   </g>
 
   <!-- Electrical circuit patterns -->
-  <g opacity="0.2" stroke="#393E46" stroke-width="1" fill="none">
+  <g opacity="0.2" stroke="#ffffff" stroke-width="1" fill="none">
     <!-- Horizontal lines -->
     <line x1="100" y1="250" x2="400" y2="250">
       <animate attributeName="x2" values="100;400;100" dur="8s" repeatCount="indefinite"/>
@@ -124,7 +124,7 @@
   </circle>
 
   <!-- Tech grid pattern -->
-  <g opacity="0.05" stroke="#00ADB5" stroke-width="0.5">
+  <g opacity="0.05" stroke="#ffffff" stroke-width="0.5">
     <line x1="0" y1="270" x2="1920" y2="270"/>
     <line x1="0" y1="540" x2="1920" y2="540"/>
     <line x1="0" y1="810" x2="1920" y2="810"/>
@@ -134,16 +134,16 @@
   </g>
 
   <!-- Pulse wave effect -->
-  <path d="M 0,540 Q 240,440 480,540 T 960,540 T 1440,540 T 1920,540" 
-        stroke="#00ADB5" 
-        stroke-width="2" 
-        fill="none" 
+  <path d="M 0,540 Q 240,440 480,540 T 960,540 T 1440,540 T 1920,540"
+        stroke="#ffffff"
+        stroke-width="2"
+        fill="none"
         opacity="0.15">
-    <animate attributeName="d" 
+    <animate attributeName="d"
              values="M 0,540 Q 240,440 480,540 T 960,540 T 1440,540 T 1920,540;
                      M 0,540 Q 240,640 480,540 T 960,540 T 1440,540 T 1920,540;
-                     M 0,540 Q 240,440 480,540 T 960,540 T 1440,540 T 1920,540" 
-             dur="6s" 
+                     M 0,540 Q 240,440 480,540 T 960,540 T 1440,540 T 1920,540"
+             dur="6s"
              repeatCount="indefinite"/>
     <animate attributeName="opacity" values="0.1;0.3;0.1" dur="6s" repeatCount="indefinite"/>
   </path>

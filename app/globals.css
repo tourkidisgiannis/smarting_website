@@ -6,6 +6,7 @@
 
   --font-mono: var(--font-geist-mono);
   --font-poppins: var(--font-poppins);
+  --font-display: var(--font-electrolize);
 
   /* SMARTING.GR Tailwind Color Tokens */
   --color-primary: var(--color-primary-teal);
