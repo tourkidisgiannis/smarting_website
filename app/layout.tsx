@@ -109,9 +109,9 @@ export const metadata: Metadata = {
     "κατασκευή ιστιοσελίδων",
   ],
   icons: {
-    icon: "/images/smarting_android.png",
-    shortcut: "/images/smarting_android.png",
-    apple: "/images/smarting_apple.png",
+    icon: "/favicon.ico",
+    shortcut: "/favicon-16x16.png",
+    apple: "/apple-touch-icon.png",
   },
   openGraph: {
     title:
