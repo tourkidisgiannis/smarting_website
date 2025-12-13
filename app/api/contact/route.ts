@@ -55,16 +55,16 @@ export async function POST(req: Request) {
     const businessMailOptions = {
       from: `"Smarting.gr Contact" <${SMTP_USER}>`,
       to: CONTACT_EMAIL || SMTP_USER,
-      subject: `New Contact Request: ${service} from ${name}`,
+      subject: `Νέο μύνημα ενδιαφέροντος: ${service} from ${name}`,
       text: `
-        New Contact Request from Smarting.gr
+        Νέο Μύνημα από Smarting.gr
 
-        Name: ${name}
+        Όνομα: ${name}
         Email: ${email}
-        Phone: ${phone}
-        Service Interest: ${service}
+        Τηλέφωνο: ${phone}
+        Υπηρεσία Ενδιαφέροντος: ${service}
         
-        Message:
+        Μύνημα:
         ${message}
       `,
       html: `
@@ -104,7 +104,7 @@ export async function POST(req: Request) {
 
       <div style="padding: 24px;">
         <div style="margin-bottom: 12px;">
-          <strong style="color: #374151;">Name:</strong>
+          <strong style="color: #374151;">Όνομα:</strong>
           <span style="color: #111827;"> ${name}</span>
         </div>
 
@@ -114,12 +114,12 @@ export async function POST(req: Request) {
         </div>
 
         <div style="margin-bottom: 12px;">
-          <strong style="color: #374151;">Phone:</strong>
+          <strong style="color: #374151;">Τηλέφωνο:</strong>
           <span style="color: #111827;"> ${phone}</span>
         </div>
 
         <div style="margin-bottom: 20px;">
-          <strong style="color: #374151;">Service Interest:</strong>
+          <strong style="color: #374151;">Υπηρεσία Ενδιαφέροντος:</strong>
           <span style="color: #111827;"> ${service}</span>
         </div>
 
