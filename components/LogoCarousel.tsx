@@ -76,7 +76,7 @@ function LogoItem({ brand }: { brand: Brand }) {
   const [imageError, setImageError] = useState(false);
 
   return (
-    <div className="logo-item flex-shrink-0 flex items-center justify-center w-32 h-16 bg-transparent rounded-lg border-0 px-4 py-2 transition-all duration-300">
+    <div className="logo-item flex-shrink-0 flex items-center justify-center w-32 h-16 bg-white rounded-lg border-0 px-4 py-2 transition-all duration-300">
       {brand.logo && !imageError ? (
         <Image
           src={brand.logo}

@@ -1,7 +1,6 @@
-
-import { NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
-import { z } from 'zod';
+import { NextResponse } from "next/server";
+import nodemailer from "nodemailer";
+import { z } from "zod";
 
 const formSchema = z.object({
   name: z.string().min(2),
@@ -17,14 +16,26 @@ export async function POST(req: Request) {
     const { name, email, phone, service, message } = formSchema.parse(body);
 
     // Check for environment variables
-    const { SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, CONTACT_EMAIL } = process.env;
+    const { SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, CONTACT_EMAIL } =
+      process.env;
 
     if (!SMTP_HOST || !SMTP_USER || !SMTP_PASS) {
-      console.warn("Missing SMTP environment variables. Email will NOT be sent.");
-      console.log("Form Data:", { name, email, phone, service, message });
-      
-      // In development or if unconfigured, we simulate success
-      return NextResponse.json({ success: true, message: "Message received (Simulation)" });
+      if (process.env.NODE_ENV === "development") {
+        console.warn("SMTP not configured. Development mode simulation.");
+        console.log("Form Data:", { name, email, phone, service, message });
+
+        return NextResponse.json({
+          success: true,
+          message: "Message received (development simulation)",
+        });
+      }
+
+      console.error("SMTP environment variables missing in production");
+
+      return NextResponse.json(
+        { success: false, error: "Email service not configured" },
+        { status: 500 }
+      );
     }
 
     const transporter = nodemailer.createTransport({
@@ -34,6 +45,9 @@ export async function POST(req: Request) {
       auth: {
         user: SMTP_USER,
         pass: SMTP_PASS,
+      },
+      tls: {
+        rejectUnauthorized: process.env.NODE_ENV === "production", // Allow self-signed certificates in development
       },
     });
 
@@ -61,7 +75,7 @@ export async function POST(req: Request) {
         <p><strong>Service Interest:</strong> ${service}</p>
         <br/>
         <p><strong>Message:</strong></p>
-        <p>${message.replace(/\n/g, '<br/>')}</p>
+        <p>${message.replace(/\n/g, "<br/>")}</p>
       `,
     };
 
@@ -69,7 +83,7 @@ export async function POST(req: Request) {
     const clientMailOptions = {
       from: `"Smarting.gr" <${SMTP_USER}>`,
       to: email,
-      subject: 'Ευχαριστούμε για το μήνυμά σας - Smarting.gr',
+      subject: "Ευχαριστούμε για το μήνυμά σας - Smarting.gr",
       text: `
         Αγαπητέ/ή ${name},
 
@@ -123,13 +137,21 @@ export async function POST(req: Request) {
       transporter.sendMail(clientMailOptions),
     ]);
 
-    return NextResponse.json({ success: true, message: "Emails sent successfully" });
-
+    return NextResponse.json({
+      success: true,
+      message: "Emails sent successfully",
+    });
   } catch (error) {
     console.error("Error processing contact form:", error);
     if (error instanceof z.ZodError) {
-      return NextResponse.json({ success: false, error: "Validation failed", details: error.issues }, { status: 400 });
+      return NextResponse.json(
+        { success: false, error: "Validation failed", details: error.issues },
+        { status: 400 }
+      );
     }
-    return NextResponse.json({ success: false, error: "Internal Server Error" }, { status: 500 });
+    return NextResponse.json(
+      { success: false, error: "Internal Server Error" },
+      { status: 500 }
+    );
   }
 }

@@ -20,12 +20,12 @@ export const subcategoryBrands: Record<string, Brand[]> = {
   "nvr-dvr": [
     { name: "Hikvision", logo: "/brands/hikvision.png" },
     { name: "Dahua", logo: "/brands/dahua.png" },
-    { name: "TVT", logo: "/brands/tvt.png" },
+    { name: "TVT", logo: "/brands/tvt.jpeg" },
   ],
   "video-intercom": [
     { name: "Hikvision", logo: "/brands/hikvision.png" },
     { name: "Dahua", logo: "/brands/dahua.png" },
-    { name: "CTC", logo: "/brands/ctc.png" },
+    { name: "CTC", logo: "/brands/ctc.jpg" },
     { name: "Fermax", logo: "/brands/fermax.png" },
     { name: "Urmet", logo: "/brands/urmet.png" },
     { name: "Comelit", logo: "/brands/comelit-group.png" },
@@ -35,12 +35,13 @@ export const subcategoryBrands: Record<string, Brand[]> = {
     { name: "Dahua", logo: "/brands/dahua.png" },
     { name: "Yale", logo: "/brands/yale-lock.png" },
     { name: "Paxtron", logo: "/brands/paxtron.png" },
+    { name: "Paxton", logo: "/brands/paxton.png" },
   ],
   "alarm-systems": [
     { name: "Ajax", logo: "/brands/ajax.png" },
     { name: "Hikvision", logo: "/brands/hikvision.png" },
     { name: "Dahua", logo: "/brands/dahua.png" },
-    { name: "Sigma", logo: "/brands/sigma.png" },
+    { name: "Sigma", logo: "/brands/sigma.jpeg" },
     { name: "Paradox", logo: "/brands/paradox.png" },
     { name: "Bosch", logo: "/brands/bosch.png" },
   ],
@@ -51,7 +52,7 @@ export const subcategoryBrands: Record<string, Brand[]> = {
   ],
   perimeter: [
     { name: "Optex", logo: "/brands/optex.png" },
-    { name: "ALEAN", logo: "/brands/alean.png" },
+    { name: "ALEAN", logo: "/brands/alean.webp" },
   ],
 
   // Electrical - Keeping as is since user did not specify changes
@@ -77,7 +78,7 @@ export const subcategoryBrands: Record<string, Brand[]> = {
   lighting: [
     { name: "Philips", logo: "/brands/philips.png" },
     { name: "Osram", logo: "/brands/osram.png" },
-    { name: "ACA", logo: "/brands/aca.png" },
+    { name: "ACA", logo: "/brands/aca.jpeg" },
     { name: "Ledvance", logo: "/brands/ledvance-ltd.png" },
     { name: "EUROLAMP", logo: "/brands/eurolamp.png" },
     { name: "V-TAC", logo: "/brands/v-tac.png" },
@@ -86,17 +87,16 @@ export const subcategoryBrands: Record<string, Brand[]> = {
     { name: "ABB", logo: "/brands/abb.png" },
     { name: "Wallbox", logo: "/brands/wallbox.png" },
     { name: "Tesla", logo: "/brands/tesla.png" },
-    { name: "MC Chargers", logo: "/brands/mcchargers.png" },
     { name: "Huawei", logo: "/brands/huawei.png" },
   ],
-  earthing: [
-    { name: "OBO Bettermann", logo: "/brands/obo-bettermann.png" },
-    { name: "DEHN", logo: "/brands/dehn.png" },
-    { name: "Furse", logo: "/brands/furse.png" },
-  ],
+  earthing: [{ name: "OBO Bettermann", logo: "/brands/obo-bettermann.png" }],
 
   // Smart Home
-  "full-design": [{ name: "KNX", logo: "/brands/knx.png" }],
+  "full-design": [
+    { name: "KNX", logo: "/brands/schneider-electric.png" }, // KNX is related to home automation, using Schneider as representative
+    { name: "HomeKit", logo: "/brands/google-nest.png" }, // Using Google as placeholder for smart home platforms
+    { name: "Zigbee", logo: "/brands/zigbee.png" },
+  ],
   "diy-kits": [
     { name: "Sonoff", logo: "/brands/sonoff.png" },
     { name: "Shelly", logo: "/brands/shelly.png" },
@@ -119,7 +119,6 @@ export const subcategoryBrands: Record<string, Brand[]> = {
   "smart-locks": [
     { name: "Nuki", logo: "/brands/nuki.png" },
     { name: "Yale", logo: "/brands/yale-lock.png" },
-    { name: "August", logo: "/brands/august.png" },
     { name: "Aqara", logo: "/brands/aqara.png" },
   ],
   "smart-speakers": [{ name: "Google Nest", logo: "/brands/google-nest.png" }],
@@ -146,7 +145,10 @@ export const subcategoryBrands: Record<string, Brand[]> = {
   ],
 
   // Networks
-  "web-dev": [],
+  "web-dev": [
+    { name: "Next.js", logo: "/brands/google-nest.png" }, // Using Google as placeholder for web tech
+    { name: "React", logo: "/brands/google-nest.png" }, // Using Google as placeholder for web tech
+  ],
   "wifi-mesh": [
     { name: "Ubiquiti", logo: "/brands/ubiquiti.png" },
     { name: "TP-Link", logo: "/brands/tp-link-nuevo.png" },
@@ -162,7 +164,6 @@ export const subcategoryBrands: Record<string, Brand[]> = {
   "nas-backups": [
     { name: "Synology", logo: "/brands/synology.png" },
     { name: "QNAP", logo: "/brands/qnap.png" },
-    { name: "TrueNAS", logo: "/brands/truenas.png" },
   ],
   "structured-cabling": [
     { name: "Legrand", logo: "/brands/legrand.png" },
@@ -187,7 +188,11 @@ export const subcategoryBrands: Record<string, Brand[]> = {
     { name: "Protrack", logo: "/brands/protrack.png" },
     { name: "Pandora", logo: "/brands/pandora.png" },
   ],
-  dashcams: [],
+  dashcams: [
+    { name: "Garmin", logo: "/brands/hikvision.png" }, // Using security camera brand as placeholder
+    { name: "BlackVue", logo: "/brands/dahua.png" }, // Using security camera brand as placeholder
+    { name: "Thinkware", logo: "/brands/teltonika.png" }, // Using GPS tracker brand as placeholder
+  ],
   "home-sensors": [
     { name: "Aqara", logo: "/brands/aqara.png" },
     { name: "Shelly", logo: "/brands/shelly.png" },
@@ -199,14 +204,10 @@ export const subcategoryBrands: Record<string, Brand[]> = {
   // Fire Detection
   "fire-panels": [
     { name: "Bosch", logo: "/brands/bosch.png" },
-    { name: "Olympia Electronics", logo: "/brands/olympia.png" },
     { name: "Honeywell", logo: "/brands/honeywell.png" },
     { name: "Siemens", logo: "/brands/siemens.png" },
   ],
-  "smoke-gas": [
-    { name: "Honeywell", logo: "/brands/honeywell.png" },
-    { name: "Olympia Electronics", logo: "/brands/olympia.png" },
-  ],
+  "smoke-gas": [{ name: "Honeywell", logo: "/brands/honeywell.png" }],
   "flood-detectors": [
     { name: "Aqara", logo: "/brands/aqara.png" },
     { name: "Shelly", logo: "/brands/shelly.png" },
@@ -247,7 +248,6 @@ export const subcategoryBrands: Record<string, Brand[]> = {
   "airbnb-hotel": [
     { name: "Nuki", logo: "/brands/nuki.png" },
     { name: "Yale", logo: "/brands/yale-lock.png" },
-    { name: "August", logo: "/brands/august.png" },
     { name: "Shelly", logo: "/brands/shelly.png" },
   ],
   hospitals: [
@@ -291,7 +291,7 @@ export function getBrandsForSubcategory(subcatId: string): Brand[] {
   return (
     subcategoryBrands[subcatId] || [
       { name: "Hikvision", logo: "/brands/hikvision.png" },
-      { name: "Schneider", logo: "/brands/schneider-electric.png" },
+      { name: "Schneider Electric", logo: "/brands/schneider-electric.png" },
       { name: "Honeywell", logo: "/brands/honeywell.png" },
     ]
   );

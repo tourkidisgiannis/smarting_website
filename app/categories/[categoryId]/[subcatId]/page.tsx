@@ -39,11 +39,11 @@ export async function generateMetadata({ params }: SubcategoryPageProps): Promis
   }
   
   return {
-    title: `${sub.title} | ${category.title} – SMARTING.GR`,
-    description: sub.description,
+    title: `${sub.title} - ${category.title} στη Θεσσαλονίκη | Εγκατάσταση & Συντήρηση SMARTING.GR`,
+    description: `${sub.description} - Εξειδικευμένες υπηρεσίες ${sub.title} στη Θεσσαλονίκη και περιοχές. Προσφέρουμε εγκατάσταση, συντήρηση και υποστήριξη με εγγύηση ποιότητας. Επικοινωνήστε με εμάς για δωρεάν προσφορά.`,
     openGraph: {
-      title: `${sub.title} | ${category.title} – SMARTING.GR`,
-      description: sub.description,
+      title: `${sub.title} - ${category.title} στη Θεσσαλονίκη | Εγκατάσταση & Συντήρηση SMARTING.GR`,
+      description: `${sub.description} - Εξειδικευμένες υπηρεσίες ${sub.title} στη Θεσσαλονίκη και περιοχές. Προσφέρουμε εγκατάσταση, συντήρηση και υποστήριξη με εγγύηση ποιότητας.`,
       images: [{ url: sub.image, width: 1200, height: 1200, alt: sub.title }],
       type: 'article',
     },

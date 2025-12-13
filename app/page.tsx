@@ -12,6 +12,7 @@ import { CTASection } from "@/components/sections/CTASection";
 
 gsap.registerPlugin(ScrollTrigger);
 
+
 export default function HomePage() {
   const pageRef = useRef<HTMLDivElement>(null);
 
