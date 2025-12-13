@@ -68,15 +68,94 @@ export async function POST(req: Request) {
         ${message}
       `,
       html: `
-        <h2>New Contact Request from Smarting.gr</h2>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Phone:</strong> ${phone}</p>
-        <p><strong>Service Interest:</strong> ${service}</p>
-        <br/>
-        <p><strong>Message:</strong></p>
-        <p>${message.replace(/\n/g, "<br/>")}</p>
-      `,
+  <div style="
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+    background-color: #f4f6f8;
+    padding: 24px;
+  ">
+    <div style="
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      overflow: hidden;
+    ">
+      <div style="
+        background: linear-gradient(135deg, #2563eb, #1e40af);
+        padding: 20px 24px;
+      ">
+        <h2 style="
+          margin: 0;
+          color: #ffffff;
+          font-size: 20px;
+          font-weight: 600;
+        ">
+          New Contact Request
+        </h2>
+        <p style="
+          margin: 4px 0 0;
+          color: #dbeafe;
+          font-size: 14px;
+        ">
+          Smarting.gr
+        </p>
+      </div>
+
+      <div style="padding: 24px;">
+        <div style="margin-bottom: 12px;">
+          <strong style="color: #374151;">Name:</strong>
+          <span style="color: #111827;"> ${name}</span>
+        </div>
+
+        <div style="margin-bottom: 12px;">
+          <strong style="color: #374151;">Email:</strong>
+          <span style="color: #111827;"> ${email}</span>
+        </div>
+
+        <div style="margin-bottom: 12px;">
+          <strong style="color: #374151;">Phone:</strong>
+          <span style="color: #111827;"> ${phone}</span>
+        </div>
+
+        <div style="margin-bottom: 20px;">
+          <strong style="color: #374151;">Service Interest:</strong>
+          <span style="color: #111827;"> ${service}</span>
+        </div>
+
+        <div style="
+          border-top: 1px solid #e5e7eb;
+          padding-top: 16px;
+        ">
+          <p style="
+            margin: 0 0 8px;
+            font-weight: 600;
+            color: #374151;
+          ">
+            Message
+          </p>
+          <p style="
+            margin: 0;
+            color: #111827;
+            line-height: 1.6;
+            white-space: normal;
+          ">
+            ${message.replace(/\n/g, "<br/>")}
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <p style="
+      text-align: center;
+      margin-top: 16px;
+      font-size: 12px;
+      color: #6b7280;
+    ">
+      This email was generated automatically from Smarting.gr
+    </p>
+  </div>
+`,
     };
 
     // Confirmation email to client
