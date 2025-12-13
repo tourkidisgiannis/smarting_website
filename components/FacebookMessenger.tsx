@@ -19,11 +19,10 @@ export function FacebookMessenger() {
         data-attribution="setup_tool"
       ></div>
       <Script
-        src={`https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js#xfbml=1&version=v19.0&appId=${process.env.NEXT_PUBLIC_FACEBOOK_APP_ID || ''}`}
-        strategy="lazyOnload"
+        src={`https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js`}
+        strategy="afterInteractive"
         crossOrigin="anonymous"
-        async
-        defer
+        id="facebook-jssdk"
       />
     </>
   );
