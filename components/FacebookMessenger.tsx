@@ -3,35 +3,35 @@
 import Script from "next/script";
 
 export function FacebookMessenger() {
+  // Only render if FACEBOOK_PAGE_ID is defined
+  if (!process.env.FACEBOOK_PAGE_ID) {
+    return null;
+  }
+
+  // Check if we have both page ID and app ID (app ID is optional but may be needed for some features)
+  const fbAppId = process.env.FACEBOOK_APP_ID || '';
+  const fbPageId = process.env.FACEBOOK_PAGE_ID;
+
+  // Build the script URL - include appId if available
+  const fbScriptUrl = fbAppId
+    ? `https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js#xfbml=1&version=v19.0&appId=${fbAppId}`
+    : `https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js#xfbml=1&version=v19.0`;
+
   return (
     <>
       <div id="fb-root"></div>
-      <div id="fb-customer-chat" className="fb-customerchat"></div>
+      <div
+        className="fb-customerchat"
+        data-page_id={fbPageId}
+        data-attribution="setup_tool"
+      >
+      </div>
       <Script
-        id="messenger-tag"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `
-            var chatbox = document.getElementById('fb-customer-chat');
-            chatbox.setAttribute("page_id", "${process.env.FACEBOOK_PAGE_ID}");
-            chatbox.setAttribute("attribution", "biz_inbox");
-
-            window.fbAsyncInit = function() {
-              FB.init({
-                xfbml            : true,
-                version          : 'v19.0'
-              });
-            };
-
-            (function(d, s, id) {
-              var js, fjs = d.getElementsByTagName(s)[0];
-              if (d.getElementById(id)) return;
-              js = d.createElement(s); js.id = id;
-              js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
-              fjs.parentNode.insertBefore(js, fjs);
-            }(document, 'script', 'facebook-jssdk'));
-          `,
-        }}
+        src={fbScriptUrl}
+        strategy="lazyOnload"
+        crossOrigin="anonymous"
+        async
+        defer
       />
     </>
   );
