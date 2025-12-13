@@ -4,7 +4,7 @@ import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { StickyCTA } from "@/components/layout/StickyCTA";
-import { FacebookMessenger } from "@/components/FacebookMessenger";
+
 import { Toaster } from "@/components/ui/sonner";
 import { generateLocalBusinessSchema } from "@/lib/schema";
 
@@ -141,6 +141,7 @@ export const metadata: Metadata = {
 };
 
 import { AnimatedBackground } from "@/components/layout/AnimatedBackground";
+import FacebookMessenger from "@/components/FacebookMessenger";
 
 export default function RootLayout({
   children,
