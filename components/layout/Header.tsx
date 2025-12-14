@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { Menu, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetDescription } from "@/components/ui/sheet";
 import businessInfo from "@/app/mocks/business-info.json";
 import Image from "next/image";
 import logo from "@/public/images/smarting_logo_inline.png";
@@ -68,7 +68,7 @@ export function Header() {
 
         {/* Mobile Nav */}
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
-          <SheetTrigger asChild className="lg:hidden">
+          <SheetTrigger asChild  className="lg:hidden">
             <Button variant="ghost" size="icon">
               <Menu className="size-7" />
               <span className="sr-only">Toggle menu</span>
@@ -78,6 +78,9 @@ export function Header() {
             side="right"
             className="w-full sm:w-[400px] bg-background/95 backdrop-blur-xl border-l border-white/10 supports-backdrop-filter:bg-background/80"
           >
+            {/* Visually hidden for accessibility */}
+            <SheetTitle className="sr-only">Μενού πλοήγησης</SheetTitle>
+            <SheetDescription className="sr-only">Κύριο μενού πλοήγησης του ιστότοπου</SheetDescription>
             <nav className="flex flex-col gap-4 mt-8 items-center">
               {navLinks.map((link) => (
                 <Link

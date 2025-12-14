@@ -60,7 +60,7 @@ const config: Config = {
         "neutral-gray": "var(--color-neutral-gray)",
       },
       fontFamily: {
-        'display': 'var(--font-display)',
+        display: "var(--font-display)",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -90,7 +90,6 @@ const config: Config = {
       },
     },
   },
-  // Remove the require() and use ES6 import instead
   plugins: [],
 };
 
