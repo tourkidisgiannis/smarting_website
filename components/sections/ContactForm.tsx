@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
@@ -159,10 +160,10 @@ export function ContactForm() {
             <FormItem>
               <FormLabel>Μήνυμα</FormLabel>
               <FormControl>
-                <Textarea 
-                  placeholder="Περιγράψτε μας τι χρειάζεστε..." 
+                <Textarea
+                  placeholder="Περιγράψτε μας τι χρειάζεστε..."
                   className="min-h-[120px]"
-                  {...field} 
+                  {...field}
                 />
               </FormControl>
               <FormMessage />
@@ -170,6 +171,13 @@ export function ContactForm() {
           )}
         />
 
+        <p className="text-xs text-muted-foreground mt-2">
+          Υποβάλλοντας αυτήν την φόρμα, επιβεβαιώνω ότι έχω λάβει γνώση της{' '}
+          <Link href="/privacy" className="hover-link text-primary">
+            Πολιτικής Απορρήτου
+          </Link>{' '}
+          και συναινώ στην επεξεργασία των προσωπικών μου δεδομένων σύμφωνα με τους όρους που περιγράφονται.
+        </p>
         <Button type="submit" className="w-full" size="lg" disabled={form.formState.isSubmitting}>
           {form.formState.isSubmitting ? 'Αποστολή...' : 'Αποστολή Μηνύματος'}
         </Button>
