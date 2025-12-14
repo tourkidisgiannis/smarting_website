@@ -138,6 +138,9 @@ export const metadata: Metadata = {
     description:
       "Εξειδικευμένος ηλεκτρολόγος στη Θεσσαλονίκη και όλη τη Βόρεια Ελλάδα. Ασύρματα συστήματα Καμερών, συναγερμοί, εγκατάσταση δικτύων, ηλεκτρολογικές εργασίες.",
   },
+  other: {
+    "theme-color": "#4A90A0", // Primary brand teal color
+  },
 };
 
 import { AnimatedBackground } from "@/components/layout/AnimatedBackground";
@@ -153,6 +156,7 @@ export default function RootLayout({
   return (
     <html lang="el">
       <head>
+        <meta name="theme-color" content="#4A90A0" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}

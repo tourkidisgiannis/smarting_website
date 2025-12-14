@@ -84,7 +84,7 @@ export function Header() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="text-lg font-medium text-foreground/80 transition-all duration-200 hover:text-primary py-2 px-3 rounded-lg hover:bg-primary/10 w-full text-center hover:scale-105 active:scale-95"
+                  className="text-lg font-medium text-foreground/80 transition-all duration-200 hover:text-primary py-2 px-3 rounded-lg hover:bg-primary/10 w-full text-center hover:scale-105 active:scale-95 hover:transition-transform hover:duration-200"
                 >
                   {link.label}
                 </Link>
@@ -101,6 +101,7 @@ export function Header() {
                   <a
                     href={`tel:${businessInfo.phone}`}
                     className="flex items-center justify-center gap-2" // Use gap instead of mr-2
+                    onClick={() => setIsOpen(false)}
                   >
                     <Phone className="h-4 w-4" />
                     <p className="mb-0.5">6987341139</p>
@@ -115,6 +116,7 @@ export function Header() {
                   <a
                     href={`tel:${businessInfo.phone}`}
                     className="flex items-center justify-center gap-2" // Use gap instead of mr-2
+                    onClick={() => setIsOpen(false)}
                   >
                     <Phone className="h-4 w-4" />
                     <p className="mb-0.5">2310 781555</p>
@@ -130,7 +132,7 @@ export function Header() {
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => setIsOpen(false)}
-                    className="p-3 rounded-full bg-primary/10 hover:bg-primary/20 transition-colors"
+                    className="p-3 rounded-full bg-primary/10 hover:bg-primary/20 transition-all duration-200 hover:scale-110"
                     aria-label="Επισκεφθείτε τη σελίδα μας στο Facebook"
                   >
                     <svg
@@ -153,7 +155,7 @@ export function Header() {
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => setIsOpen(false)}
-                    className="p-3 rounded-full bg-primary/10 hover:bg-primary/20 transition-colors"
+                    className="p-3 rounded-full bg-primary/10 hover:bg-primary/20 transition-all duration-200 hover:scale-110"
                     aria-label="Ακολουθήστε μας στο Instagram"
                   >
                     <svg
