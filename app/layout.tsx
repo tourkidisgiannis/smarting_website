@@ -109,10 +109,15 @@ export const metadata: Metadata = {
     "κατασκευή ιστιοσελίδων",
   ],
   icons: {
-    icon: "/images/favicon.ico",
-    shortcut: "/images/favicon-16x16.png",
-    apple: "/images/apple-touch-icon.png",
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: "/apple-touch-icon.png",
   },
+  manifest: "/site.webmanifest",
+  themeColor: "#4A90A0",
   openGraph: {
     title:
       "SMARTING.GR - Smart Solutions - Ηλεκτρολόγος Θεσσαλονίκη | CCTV, Συναγερμοί, Ηλεκτρολογικές Εργασίες",

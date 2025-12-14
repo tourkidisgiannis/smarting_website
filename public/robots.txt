@@ -14,7 +14,7 @@ Allow: /
 User-agent: PerplexityBot
 Allow: /
 
-User-agent:anthropic-ai
+User-agent: anthropic-ai
 Allow: /
 
 User-agent: OpenAI
@@ -23,5 +23,3 @@ Allow: /
 # Sitemap
 Sitemap: https://www.smarting.gr/sitemap.xml
 
-# Host directive
-Host: https://www.smarting.gr
