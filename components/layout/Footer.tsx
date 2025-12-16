@@ -4,7 +4,7 @@ import businessInfo from "@/app/mocks/business-info.json";
 
 export function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-card text-card-foreground">
+    <footer className="border-t border-white/10 bg-card text-card-foreground pb-20 md:pb-0">
       <div className="container mx-auto px-4 py-12 md:py-16">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand & Tagline */}
@@ -77,8 +77,8 @@ export function Footer() {
                     d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                   ></path>
                 </svg>
-                <a href={`mailto:${businessInfo.email}`} className="hover-link">
-                  {businessInfo.email}
+                <a href={`mailto:info@smarting.gr`} className="hover-link">
+                  info@smarting.gr
                 </a>
               </li>
               <li className="flex items-center gap-2">
@@ -96,7 +96,9 @@ export function Footer() {
                     d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
                   ></path>
                 </svg>
-                <span>Αριθμός Μητρώου: {businessInfo["business-registry-number"]}</span>
+                <span>
+                  ΑΡΙΘΜΟΣ Γ.Ε.ΜΗ: {businessInfo["business-registry-number"]}
+                </span>
               </li>
             </ul>
           </div>
@@ -123,7 +125,7 @@ export function Footer() {
 
           {/* Links */}
           <div>
-            <h4 className="font-semibold text-white mb-4 font-[family-name:var(--font-poppins)]">
+            <h4 className="font-semibold text-white mb-4 font-poppins">
               Σύνδεσμοι
             </h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
@@ -159,6 +161,9 @@ export function Footer() {
         <div className="mt-12 border-t border-white/10 pt-8 text-center text-xs text-muted-foreground">
           <p>
             &copy; {new Date().getFullYear()} SMARTING.GR. All rights reserved.
+          </p>
+          <p className="mt-2 flex items-center justify-center gap-1.5">
+            made with <span className="text-red-500 animate-pulse">❤️</span> by <Link href="https://web.smarting.gr" target="_blank" rel="noopener noreferrer" className="text-primary font-medium hover:underline">web.smarting.gr</Link>
           </p>
         </div>
       </div>
