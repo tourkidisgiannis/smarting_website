@@ -7,6 +7,7 @@ import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 import type { Category, Subcat } from "@/data/categories";
 import { LogoCarousel } from "@/components/LogoCarousel";
+import { SubcategoryQA } from "@/components/SubcategoryQA";
 
 interface AnimatedSubcategoryContentProps {
   category: Category;
@@ -91,6 +92,17 @@ export function AnimatedSubcategoryContent({
           },
           "-=0.3"
         )
+        // Animate QA section
+        .from(
+          ".anim-qa",
+          {
+            y: 20,
+            opacity: 0,
+            duration: 0.6,
+            ease: "power3.out",
+          },
+          "-=0.3"
+        )
         // Animate related services section
         .from(
           ".anim-related-title",
@@ -119,12 +131,12 @@ export function AnimatedSubcategoryContent({
   }, []);
 
   return (
-    <div ref={containerRef} className="container mx-auto px-4 py-16">
+    <div ref={containerRef} className="container mx-auto px-4 py-16 ">
       <div className="max-w-4xl mx-auto">
         {/* Breadcrumb Navigation */}
         <nav
           aria-label="Breadcrumb"
-          className="flex items-center gap-2 text-sm text-neutralGray mb-8"
+          className="flex items-center gap-2 text-sm text-muted-foreground mb-8"
         >
           <Link href="/" className="breadcrumb-item hover-link">
             Αρχική
@@ -163,7 +175,7 @@ export function AnimatedSubcategoryContent({
                 <h1 className="anim-title text-3xl md:text-4xl font-bold text-foreground mb-6">
                   {sub.title}
                 </h1>
-                <p className="anim-desc text-lg text-neutralGray">
+                <p className="anim-desc text-lg text-foreground/80">
                   {sub.description}
                 </p>
               </header>
@@ -186,12 +198,17 @@ export function AnimatedSubcategoryContent({
             <LogoCarousel subcatId={sub.id} />
           </div>
 
+          {/* Q&A Section */}
+          <section className="anim-qa">
+            <SubcategoryQA subcatId={sub.id} />
+          </section>
+
           {/* CTA Section */}
           <div className="anim-cta bg-card border border-border rounded-xl p-6 md:p-8 mb-12">
             <h2 className="text-xl font-semibold text-foreground mb-2">
               Ενδιαφέρεστε για αυτή την υπηρεσία;
             </h2>
-            <p className="text-neutralGray mb-4">
+            <p className="text-muted-foreground mb-4">
               Επικοινωνήστε μαζί μας για δωρεάν εκτίμηση και προσφορά.
             </p>
             <div className="flex flex-wrap gap-4">
@@ -230,7 +247,7 @@ export function AnimatedSubcategoryContent({
                   <h3 className="font-medium text-foreground group-hover:text-primary transition-colors mb-1">
                     {related.title}
                   </h3>
-                  <p className="text-sm text-neutralGray line-clamp-2">
+                  <p className="text-sm text-muted-foreground line-clamp-2">
                     {related.description}
                   </p>
                 </Link>

@@ -83,7 +83,7 @@ function LogoItem({ brand }: { brand: Brand }) {
           alt={brand.name}
           width={100}
           height={32}
-          className="max-h-8 max-w-full object-contain"
+          className="max-h-8 max-w-full object-contain w-auto h-auto"
           onError={() => setImageError(true)}
           unoptimized // For SVG files
         />

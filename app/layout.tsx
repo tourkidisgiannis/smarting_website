@@ -117,7 +117,6 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
   manifest: "/site.webmanifest",
-  themeColor: "#4A90A0",
   openGraph: {
     title:
       "SMARTING.GR - Smart Solutions - Ηλεκτρολόγος Θεσσαλονίκη | CCTV, Συναγερμοί, Ηλεκτρολογικές Εργασίες",
@@ -148,8 +147,11 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport = {
+  themeColor: "#4A90A0",
+};
+
 import { AnimatedBackground } from "@/components/layout/AnimatedBackground";
-import FacebookMessenger from "@/components/FacebookMessenger";
 
 export default function RootLayout({
   children,
@@ -175,7 +177,7 @@ export default function RootLayout({
         <main className="min-h-screen pb-20 md:pb-0">{children}</main>
         <Footer />
         <StickyCTA />
-        <FacebookMessenger />
+        {/* <FacebookMessenger /> */}
         <Toaster />
       </body>
     </html>
