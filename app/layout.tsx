@@ -7,6 +7,7 @@ import { StickyCTA } from "@/components/layout/StickyCTA";
 
 import { Toaster } from "@/components/ui/sonner";
 import { generateLocalBusinessSchema } from "@/lib/schema";
+import { Analytics } from "@vercel/analytics/next";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -174,7 +175,10 @@ export default function RootLayout({
       >
         <AnimatedBackground />
         <Header />
-        <main className="min-h-screen pb-20 md:pb-0">{children}</main>
+        <main className="min-h-screen pb-20 md:pb-0">
+          {children}
+          <Analytics />
+        </main>
         <Footer />
         <StickyCTA />
         {/* <FacebookMessenger /> */}
