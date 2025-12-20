@@ -146,8 +146,12 @@ export const subcategoryBrands: Record<string, Brand[]> = {
 
   // Networks
   "web-dev": [
-    { name: "Next.js", logo: "/brands/google-nest.png" }, // Using Google as placeholder for web tech
-    { name: "React", logo: "/brands/google-nest.png" }, // Using Google as placeholder for web tech
+    { name: "HTML", logo: "/brands/html5.png" },
+    { name: "CSS", logo: "/brands/css3.png" },
+    { name: "JS", logo: "/brands/js.png" },
+    { name: "NodeJs", logo: "/brands/node-js.png" },
+    { name: "Next.js", logo: "/brands/next-js.png" },
+    { name: "React", logo: "/brands/react-native.png" },
   ],
   "wifi-mesh": [
     { name: "Ubiquiti", logo: "/brands/ubiquiti.png" },
