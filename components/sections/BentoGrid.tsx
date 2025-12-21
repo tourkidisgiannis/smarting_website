@@ -92,8 +92,8 @@ export function BentoGrid() {
                   spanClasses
                 )}
                 onClick={() => {
-                  // Redirect to categories page on click (especially for mobile)
-                  window.location.href = "/categories";
+                  // Redirect to category page on click (especially for mobile)
+                  window.location.href = `/services/${category.id}`;
                 }}
               >
                 {/* Default State Content */}
@@ -137,7 +137,7 @@ export function BentoGrid() {
                     {category.subcategories.map((sub) => (
                       <Link
                         key={sub.id}
-                        href={`/categories/${category.id}/${sub.id}`}
+                        href={`/services/${category.id}/${sub.id}`}
                         className="block group/link"
                       >
                         <div className="flex items-center justify-between text-sm py-1.5 px-2 rounded-lg hover:bg-white/5 text-zinc-300 hover:text-primary transition-colors">
@@ -150,7 +150,7 @@ export function BentoGrid() {
 
                   <div className="mt-4 pt-2 border-t border-white/10 text-center shrink-0">
                     <Link
-                      href="/categories"
+                      href={`/services/${category.id}`}
                       className="text-xs text-foreground/80 group-hover:text-primary transition-colors hover:underline"
                     >
                       Δείτε περισσότερα

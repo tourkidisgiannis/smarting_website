@@ -1,16 +1,17 @@
-'use client';
+"use client";
 
-import { useRef, useEffect } from 'react';
-import Link from 'next/link';
-import { ChevronRight } from 'lucide-react';
-import { gsap } from 'gsap';
+import { useRef } from "react";
+import Link from "next/link";
+import { ChevronRight } from "lucide-react";
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { categories, type Category } from '@/data/categories';
+import { categories, type Category } from "@/data/categories";
 
 interface CategoryAccordionProps {
   category: Category;
@@ -19,21 +20,15 @@ interface CategoryAccordionProps {
 function StaggeredList({ children }: { children: React.ReactNode }) {
   const listRef = useRef<HTMLUListElement>(null);
 
-  useEffect(() => {
-    if (!listRef.current) return;
-    
-    const ctx = gsap.context(() => {
-      gsap.from(listRef.current!.children, {
-        y: 10,
-        opacity: 0,
-        duration: 0.3,
-        stagger: 0.05,
-        ease: 'power2.out',
-        delay: 0.1 // Wait for accordion to start opening
-      });
-    }, listRef);
-
-    return () => ctx.revert();
+  useGSAP(() => {
+    gsap.from(listRef.current!.children, {
+      y: 10,
+      opacity: 0,
+      duration: 0.3,
+      stagger: 0.05,
+      ease: "power2.out",
+      delay: 0.1, // Wait for accordion to start opening
+    });
   }, []);
 
   return (
@@ -46,21 +41,26 @@ function StaggeredList({ children }: { children: React.ReactNode }) {
 export function CategoryAccordion({ category }: CategoryAccordionProps) {
   return (
     <Accordion type="single" collapsible className="w-full">
-      <AccordionItem value={category.id} className="border border-border rounded-lg overflow-hidden">
-        <AccordionTrigger 
-          className="px-4 py-4 hover:bg-muted/50 hover:no-underline [&[data-state=open]>svg]:rotate-180"
-        >
+      <AccordionItem
+        value={category.id}
+        className="border border-border rounded-lg overflow-hidden"
+      >
+        <AccordionTrigger className="px-4 py-4 hover:bg-muted/50 hover:no-underline [&[data-state=open]>svg]:rotate-180">
           <span className="text-lg font-medium text-card-foreground transition-colors">
             {category.title}
           </span>
         </AccordionTrigger>
         <AccordionContent>
-          <div className="px-4 pb-4 pt-2" role="region" aria-label={`${category.title} subcategories`}>
+          <div
+            className="px-4 pb-4 pt-2"
+            role="region"
+            aria-label={`${category.title} subcategories`}
+          >
             <StaggeredList>
               {category.subcategories.map((sub) => (
                 <li key={sub.id}>
                   <Link
-                    href={`/categories/${category.id}/${sub.id}`}
+                    href={`/services/${category.id}/${sub.id}`}
                     className="subcat-link hover-link text-sm text-muted-foreground"
                   >
                     {sub.title}
@@ -75,19 +75,23 @@ export function CategoryAccordion({ category }: CategoryAccordionProps) {
   );
 }
 
+interface CategoriesAccordionProps {
+  initialCategories?: Category[];
+}
+
 // Full Categories Accordion - all categories in one accordion group
-export function CategoriesAccordion() {
+export function CategoriesAccordion({ initialCategories }: CategoriesAccordionProps = {}) {
+  const categoriesToDisplay = initialCategories || categories;
+
   return (
     <Accordion type="multiple" className="w-full space-y-4">
-      {categories.map((category) => (
+      {categoriesToDisplay.map((category) => (
         <AccordionItem
           key={category.id}
           value={category.id}
           className="border border-border rounded-lg overflow-hidden bg-card accordion-item"
         >
-          <AccordionTrigger 
-            className="px-5 py-4 hover:bg-muted/50 hover:no-underline [&[data-state=open]>svg]:rotate-180"
-          >
+          <AccordionTrigger className="px-5 py-4 hover:bg-muted/50 hover:no-underline [&[data-state=open]>svg]:rotate-180">
             <span className="text-lg font-semibold text-card-foreground transition-colors">
               {category.title}
             </span>
@@ -98,10 +102,13 @@ export function CategoriesAccordion() {
                 {category.subcategories.map((sub) => (
                   <li key={sub.id}>
                     <Link
-                      href={`/categories/${category.id}/${sub.id}`}
+                      href={`/services/${category.id}/${sub.id}`}
                       className="subcat-link hover-link text-sm text-foreground/80 flex items-center gap-2"
                     >
-                      <ChevronRight className="h-3 w-3 text-primary/60" aria-hidden="true" />
+                      <ChevronRight
+                        className="h-3 w-3 text-primary/60"
+                        aria-hidden="true"
+                      />
                       {sub.title}
                     </Link>
                   </li>

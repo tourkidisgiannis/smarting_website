@@ -130,7 +130,7 @@ export function Footer() {
             </h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
-                <Link href="/categories" className="hover-link">
+                <Link href="/services" className="hover-link">
                   Υπηρεσίες
                 </Link>
               </li>
@@ -163,7 +163,15 @@ export function Footer() {
             &copy; {new Date().getFullYear()} SMARTING.GR. All rights reserved.
           </p>
           <p className="mt-2 flex items-center justify-center gap-1.5">
-            made with <span className="text-red-500 animate-pulse">❤️</span> by <Link href="https://web.smarting.gr" target="_blank" rel="noopener noreferrer" className="text-primary font-medium hover:underline">web.smarting.gr</Link>
+            made with <span className="text-red-500 animate-pulse">❤️</span> by{" "}
+            <Link
+              href="https://web.smarting.gr"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary font-medium hover:underline"
+            >
+              web.smarting.gr
+            </Link>
           </p>
         </div>
       </div>

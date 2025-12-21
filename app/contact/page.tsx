@@ -1,7 +1,10 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+
 import { ContactForm } from "@/components/sections/ContactForm";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Phone, MapPin } from "lucide-react";
@@ -9,37 +12,88 @@ import { Button } from "@/components/ui/button";
 import businessInfo from "@/app/mocks/business-info.json";
 import Link from "next/link";
 
+gsap.registerPlugin(ScrollTrigger);
+
 export default function ContactPage() {
   const containerRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      const tl = gsap.timeline();
+  useGSAP(
+    (context) => {
+      const prefersReducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      ).matches;
 
-      tl.from(".anim-header", {
-        y: 30,
+      const q = context.selector;
+
+      if (prefersReducedMotion) {
+        gsap.set(q!("[data-anim]"), {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+        });
+        return;
+      }
+
+      /* Header */
+      gsap.from(q!(".anim-header"), {
         opacity: 0,
-        duration: 0.8,
-        ease: "power3.out",
-      }).from(
-        ".anim-card",
-        {
-          y: 30,
-          opacity: 0,
-          duration: 0.8,
-          stagger: 0.2,
-          ease: "power3.out",
-        },
-        "-=0.5"
-      );
-    }, containerRef);
+        y: 40,
+        filter: "blur(6px)",
+        duration: 1,
+        ease: "power4.out",
+        clearProps: "filter",
+      });
 
-    return () => ctx.revert();
-  }, []);
+      /* Cards reveal */
+      gsap.from(q!(".anim-card"), {
+        scrollTrigger: {
+          trigger: q!(".cards-wrapper"),
+          start: "top 75%",
+        },
+        opacity: 0,
+        y: 30,
+        scale: 0.96,
+        stagger: 0.15,
+        duration: 0.9,
+        ease: "power3.out",
+      });
+
+      /* Hover micro-interactions */
+      gsap.utils.toArray<HTMLElement>(q!(".anim-card")).forEach((card) => {
+        gsap.set(card, { transformPerspective: 1000 });
+
+        const hoverIn = () =>
+          gsap.to(card, {
+            y: -6,
+            scale: 1.01,
+            duration: 0.25,
+            ease: "power2.out",
+          });
+
+        const hoverOut = () =>
+          gsap.to(card, {
+            y: 0,
+            scale: 1,
+            duration: 0.25,
+            ease: "power2.out",
+          });
+
+        card.addEventListener("mouseenter", hoverIn);
+        card.addEventListener("mouseleave", hoverOut);
+
+        context.add(() => {
+          card.removeEventListener("mouseenter", hoverIn);
+          card.removeEventListener("mouseleave", hoverOut);
+        });
+      });
+    },
+    { scope: containerRef }
+  );
 
   return (
-    <div ref={containerRef} className="container mx-auto px-4 py-16">
+    <div ref={containerRef} className="container mx-auto px-4 py-16" data-anim>
       <div className="max-w-5xl mx-auto">
+        {/* Header */}
         <div className="anim-header text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold tracking-tighter mb-4">
             Επικοινωνήστε μαζί μας
@@ -50,9 +104,9 @@ export default function ContactPage() {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8">
+        <div className="grid lg:grid-cols-2 gap-8 cards-wrapper">
           {/* Contact Form */}
-          <Card className="anim-card">
+          <Card className="anim-card" data-anim>
             <CardHeader>
               <CardTitle>Στείλτε μας μήνυμα</CardTitle>
             </CardHeader>
@@ -61,9 +115,9 @@ export default function ContactPage() {
             </CardContent>
           </Card>
 
-          {/* Contact Info & Quick Actions */}
+          {/* Info */}
           <div className="space-y-6">
-            <Card className="anim-card">
+            <Card className="anim-card" data-anim>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Phone className="text-primary" />
@@ -80,7 +134,6 @@ export default function ContactPage() {
                       Κλήση
                     </Link>
                   </Button>
-
                   <Button variant="outline" className="flex-1" asChild>
                     <Link href={`sms:${businessInfo.mobile}`}>
                       Αποστολή SMS
@@ -89,7 +142,8 @@ export default function ContactPage() {
                 </div>
               </CardContent>
             </Card>
-            <Card className="anim-card">
+
+            <Card className="anim-card" data-anim>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <MapPin className="text-primary" />
@@ -117,8 +171,8 @@ export default function ContactPage() {
               </CardContent>
             </Card>
 
-            {/* Map Embed Placeholder */}
-            <Card className="overflow-hidden p-0 border-0">
+            {/* Map */}
+            <Card className="overflow-hidden p-0 border-0 anim-card" data-anim>
               <div className="aspect-video w-full">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3025.36905179205!2d22.85383218314381!3d40.6878690653583!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a83b3c9dcfbbe3%3A0xdd67b6323ff9fb39!2sSMARTING.GR!5e0!3m2!1sel!2sgr!4v1764905598394!5m2!1sel!2sgr"
