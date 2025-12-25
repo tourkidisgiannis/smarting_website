@@ -175,8 +175,8 @@ export function AnimatedSubcategoryContent({
 
         {/* ---------------------------- Main ---------------------------- */}
         <article>
-          <div className="grid gap-12 lg:grid-cols-2 items-start">
-            <header>
+          <div className="grid gap-8 lg:gap-12 items-start lg:grid-cols-2">
+            <header className="order-2 lg:order-1">
               <h1 className="anim-title mb-6 text-3xl font-bold text-foreground md:text-4xl">
                 {sub.title}
               </h1>
@@ -185,7 +185,7 @@ export function AnimatedSubcategoryContent({
               </p>
             </header>
 
-            <figure className="anim-image relative aspect-square overflow-hidden rounded-xl border border-border bg-card">
+            <figure className="anim-image order-1 lg:order-2 relative aspect-square overflow-hidden rounded-xl border border-border bg-card">
               <Image
                 src={sub.image}
                 alt={sub.title}

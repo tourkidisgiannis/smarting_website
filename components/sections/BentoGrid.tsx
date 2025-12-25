@@ -96,6 +96,25 @@ export function BentoGrid() {
                   window.location.href = `/services/${category.id}`;
                 }}
               >
+                {/* Mobile indicator showing the box is clickable */}
+                <div className="absolute bottom-2 right-2 md:hidden z-30">
+                  <div className="bg-primary/20 backdrop-blur-sm rounded-full px-2 py-1 text-xs text-primary border border-primary/30 flex items-center gap-1">
+                    <span>Περισσότερα</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="10"
+                      height="10"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M9 18l6-6-6-6" />
+                    </svg>
+                  </div>
+                </div>
                 {/* Default State Content */}
                 <div className="absolute inset-0 z-10 p-2 flex flex-col items-center justify-center text-center transition-all duration-300 group-hover:opacity-0 group-hover:scale-90">
                   <div

@@ -220,14 +220,14 @@ export function Header() {
               Κύριο μενού πλοήγησης
             </SheetDescription>
 
-            <nav className="mt-8 flex flex-col items-center gap-4">
+            <nav className="mt-8 flex flex-col items-center justify-center gap-4 w-full h-[calc(100vh-120px)]">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
                   className={cn(
-                    "w-full rounded-lg px-4 py-2 text-center text-lg font-medium transition-colors",
+                    "w-3/4 rounded-lg px-4 py-3 text-center text-lg font-medium transition-colors border border-white/10",
                     isActiveRoute(link.href)
                       ? "bg-primary/15 text-primary"
                       : "text-foreground/80 hover:bg-primary/10 hover:text-primary"
