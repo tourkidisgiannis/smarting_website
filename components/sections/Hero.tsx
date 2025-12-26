@@ -120,7 +120,7 @@ export function Hero() {
         </div>
 
         {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-20">
+        {/* <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-20">
           <div className="flex flex-col items-center">
             <span className="text-xs text-foreground/60 mb-2">Κυλήστε προς τα κάτω</span>
             <svg
@@ -138,7 +138,7 @@ export function Hero() {
               <path d="M19 12l-7 7-7-7" />
             </svg>
           </div>
-        </div>
+        </div> */}
 
         {/* Bottom subtle detail */}
         <div className="mt-12 pt-8 border-t border-white/5 mx-auto max-w-sm text-sm text-foreground/60 hero-cta opacity-60">
