@@ -191,9 +191,12 @@ export function Header() {
           ))}
 
           <div className="ml-4 flex gap-2">
-            {[businessInfo.phone, "2310 781555"].map((phone) => (
+            {[businessInfo.mobile, businessInfo.phone].map((phone) => (
               <Button key={phone} size="sm" asChild>
-                <a href={`tel:${phone}`} className="flex items-center gap-2">
+                <a
+                  href={`tel:${phone}`}
+                  className="flex items-center gap-2 tracking-wide"
+                >
                   <Phone className="h-4 w-4" />
                   <span>{phone}</span>
                 </a>
