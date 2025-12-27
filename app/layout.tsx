@@ -96,6 +96,7 @@ export const viewport = {
 };
 
 import { AnimatedBackground } from "@/components/layout/AnimatedBackground";
+import SnowEffect from "@/components/SnowEffect";
 
 export default function RootLayout({
   children,
@@ -120,6 +121,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${electrolize.variable} ${poppins.variable} antialiased`}
       >
         <AnimatedBackground />
+        <SnowEffect />
         <Header />
         <main className="min-h-screen pb-20 md:pb-0">
           {children}
