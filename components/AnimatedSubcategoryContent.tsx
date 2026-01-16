@@ -18,6 +18,10 @@ interface AnimatedSubcategoryContentProps {
   category: Category;
   sub: Subcat;
   relatedServices: Subcat[];
+  cta?: {
+    label: string;
+    href: string;
+  };
 }
 
 export function AnimatedSubcategoryContent({
@@ -183,6 +187,17 @@ export function AnimatedSubcategoryContent({
               <p className="anim-desc text-lg text-foreground/80">
                 {sub.description}
               </p>
+              {sub.cta && (
+                <a
+                  href={sub.cta.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="anim-desc mt-4 inline-flex items-center gap-2 font-medium text-primary transition-colors hover:underline"
+                >
+                  {sub.cta.label}
+                  <ChevronRight className="h-4 w-4" />
+                </a>
+              )}
             </header>
 
             <figure className="anim-image order-1 lg:order-2 relative aspect-square overflow-hidden rounded-xl border border-border bg-card">

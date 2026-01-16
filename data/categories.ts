@@ -6,6 +6,10 @@ export type Subcat = {
   title: string;
   description: string;
   image: string;
+  cta?: {
+    label: string;
+    href: string;
+  };
 };
 
 export type Category = {
@@ -204,6 +208,10 @@ export const categories: Category[] = [
         description:
           "Σχεδίαση και ανάπτυξη responsive ιστοσελίδων με έμφαση στην ταχύτητα και το SEO. Χρησιμοποιούμε σύγχρονες τεχνολογίες για σταθερή εμπειρία χρήστη τόσο σε desktop όσο και σε mobile. Παρέχουμε υποστήριξη και συντήρηση μετά την παράδοση. Προσαρμόζουμε λύσεις ανάλογα με ανάγκες ecommerce, εταιρικής παρουσίας ή landing pages.",
         image: "/images/web-dev.png",
+        cta: {
+          label: "Επισκεφθείτε τη σελίδα μας",
+          href: "https://web.smarting.gr/",
+        },
       },
       {
         id: "wifi-mesh",
