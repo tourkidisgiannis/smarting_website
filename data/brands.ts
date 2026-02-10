@@ -36,6 +36,7 @@ export const subcategoryBrands: Record<string, Brand[]> = {
     { name: "Yale", logo: "/brands/yale-lock.png" },
     { name: "Paxtron", logo: "/brands/paxtron.png" },
     { name: "Paxton", logo: "/brands/paxton.png" },
+    { name: "PartnerNet", logo: "/brands/partnernet.png" },
   ],
   "alarm-systems": [
     { name: "Ajax", logo: "/brands/ajax.png" },
@@ -158,20 +159,29 @@ export const subcategoryBrands: Record<string, Brand[]> = {
     { name: "TP-Link", logo: "/brands/tp-link-nuevo.png" },
     { name: "Google", logo: "/brands/google-nest.png" },
     { name: "Asus", logo: "/brands/asus.png" },
+    { name: "PartnerNet", logo: "/brands/partnernet.png" },
   ],
   "ap-router": [
     { name: "Ubiquiti", logo: "/brands/ubiquiti.png" },
     { name: "MikroTik", logo: "/brands/mikrotik.png" },
     { name: "Cisco", logo: "/brands/cisco.png" },
     { name: "TP-Link", logo: "/brands/tp-link-nuevo.png" },
+    { name: "PartnerNet", logo: "/brands/partnernet.png" },
   ],
   "nas-backups": [
     { name: "Synology", logo: "/brands/synology.png" },
     { name: "QNAP", logo: "/brands/qnap.png" },
+    { name: "PartnerNet", logo: "/brands/partnernet.png" },
+    { name: "InterworksCloud", logo: "/brands/interworks-cloud.png" },
   ],
   "structured-cabling": [
     { name: "Legrand", logo: "/brands/legrand.png" },
     { name: "Schrack", logo: "/brands/schrack.png" },
+  ],
+  "pbx-installation": [
+    { name: "PartnerNet", logo: "/brands/partnernet.png" },
+    { name: "Grandstream", logo: "/brands/grandstream.webp" },
+    { name: "Yeastar", logo: "/brands/yeastar.svg" },
   ],
 
   // Home Solutions

@@ -200,7 +200,7 @@ export const categories: Category[] = [
   },
   {
     id: "networks",
-    title: "Δίκτυα & Internet",
+    title: "Δίκτυα,Internet & Τηλεφωνία",
     subcategories: [
       {
         id: "web-dev",
@@ -240,6 +240,13 @@ export const categories: Category[] = [
         description:
           "Επαγγελματική εγκατάσταση δομημένης καλωδίωσης για αξιόπιστη μεταφορά δεδομένων και ισχύος. Σχεδιάζουμε δίκτυα που υποστηρίζουν μελλοντικές επεκτάσεις και υψηλότερες ταχύτητες. Χρησιμοποιούμε πιστοποιημένα υλικά και διεξάγουμε δοκιμές μετά την ολοκλήρωση. Προσφέρουμε τεκμηρίωση και σχέδια καλωδιώσεων για εύκολη διαχείριση.",
         image: "/images/cabling.png",
+      },
+      {
+        id: "pbx-installation",
+        title: "Εγκατάσταση Τηλεφωνικού Κέντρου (PBX)",
+        description:
+          "Αναλαμβάνουμε τη μελέτη και εγκατάσταση τηλεφωνικών κέντρων (IP PBX ή υβριδικών) για επιχειρήσεις κάθε μεγέθους. Διασφαλίζουμε αξιόπιστη εσωτερική και εξωτερική επικοινωνία, με δυνατότητες όπως μεταφορά κλήσεων, IVR, voicemail και απομακρυσμένα extensions. Παρέχουμε παραμετροποίηση, QoS και διασύνδεση με υπάρχουσες υποδομές δικτύου, καθώς και υποστήριξη και εκπαίδευση χρηστών.",
+        image: "/images/pbx-installation.png",
       },
     ],
   },
@@ -437,7 +444,7 @@ export function getCategoryById(categoryId: string): Category | undefined {
 // Helper to find a subcategory within a category
 export function getSubcategoryById(
   categoryId: string,
-  subcatId: string
+  subcatId: string,
 ): Subcat | undefined {
   const category = getCategoryById(categoryId);
   return category?.subcategories.find((s) => s.id === subcatId);
