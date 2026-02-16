@@ -29,7 +29,7 @@ export function Hero() {
             ease: "power3.out",
             clearProps: "all",
           },
-          "-=0.4"
+          "-=0.4",
         )
 
         .from(
@@ -41,7 +41,7 @@ export function Hero() {
             ease: "power3.out",
             clearProps: "all",
           },
-          "-=0.6"
+          "-=0.6",
         )
         .from(
           ".hero-cta",
@@ -53,7 +53,7 @@ export function Hero() {
             ease: "power3.out",
             clearProps: "all",
           },
-          "-=0.4"
+          "-=0.4",
         );
     }, heroRef);
 
