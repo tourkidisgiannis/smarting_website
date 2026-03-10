@@ -45,17 +45,17 @@ export async function generateMetadata({
     };
   }
 
-  const title = `${sub.title} – ${category.title}`;
-  const description = `${sub.description} Επαγγελματική εγκατάσταση και υποστήριξη για οικίες και επιχειρήσεις.`;
+  const title = `${sub.title} | Smarting.gr`;
+  // Shorten description to ~155 characters for SEO
+  const rawDescription = sub.description || "";
+  const description = rawDescription.length > 155 
+    ? rawDescription.substring(0, 152) + "..."
+    : rawDescription;
 
   const url = `https://www.smarting.gr/services/${categoryId}/${subcatId}`;
 
   return {
-    title: {
-      default: title,
-      template: "%s – Smarting.gr",
-    },
-
+    title,
     description,
 
     alternates: {

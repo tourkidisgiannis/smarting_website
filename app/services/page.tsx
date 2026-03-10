@@ -2,13 +2,10 @@ import { Metadata } from "next";
 import { AnimatedCategoriesContent } from "@/components/AnimatedCategoriesContent";
 
 export const metadata: Metadata = {
-  title: {
-    default: "Υπηρεσίες | Ηλεκτρολογικές Εγκαταστάσεις, Ασφάλεια & Smart Home",
-    template: "%s – Smarting.gr",
-  },
+  title: "Υπηρεσίες Ηλεκτρολογικών Εγκαταστάσεων",
 
   description:
-    "Δείτε όλες τις υπηρεσίες μας: ηλεκτρολογικές εγκαταστάσεις, δίκτυα και καλωδιώσεις, CCTV, συστήματα ασφαλείας, access control και smart home λύσεις για κατοικίες και επιχειρήσεις.",
+    "Ολοκληρωμένες υπηρεσίες: ηλεκτρολογικές εγκαταστάσεις, CCTV, συστήματα ασφαλείας & smart home λύσεις για κατοικίες και επιχειρήσεις στη Θεσσαλονίκη.",
 
   robots: {
     index: true,
@@ -18,7 +15,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Υπηρεσίες Ηλεκτρολογικών Εγκαταστάσεων & Συστημάτων Ασφαλείας",
     description:
-      "Ολοκληρωμένες υπηρεσίες ηλεκτρολογικών εγκαταστάσεων, δικτύων, CCTV και smart home λύσεων.",
+      "Εξειδικευμένες υπηρεσίες: ηλεκτρολογικές εγκαταστάσεις, CCTV, συστήματα ασφαλείας & smart home λύσεις για κάθε ανάγκη.",
     type: "website",
     locale: "el_GR",
     url: "https://www.smarting.gr/services",

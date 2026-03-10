@@ -30,17 +30,13 @@ export async function generateMetadata({
     };
   }
 
-  const title = `${category.title} – Υπηρεσίες | Smarting.gr`;
-  const description = `Δείτε όλες τις υπηρεσίες στην κατηγορία ${category.title}. Επαγγελματικές λύσεις για οικίες και επιχειρήσεις.`;
+  const title = `${category.title} | Smarting.gr`;
+  const description = `Υπηρεσίες στην κατηγορία ${category.title}. Επαγγελματικές λύσεις για οικίες και επιχειρήσεις στη Θεσσαλονίκη από την Smarting.gr.`;
 
   const url = `https://www.smarting.gr/services/${categoryId}`;
 
   return {
-    title: {
-      default: title,
-      template: "%s – Smarting.gr",
-    },
-
+    title,
     description,
 
     alternates: {

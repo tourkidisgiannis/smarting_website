@@ -34,14 +34,15 @@ const electrolize = Electrolize({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.smarting.gr"),
   title: {
     default:
-      "Ηλεκτρολογικές Εγκαταστάσεις & Βιομηχανικοί Αυτοματισμοί | Συστήματα Ασφαλείας & Smart Home – Smarting.gr",
+      "Ηλεκτρολογικές Εγκαταστάσεις & Smart Home | Smarting.gr",
     template: "%s – Smarting.gr",
   },
 
   description:
-    "Ηλεκτρολογικές εγκαταστάσεις και βιομηχανικοί αυτοματισμοί. Συστήματα ασφαλείας, κάμερες, συναγερμοί, access control, θυροτηλεοράσεις, ενσύρματα & ασύρματα δίκτυα και smart home λύσεις σε Θεσσαλονίκη και Βόρεια Ελλάδα.",
+    "Εξειδικευμένες ηλεκτρολογικές εγκαταστάσεις, συστήματα ασφαλείας & smart home σε Θεσσαλονίκη και Βόρεια Ελλάδα. Ποιότητα και ασφάλεια για κάθε ανάγκη.",
   keywords: [
     "ηλεκτρολογικές εγκαταστάσεις",
     "βιομηχανικοί αυτοματισμοί",
@@ -64,16 +65,16 @@ export const metadata: Metadata = {
   manifest: "/site.webmanifest",
   openGraph: {
     title:
-      "Ηλεκτρολογικές Εγκαταστάσεις & Βιομηχανικοί Αυτοματισμοί | Συστήματα Ασφαλείας & Smart Home",
+      "Ηλεκτρολογικές Εγκαταστάσεις & Smart Home | Smarting.gr",
     description:
-      "Ηλεκτρολογικές εγκαταστάσεις, βιομηχανικοί αυτοματισμοί, κάμερες, συναγερμοί, access control, θυροτηλεοράσεις, ενσύρματα & ασύρματα δίκτυα και smart home λύσεις σε Θεσσαλονίκη και Βόρεια Ελλάδα.",
+      "Εξειδικευμένες ηλεκτρολογικές εγκαταστάσεις, συστήματα ασφαλείας & smart home σε Θεσσαλονίκη και Βόρεια Ελλάδα. Ποιότητα και ασφάλεια για κάθε ανάγκη.",
     url: "https://www.smarting.gr",
     siteName: "Smarting.gr",
     locale: "el_GR",
     type: "website",
     images: [
       {
-        url: "https://www.smarting.gr/og-image-v2.jpg",
+        url: "https://www.smarting.gr/og-image-v2-fixed.jpg",
         width: 1200,
         height: 630,
         alt: "Smarting.gr – Ηλεκτρολογικές Εγκαταστάσεις, Συστήματα Ασφαλείας & Smart Home",

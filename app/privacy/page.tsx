@@ -2,9 +2,9 @@ import { Metadata } from "next";
 import businessInfo from "@/app/mocks/business-info.json";
 
 export const metadata: Metadata = {
-  title: "Πολιτική Απορρήτου - SMARTING.GR",
+  title: "Πολιτική Απορρήτου",
   description:
-    "Πολιτική απορρήτου σχετικά με τη συλλογή και επεξεργασία προσωπικών δεδομένων σύμφωνα με τον GDPR.",
+    "Ενημερωθείτε για την Πολιτική Απορρήτου της Smarting.gr και την προστασία των προσωπικών σας δεδομένων σύμφωνα με τον GDPR.",
 };
 
 export default function PrivacyPolicyPage() {

@@ -1,8 +1,8 @@
 import { GoogleReviews } from "@/components/sections/GoogleReviews";
 
 export const metadata = {
-  title: "Κριτικές - SMARTING.GR",
-  description: "Δείτε τι λένε οι πελάτες μας. Βαθμολογία 5.0 από 60 κριτικές.",
+  title: "Κριτικές Πελατών",
+  description: "Δείτε τι λένε οι πελάτες μας για τις ηλεκτρολογικές εγκαταστάσεις & τα συστήματα ασφαλείας της Smarting.gr.",
 };
 
 export default function ReviewsPage() {
