@@ -73,7 +73,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://www.smarting.gr/og-image.jpg",
+        url: "https://www.smarting.gr/og-image-v2.jpg",
         width: 1200,
         height: 630,
         alt: "Smarting.gr – Ηλεκτρολογικές Εγκαταστάσεις, Συστήματα Ασφαλείας & Smart Home",
